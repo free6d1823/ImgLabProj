@@ -1,0 +1,76 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: iViewer - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x404 /fo"Debug/iViewer.res" /d "_DEBUG" /d "_AFXDLL" "D:\CurWork\ImgLab\iViewer\iViewer.rc"" 
+Creating temporary file "C:\DOCUME~1\JAMMY~1.MYC\LOCALS~1\Temp\RSPC.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/iViewer.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\CurWork\ImgLab\Diplab\DIB.CPP"
+"D:\CurWork\ImgLab\iViewer\ImgDoc.cpp"
+"D:\CurWork\ImgLab\Diplab\ImgFile.cpp"
+"D:\CurWork\ImgLab\Diplab\ImgJpeg.cpp"
+"D:\CurWork\ImgLab\iViewer\ImgProcess.cpp"
+"D:\CurWork\ImgLab\iViewer\ImgView.cpp"
+"D:\CurWork\ImgLab\iViewer\iViewer.cpp"
+"D:\CurWork\ImgLab\iViewer\MainFrm.cpp"
+"D:\CurWork\ImgLab\iViewer\Navigator.cpp"
+"D:\CurWork\ImgLab\iViewer\palette.cpp"
+"D:\CurWork\ImgLab\iViewer\ThresholdDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMMY~1.MYC\LOCALS~1\Temp\RSPC.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMMY~1.MYC\LOCALS~1\Temp\RSPD.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/iViewer.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\CurWork\ImgLab\iViewer\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\JAMMY~1.MYC\LOCALS~1\Temp\RSPD.tmp" 
+Creating temporary file "C:\DOCUME~1\JAMMY~1.MYC\LOCALS~1\Temp\RSPE.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/iViewer.pdb" /debug /machine:I386 /out:"../bin/iViewer.exe" /pdbtype:sept 
+.\Debug\DIB.OBJ
+.\Debug\ImgDoc.obj
+.\Debug\ImgFile.obj
+.\Debug\ImgJpeg.obj
+.\Debug\ImgProcess.obj
+.\Debug\ImgView.obj
+.\Debug\iViewer.obj
+.\Debug\MainFrm.obj
+.\Debug\Navigator.obj
+.\Debug\palette.obj
+.\Debug\StdAfx.obj
+.\Debug\ThresholdDlg.obj
+.\Debug\iViewer.res
+..\lib\IJL15.LIB
+]
+Creating command line "link.exe @C:\DOCUME~1\JAMMY~1.MYC\LOCALS~1\Temp\RSPE.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DIB.CPP
+ImgDoc.cpp
+ImgFile.cpp
+ImgJpeg.cpp
+ImgProcess.cpp
+ImgView.cpp
+iViewer.cpp
+MainFrm.cpp
+Navigator.cpp
+palette.cpp
+ThresholdDlg.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+iViewer.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
