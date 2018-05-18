@@ -1,9 +1,5 @@
-/*
-$ Log: $
- * 
-*/
-#ifndef _MY_CDIB_CLASS_
-#define _MY_CDIB_CLASS_
+#pragma once
+
 
 #ifdef IMGLAB_EXPORTS
 #define IMGLAB_API __declspec(dllexport)
@@ -11,30 +7,23 @@ $ Log: $
 #define IMGLAB_API __declspec(dllimport)
 #endif
 
-//function declaration
-IMGLAB_API int function1(int a, int b);
-IMGLAB_API int function2(int a, int b);
 
-
-#include <afxwin.h>
-
-class CDib : public CObject
+class Dib
 {
 public:
 
-IMGLAB_API	CDib (LPBITMAPINFO pDibInfo, void* pDibBits);
-IMGLAB_API	CDib();
-IMGLAB_API	~CDib ( );
+IMGLAB_API	Dib (LPBITMAPINFO pDibInfo, void* pDibBits);
+IMGLAB_API	Dib();
+IMGLAB_API	~Dib ( );
 IMGLAB_API	void DetachDibBits();
 IMGLAB_API	void AttachDibBits(LPBITMAPINFO pDibInfo, void* pDibBits);
 
 IMGLAB_API	BOOL Create( int width, int height, int depth, int colorUsed = 0 );
 IMGLAB_API	BOOL ReadBmp(LPCTSTR szFileName);
 IMGLAB_API	BOOL WriteBmp(LPCTSTR szFileName);
-IMGLAB_API	BOOL AdjustBrightness(int nFactor);
 
 IMGLAB_API	void*		GetBits();
-IMGLAB_API	inline BITMAPINFO* CDib::GetDibInfo() { return m_pDibInfo; }
+IMGLAB_API	inline BITMAPINFO* Dib::GetDibInfo() { return m_pDibInfo; }
 IMGLAB_API	BOOL		GetColor( int index, COLORREF &color );
 IMGLAB_API	BOOL		SetColor( int index, COLORREF color );
 IMGLAB_API	BOOL		GetPixelColor(POINT pt, COLORREF& color);
@@ -56,23 +45,22 @@ IMGLAB_API	BOOL		DoWrite( CFile& file );
 
 IMGLAB_API	long		GetBodySize();
 
-IMGLAB_API	BOOL		ScaleUp(int nxScale, int nyScale);
-IMGLAB_API	BOOL		ScaleDown(int nxScale, int nyScale);
+
 protected:
 	int			GetHeaderSize();
 	void		InitDibInfo ( int , int = 0, int = 0 );
 
 	BITMAPINFO*	m_pDibInfo;
 	void*		m_pDibBits;
-	void*		m_pTempDib;
+
 };
 
-inline int CDib::GetBitsPerPixel () { return ( !m_pDibInfo ) ? 0 : m_pDibInfo->bmiHeader.biBitCount; }
-inline void* CDib::GetBits() { return m_pDibBits; }
-inline DWORD CDib::Width() { return m_pDibInfo->bmiHeader.biWidth; }
-inline DWORD CDib::Height() { return m_pDibInfo->bmiHeader.biHeight; }
-inline long CDib::GetBodySize() { return BytesPerLine() * m_pDibInfo->bmiHeader.biHeight; }
-inline DWORD CDib::BytesPerLine() 
+inline int Dib::GetBitsPerPixel () { return ( !m_pDibInfo ) ? 0 : m_pDibInfo->bmiHeader.biBitCount; }
+inline void* Dib::GetBits() { return m_pDibBits; }
+inline DWORD Dib::Width() { return m_pDibInfo->bmiHeader.biWidth; }
+inline DWORD Dib::Height() { return m_pDibInfo->bmiHeader.biHeight; }
+inline long Dib::GetBodySize() { return BytesPerLine() * m_pDibInfo->bmiHeader.biHeight; }
+inline DWORD Dib::BytesPerLine() 
 { 
 	DWORD bytes_per_line;
 	// fillup byte //
@@ -82,11 +70,10 @@ inline DWORD CDib::BytesPerLine()
     return bytes_per_line*4;
 }
 
-inline BOOL CDib::GetDimension ( CSize& size )
+inline BOOL Dib::GetDimension ( CSize& size )
 {
 	if ( !m_pDibInfo ) return FALSE;	
 	size.cx = m_pDibInfo->bmiHeader.biWidth;
 	size.cy = m_pDibInfo->bmiHeader.biHeight;
 	return TRUE;
 }
-#endif

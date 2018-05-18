@@ -1,15 +1,9 @@
    // ImgFile.h: interface for the ImgFile class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_IMGFILE_H__128E57E8_8460_4469_88A8_4497C9CFF531__INCLUDED_)
-#define AFX_IMGFILE_H__128E57E8_8460_4469_88A8_4497C9CFF531__INCLUDED_
-
-#include "DIB.H"
-
-#if _MSC_VER > 1000
 #pragma once
-#endif // _MSC_VER > 1000
+
+#include "DIB2.H"
 
 typedef enum tagIMGFORMAT
 {
@@ -54,7 +48,7 @@ typedef struct _SaveAs{
 	LPSTR		pComment;
 }SAVEAS_PARAM;
 
-class ImgFile  : public CDib
+class ImgFile  : public Dib
 {
 public:
 IMGLAB_API	ImgFile();
@@ -77,4 +71,3 @@ private:
 
 };
 
-#endif // !defined(AFX_IMGFILE_H__128E57E8_8460_4469_88A8_4497C9CFF531__INCLUDED_)

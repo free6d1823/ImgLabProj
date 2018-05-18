@@ -51,7 +51,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="./include"
+				AdditionalIncludeDirectories="$(SolutionDir)include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -78,11 +78,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ImgFile.lib"
-				OutputFile="../bin/iViewer.exe"
+				AdditionalDependencies="ImgReader.lib"
+				OutputFile="$(SolutionDir)bin/iViewer.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="./lib"
+				AdditionalLibraryDirectories="&quot;$(SolutionDir)lib&quot;"
 				ProgramDatabaseFile=".\Release/iViewer.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -176,7 +176,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="ImgReader.lib"
-				OutputFile="../bin/iViewer.exe"
+				OutputFile="$(SolutionDir)bin/iViewer.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="&quot;$(SolutionDir)lib&quot;"

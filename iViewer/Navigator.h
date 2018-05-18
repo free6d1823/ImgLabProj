@@ -9,7 +9,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // Navigator window
-#include "Dib.h"
+#include "ImgFile.h"
 
 class CMainView;
 class Navigator : public CWnd
@@ -34,7 +34,7 @@ public:
 
 // Implementation
 public:
-	BOOL SetImage(CDib* pDib);
+	BOOL SetImage(ImgFile* pDib);
 	BOOL Create(CWnd* pWnd, int x, int y);
 	virtual ~Navigator();
 	// Generated message map functions

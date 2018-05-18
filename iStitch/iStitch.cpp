@@ -3,7 +3,6 @@
 //
 
 #include "stdafx.h"
-#include "afxwinappex.h"
 #include "iStitch.h"
 #include "MainFrm.h"
 
@@ -17,11 +16,11 @@
 
 // CMainApp
 
-BEGIN_MESSAGE_MAP(CMainApp, CWinAppEx)
+BEGIN_MESSAGE_MAP(CMainApp, CWinApp)
 	ON_COMMAND(ID_APP_ABOUT, &CMainApp::OnAppAbout)
 	// Standard file based document commands
-	ON_COMMAND(ID_FILE_NEW, &CWinAppEx::OnFileNew)
-	ON_COMMAND(ID_FILE_OPEN, &CWinAppEx::OnFileOpen)
+	ON_COMMAND(ID_FILE_NEW, &CWinApp::OnFileNew)
+	ON_COMMAND(ID_FILE_OPEN, &CWinApp::OnFileOpen)
 END_MESSAGE_MAP()
 
 
@@ -30,10 +29,6 @@ END_MESSAGE_MAP()
 CMainApp::CMainApp()
 {
 
-	m_bHiColorIcons = TRUE;
-
-	// TODO: add construction code here,
-	// Place all significant initialization in InitInstance
 }
 
 // The one and only CMainApp object
@@ -45,27 +40,11 @@ CMainApp theApp;
 
 BOOL CMainApp::InitInstance()
 {
-	CWinAppEx::InitInstance();
+	CWinApp::InitInstance();
 
-	// Standard initialization
-	// If you are not using these features and wish to reduce the size
-	// of your final executable, you should remove from the following
-	// the specific initialization routines you do not need
-	// Change the registry key under which our settings are stored
-	// TODO: You should modify this string to be something appropriate
-	// such as the name of your company or organization
-	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
+	SetRegistryKey(_T("iStitch"));
 	LoadStdProfileSettings(10);  // Load standard INI file options (including MRU)
 
-	InitContextMenuManager();
-
-	InitKeyboardManager();
-
-	InitTooltipManager();
-	CMFCToolTipInfo ttParams;
-	ttParams.m_bVislManagerTheme = TRUE;
-	theApp.GetTooltipManager()->SetTooltipParams(AFX_TOOLTIP_TYPE_ALL,
-		RUNTIME_CLASS(CMFCToolTipCtrl), &ttParams);
 
 	// Register the application's document templates.  Document templates
 	//  serve as the connection between documents, frame windows and views
@@ -145,17 +124,6 @@ void CMainApp::OnAppAbout()
 
 // CMainApp customization load/save methods
 
-void CMainApp::PreLoadState()
-{
-}
-
-void CMainApp::LoadCustomState()
-{
-}
-
-void CMainApp::SaveCustomState()
-{
-}
 
 // CMainApp message handlers
 

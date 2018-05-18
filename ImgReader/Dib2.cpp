@@ -1,29 +1,24 @@
-/*
-$ Log: $
- * 
-*/
-#include "stdafx.h"
-#include "dib.h"
+#include "StdAfx.h"
+#include "Dib2.h"
 
 
-CDib::CDib ()
+
+Dib::Dib ()
 	: m_pDibBits ( NULL ), m_pDibInfo ( NULL )
 {
-	m_pTempDib = NULL; //store old dibbits
 	
 }
 	
-CDib::CDib (LPBITMAPINFO pDibInfo, void* pDibBits)
+Dib::Dib (LPBITMAPINFO pDibInfo, void* pDibBits)
 {
 	ASSERT(pDibInfo);
 		
 	m_pDibInfo = pDibInfo; //header and color table
 	m_pDibBits = pDibBits;
-	m_pTempDib = NULL; //store old dibbits
 	
 }
 
-void CDib::AttachDibBits(LPBITMAPINFO pDibInfo, void* pDibBits)
+void Dib::AttachDibBits(LPBITMAPINFO pDibInfo, void* pDibBits)
 {
 	if(m_pDibInfo)
 		free(m_pDibInfo);
@@ -35,23 +30,22 @@ void CDib::AttachDibBits(LPBITMAPINFO pDibInfo, void* pDibBits)
 	m_pDibInfo = pDibInfo;
 }
 
-void CDib::DetachDibBits()
+void Dib::DetachDibBits()
 {
 	//return pDib back
 	m_pDibBits = NULL;
 	m_pDibInfo = NULL;
 }
 
-CDib::~CDib ( )
+Dib::~Dib ( )
 {
 	if(m_pDibInfo) free(m_pDibInfo);
 	if(m_pDibBits) free(m_pDibBits);
 
-	if(m_pTempDib) free(m_pTempDib);
 
 }
 
-BOOL	CDib::Create( int width, int height, int depth, int colorUsed )
+BOOL	Dib::Create( int width, int height, int depth, int colorUsed )
 {
 	BITMAPINFOHEADER *bmheader;
 	int PaletteSize = 0;
@@ -97,7 +91,7 @@ BOOL	CDib::Create( int width, int height, int depth, int colorUsed )
 	return TRUE;
 }
 
-CPalette* CDib::GetPalette()
+CPalette* Dib::GetPalette()
 {
 	int i;
 	CPalette *palette;
@@ -123,7 +117,7 @@ CPalette* CDib::GetPalette()
 	return palette;
 }
 
-BOOL	CDib::GetColor( int index, COLORREF &color )
+BOOL	Dib::GetColor( int index, COLORREF &color )
 {
 	int PaletteSize = 0;
 
@@ -141,7 +135,7 @@ BOOL	CDib::GetColor( int index, COLORREF &color )
 		return TRUE;
 		}
 }
-BOOL		CDib::GetPixelColor(POINT pt, COLORREF& color)
+BOOL		Dib::GetPixelColor(POINT pt, COLORREF& color)
 {
 	if(	m_pDibInfo->bmiHeader.biBitCount != 24) {
 		TRACE("Not support GetPixelColor for this color format !\n");
@@ -155,7 +149,7 @@ BOOL		CDib::GetPixelColor(POINT pt, COLORREF& color)
 	return TRUE;
 }
 
-BOOL	CDib::SetColor( int index, COLORREF color )
+BOOL	Dib::SetColor( int index, COLORREF color )
 {
 	int PaletteSize = 0;
 
@@ -175,7 +169,7 @@ BOOL	CDib::SetColor( int index, COLORREF color )
 		}
 }
 
-BOOL CDib::CopyTo ( CBitmap& ddb )
+BOOL Dib::CopyTo ( CBitmap& ddb )
 {
 	BOOL ret;
 	if ( !m_pDibInfo ) return FALSE;
@@ -198,7 +192,7 @@ BOOL CDib::CopyTo ( CBitmap& ddb )
     return ret;
 }
 
-int CDib::SetToDC ( CDC& dc, CRect& src, CPoint& dst )
+int Dib::SetToDC ( CDC& dc, CRect& src, CPoint& dst )
 {
 	if ( !m_pDibInfo ) return FALSE;
 
@@ -218,7 +212,7 @@ int CDib::SetToDC ( CDC& dc, CRect& src, CPoint& dst )
 			);	
 }
 
-int CDib::StretchToDC ( CDC& dc, RECT& src, RECT& dst, DWORD rop )
+int Dib::StretchToDC ( CDC& dc, RECT& src, RECT& dst, DWORD rop )
 {
 	if ( !m_pDibInfo ) return FALSE;
 	dc.SetStretchBltMode(STRETCH_DELETESCANS);
@@ -239,7 +233,7 @@ int CDib::StretchToDC ( CDC& dc, RECT& src, RECT& dst, DWORD rop )
 			);	
 }
 
-int CDib::GetPaletteCount ()
+int Dib::GetPaletteCount ()
 {
 	int PaletteSize = 0;
 	if (!m_pDibInfo) return 0;
@@ -259,7 +253,7 @@ int CDib::GetPaletteCount ()
 }
 
 
-BOOL CDib::ReadBmp(LPCTSTR szFileName)
+BOOL Dib::ReadBmp(LPCTSTR szFileName)
 {
 	BOOL ret;
 	CFile fp ( szFileName, CFile::modeRead | CFile::typeBinary );
@@ -268,13 +262,13 @@ BOOL CDib::ReadBmp(LPCTSTR szFileName)
 	return ret;
 }
 
-BOOL CDib::DoRead ( CFile& file )
+BOOL Dib::DoRead ( CFile& file )
 {
 
 	return TRUE;
 }
 
-BOOL CDib::WriteBmp(LPCTSTR szFileName)
+BOOL Dib::WriteBmp(LPCTSTR szFileName)
 {
 	BOOL ret;
 	CFile fp ( szFileName, CFile::modeWrite | CFile::typeBinary | CFile::modeCreate );
@@ -283,7 +277,7 @@ BOOL CDib::WriteBmp(LPCTSTR szFileName)
 	return ret;
 }
 
-BOOL CDib::DoWrite( CFile& file )
+BOOL Dib::DoWrite( CFile& file )
 {
 	BITMAPFILEHEADER bmfileheader;
 	long size, headpos;
@@ -318,7 +312,7 @@ BOOL CDib::DoWrite( CFile& file )
 	return TRUE;
 }
 
-void CDib::InitDibInfo( int BitsPerPixel, int w, int h )
+void Dib::InitDibInfo( int BitsPerPixel, int w, int h )
 {
 	int i;
 	int PaletteSize = 0, cbHeaderSize;
@@ -368,7 +362,7 @@ void CDib::InitDibInfo( int BitsPerPixel, int w, int h )
 }
 
 
-int CDib::GetHeaderSize()
+int Dib::GetHeaderSize()
 {
 	int PaletteSize;
 	switch ( m_pDibInfo->bmiHeader.biBitCount )
@@ -387,205 +381,4 @@ int CDib::GetHeaderSize()
 			break;
 	}
 	return PaletteSize;
-}
-
-#define CLIP255(x) min(255,max(0,x))
-//nFactor = -128 ~ 128
-BOOL CDib::AdjustBrightness(int nFactor)
-{
-
-	if(GetBitsPerPixel()!=24)
-	{
-		TRACE("Sorry not implement for this format!");
-		return FALSE;
-	}
-	if(!m_pTempDib)
-			m_pTempDib = (void*) malloc(GetBodySize());
-	if(!m_pTempDib)
-	{
-		TRACE("out of memory\n");
-		return FALSE;
-	}
-
-	DWORD i,j;
-	LPBYTE pIndex = (LPBYTE)m_pTempDib;
-	LPBYTE pLine = pIndex;
-
-	for(i=0;i<Height();i++)
-	{
-		for(j=0;j<3*Width();j++)
-		{
-			*pIndex = CLIP255(*pIndex +nFactor);
-			pIndex++;
-		}
-
-		pLine += BytesPerLine();
-	}
-
-	void* pTemp = m_pTempDib;
-	m_pTempDib = m_pDibBits;
-	m_pDibBits = pTemp;
-	return TRUE;
-}
-
-//2003.11.28
-BOOL CDib::ScaleUp(int nxScale, int nyScale)
-{
-	int nNewWidth,nNewHeight,nOldBpR,nNewBpR;
-	int i,j,k,m;
-	LPBYTE	pBuffer;
-
-	BITMAPINFOHEADER *bmheader = &( m_pDibInfo->bmiHeader );
-	
-	nNewWidth = nxScale * bmheader->biWidth;
-	nNewHeight = nyScale * bmheader->biHeight;
-	nOldBpR = BytesPerLine();
-	nNewBpR = nxScale * nOldBpR;
-	
-	pBuffer = new BYTE[nNewBpR*nNewHeight];
-	if(!pBuffer)
-		return FALSE;
-	LPBYTE pLineSrc = (LPBYTE)m_pDibBits;
-	LPBYTE pLineDes = pBuffer;
-	LPBYTE pIndexSrc;
-	LPBYTE pIndexDes;
-	ASSERT(m_pDibBits);
-
-	switch(m_pDibInfo->bmiHeader.biBitCount)
-	{
-	case 8:
-		for( i=0;i<bmheader->biHeight;i++)
-		{
-			pIndexSrc = pLineSrc;
-
-			for ( m = 0; m <nyScale; m++)	//duplicate line
-			{
-				pIndexDes = pLineDes;
-				for( j=0; j<bmheader->biWidth; j++)
-				{
-					for ( k=0; k<nxScale;k++) //repeat same pixel
-					{
-						*pIndexDes ++ = *pIndexSrc;
-					}
-					pIndexSrc ++;
-				}
-				pLineDes += nNewBpR;
-
-			}
-			pLineSrc += nOldBpR;
-		}
-		break;
-	case 24:
-		for( i=0;i<bmheader->biHeight;i++)
-		{
-			pIndexSrc = pLineSrc;
-
-			for ( m = 0; m <nyScale; m++)	//duplicate line
-			{
-				pIndexDes = pLineDes;
-				for( j=0; j<bmheader->biWidth; j++)
-				{
-					for ( k=0; k<nxScale;k++) //repeat same pixel
-					{
-						*pIndexDes ++ = *pIndexSrc;  //B
-						*pIndexDes ++ = *(pIndexSrc+1);  //G
-						*pIndexDes ++ = *(pIndexSrc+2);  //R
-					}
-					pIndexSrc +=3;
-				}
-				pLineDes += nNewBpR;
-
-			}
-			pLineSrc += nOldBpR;
-		} //case 24
-		break;
-	default:
-		TRACE("not implement yet\n");
-		return FALSE;
-	}
-
-
-
-	//finish duplicate
-	free( m_pDibBits);
-	m_pDibBits = pBuffer;
-	bmheader->biHeight = nNewHeight;
-	bmheader->biWidth  = nNewWidth;
-	bmheader->biSizeImage *= (nxScale * nyScale);
-
-	return TRUE;
-
-}
-
-//2003.11.28
-BOOL CDib::ScaleDown(int nxScale, int nyScale)
-{
-	int nNewWidth,nNewHeight,nOldBpR,nNewBpR;
-	int i,j;
-	LPBYTE	pBuffer;
-
-
-	ASSERT(m_pDibBits);
-
-	BITMAPINFOHEADER *bmheader = &( m_pDibInfo->bmiHeader );
-	
-	nNewWidth =  bmheader->biWidth / nxScale;
-	nNewHeight = bmheader->biHeight/nyScale;
-	nOldBpR = BytesPerLine();
-	nNewBpR = nOldBpR /nxScale;
-	
-	pBuffer = new BYTE[nNewBpR*nNewHeight];
-	if(!pBuffer)
-		return FALSE;
-	LPBYTE pLineSrc = (LPBYTE)m_pDibBits;
-	LPBYTE pLineDes = pBuffer;
-	LPBYTE pIndexSrc;
-	LPBYTE pIndexDes;
-
-	switch(m_pDibInfo->bmiHeader.biBitCount)
-	{
-	case 8:
-		for( i=0;i<nNewHeight;i++)
-		{
-			pIndexSrc = pLineSrc;
-			pIndexDes = pLineDes;
-			for( j=0; j<nNewWidth; j++)
-			{
-				*pIndexDes ++ = *pIndexSrc;
-				pIndexSrc += nxScale;
-			}
-			pLineDes += nNewBpR;
-			pLineSrc += nOldBpR * nyScale;
-		}
-		break;
-	case 24:
-		for( i=0;i<nNewHeight;i++)
-		{
-			pIndexSrc = pLineSrc;
-			pIndexDes = pLineDes;
-			for( j=0; j<nNewWidth; j++)
-			{
-				*pIndexDes ++ = *pIndexSrc;		//R
-				*pIndexDes ++ = *(pIndexSrc+1);
-				*pIndexDes ++ = *(pIndexSrc+2);
-				pIndexSrc += nxScale*3;
-			}
-			pLineDes += nNewBpR;
-			pLineSrc += nOldBpR * nyScale;
-		}
-		break;
-	default:
-		return FALSE;
-	}
-
-	//finish duplicate
-	free(m_pDibBits);
-
-	m_pDibBits = pBuffer;
-	bmheader->biHeight = nNewHeight;
-	bmheader->biWidth  = nNewWidth;
-	bmheader->biSizeImage /= (nxScale * nyScale);
-
-	return TRUE;
-
 }

@@ -14,7 +14,7 @@
 // See iStitch.cpp for the implementation of this class
 //
 
-class CMainApp : public CWinAppEx
+class CMainApp : public CWinApp
 {
 public:
 	CMainApp();
@@ -23,13 +23,6 @@ public:
 // Overrides
 public:
 	virtual BOOL InitInstance();
-
-// Implementation
-	BOOL  m_bHiColorIcons;
-
-	virtual void PreLoadState();
-	virtual void LoadCustomState();
-	virtual void SaveCustomState();
 
 	afx_msg void OnAppAbout();
 	DECLARE_MESSAGE_MAP()

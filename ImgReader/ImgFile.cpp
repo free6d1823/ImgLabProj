@@ -7,17 +7,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#ifdef _DEBUG
-#undef THIS_FILE
-static char THIS_FILE[]=__FILE__;
-#define new DEBUG_NEW
-#endif
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-ImgFile::ImgFile() : CDib()
+ImgFile::ImgFile() : Dib()
 {
 
 	memset(&m_FileParam, 0 , sizeof(m_FileParam));

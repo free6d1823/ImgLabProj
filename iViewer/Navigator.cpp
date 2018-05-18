@@ -122,7 +122,7 @@ BOOL Navigator::Create(CWnd *pWnd,  int x, int y)
 
 }
 
-BOOL Navigator::SetImage(CDib* pDib)
+BOOL Navigator::SetImage(ImgFile* pDib)
 {
 	ImgFile*	pImg = m_pParent->GetImgFile();
 	if(!pImg)
