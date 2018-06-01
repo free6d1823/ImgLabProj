@@ -318,6 +318,7 @@ void WorkView::SetCurrentSel(int nSel)
 				InvalidateRect(NULL, FALSE);
 		}
 }
+
 void WorkView::DrawImages(CDC* pDC)
 {
 		PProjectSetting pPs = GetDocument()->GetProjectSetting();
@@ -339,7 +340,9 @@ void WorkView::DrawImages(CDC* pDC)
 			if (pPs->ip[m_nCurrentSelectedImage].pImg) {
 					CRect rcSrc= CRect(0,0,pPs->ip[m_nCurrentSelectedImage].pImg->Width(), 
 							pPs->ip[m_nCurrentSelectedImage].pImg->Height());
-					pPs->ip[m_nCurrentSelectedImage].pImg->StretchToDC(*pDC, rcSrc, rcDest, SRCCOPY); 
+
+					pPs->ip[m_nCurrentSelectedImage].pImg->StretchToDC(*pDC, rcSrc, rcDest, SRCCOPY); 	
+
 			}
 			CPen pen(PS_SOLID, 1, SELECTED_COLOR);
 			CBrush brush; 

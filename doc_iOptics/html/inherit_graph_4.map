@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_basic_view.html" title="BasicView is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. " alt="" coords="116,56,199,83"/>
+<area shape="rect" id="node7" href="$class_navigator.html" title="Navigator" alt="" coords="120,107,195,133"/>
+<area shape="rect" id="node8" href="$class_ruler_bar.html" title="RulerBar" alt="" coords="121,157,193,184"/>
+<area shape="rect" id="node9" href="$class_ruler_corner.html" title="RulerCorner" alt="" coords="112,208,203,235"/>
+<area shape="rect" id="node3" href="$class_process_view.html" title="ProcessView is the basic image viewer for processing image viewing. It handles the video rendering pr..." alt="" coords="251,31,349,57"/>
+<area shape="rect" id="node6" href="$class_work_view.html" title="WorkView is the current opened image display window. It can display gride and mesh for comparision wi..." alt="" coords="259,81,341,108"/>
+<area shape="rect" id="node4" href="$class_fec_view.html" title="FecView is the image viewer for FEC processing image. It handles the video rendering process by the s..." alt="" coords="397,5,469,32"/>
+<area shape="rect" id="node5" href="$class_ldc_view.html" title="LdcView is the image viewer for LDC processing image. It handles the video rendering process by the s..." alt="" coords="398,56,469,83"/>
+</map>

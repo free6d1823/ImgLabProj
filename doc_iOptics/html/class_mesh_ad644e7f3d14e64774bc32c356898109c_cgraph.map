@@ -1,0 +1,4 @@
+<map id="Mesh::OnMouseMove" name="Mesh::OnMouseMove">
+<area shape="rect" id="node2" href="$class_mesh.html#a40ac4b15e3c738aab4c701d774e65ce9" title="Mesh::MoveControlPoint" alt="" coords="201,5,364,32"/>
+<area shape="rect" id="node3" href="$class_mesh.html#a945caa648924bf3336a54c075b83e019" title="Mesh::IsOnControlPoint" alt="" coords="203,56,363,83"/>
+</map>

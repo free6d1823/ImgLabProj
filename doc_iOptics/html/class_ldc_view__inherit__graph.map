@@ -1,0 +1,4 @@
+<map id="LdcView" name="LdcView">
+<area shape="rect" id="node2" href="$class_process_view.html" title="ProcessView is the basic image viewer for processing image viewing. It handles the video rendering pr..." alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node3" href="$class_basic_view.html" title="BasicView is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. " alt="" coords="13,80,96,107"/>
+</map>

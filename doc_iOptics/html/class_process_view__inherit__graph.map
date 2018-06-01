@@ -1,0 +1,5 @@
+<map id="ProcessView" name="ProcessView">
+<area shape="rect" id="node4" href="$class_fec_view.html" title="FecView is the image viewer for FEC processing image. It handles the video rendering process by the s..." alt="" coords="5,229,77,256"/>
+<area shape="rect" id="node5" href="$class_ldc_view.html" title="LdcView is the image viewer for LDC processing image. It handles the video rendering process by the s..." alt="" coords="102,229,173,256"/>
+<area shape="rect" id="node2" href="$class_basic_view.html" title="BasicView is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. " alt="" coords="48,80,131,107"/>
+</map>

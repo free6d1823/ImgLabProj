@@ -1,0 +1,8 @@
+<map id="LdcTool" name="LdcTool">
+<area shape="rect" id="node2" href="$class_process_tool.html" title="ProcessTool is the abstract class which is used to control the settings of a process with UI in a dia..." alt="" coords="91,260,186,287"/>
+<area shape="rect" id="node4" href="$class_process_wrap.html" title="wrap process parameters " alt="" coords="96,171,197,197"/>
+<area shape="rect" id="node5" href="$struct___point_double.html" title="double precision types of position coordinates used in LUT " alt="" coords="97,81,196,108"/>
+<area shape="rect" id="node6" href="$class_process_view.html" title="ProcessView is the basic image viewer for processing image viewing. It handles the video rendering pr..." alt="" coords="229,171,328,197"/>
+<area shape="rect" id="node7" href="$class_basic_view.html" title="BasicView is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. " alt="" coords="228,81,311,108"/>
+<area shape="rect" id="node9" href="$class_gride.html" title="Gride" alt="" coords="335,81,388,108"/>
+</map>

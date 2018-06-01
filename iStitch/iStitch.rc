@@ -218,7 +218,6 @@ IDR_iStitchTYPE         ICON                    "res\\iStitchDoc.ico"
 //
 
 IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
-IDR_MAINFRAME_256       BITMAP                  "res\\Toolbar256.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //

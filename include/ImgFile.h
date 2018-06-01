@@ -59,6 +59,7 @@ IMGLAB_API	int Save(ImgProgressProc pfnProgress = NULL, ImgAbortProc pfnAbort = 
 IMGLAB_API	int SaveAs(SAVEAS_PARAM& saveas, ImgProgressProc pfnProgress = NULL, ImgAbortProc pfnAbort = NULL);
 IMGLAB_API	int CopyFrom(ImgFile* pSource);
 
+IMGLAB_API	void DrawTransparent( CDC& dc, RECT& src, RECT& dst, float fTransparency);
 IMGLAB_API	static	IMG_FORMAT ReadFileFormat(FILE* pFile);
 private:
 	void FreePrivateData();

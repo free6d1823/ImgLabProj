@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>130</y>
+      <w>110</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=m_pMainWnd</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>170</y>
+      <w>510</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>490.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>90</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lw=2
+CMainApp
+-
+theApp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>230</y>
+      <w>210</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>CMainView::CView
+--
+m_pNavigator
+m_ruler(s)
+--
+m_view
+{innerclass
+WorkView::BasicView
+{Original mage display window}
+--
+m_gride
+m_mesh
+--
+m_pProcessTool
+Gride* m_pToolGride
+innerclass}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>230</y>
+      <w>170</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>CMainDoc::CDocument
+-
+m_pImg
+{innerclass
+ImgFile::Dib
+--
+StretchToDC()
+SetToDC()
+--
+Load();
+Save();
+CopyFrom()
+--
+BITMAPINFO*	
+  m_pDibInfo;
+void*		m_pDibBits;
+innerclass}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>230</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>CMainFrame::CFrameWnd
+--
+m_statusBar
+m_toolBar
+m_toolBox
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>470</y>
+      <w>180</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>ProcessView : BasicView
+{display window for the selected process}
+style=wordwrap
+{innerclass
+FecView
+innerclass}
+-
+Gride m_gride;
+-
+ImgFile*	m_pOriginalImg
+-
+FecCap* m_pParamRef;
+-
+ImgFile* m_pImg
+{processed image}
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>370</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>ProcessTool::CDialog
+{process settings UI control}
+{innerclass
+FecTool
+innerclass}
+-
+m_pBasicView
+-
+m_pParCap
+-
+SaveParameter()
+LoadParameter()
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>170</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>170</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>380</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>440</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>290.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>510</y>
+      <w>170</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>ProcessCap
+{process setting class}
+{innerclass
+FecCap
+-
+FecParam param
+{innerclass
+FEC process specified data
+style=wordwrap
+innerclass}
+innerclass}
+-
+int cxLut;
+int cyLut;
+
+PointDouble* lut;
+{innerclass
+LUT data
+style=wordwrap
+innerclass}
+bg=yellow
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>460</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>510</y>
+      <w>90</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>280</y>
+      <w>80</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;300.0;20.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>570</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Gride
+{process specified gride to be drawn on original image}
+{innerclass
+FecGride
+innerclass}
+style=wordwrap
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>410</y>
+      <w>110</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>50</y>
+      <w>260</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+iOptics classes diagram</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -235,3 +235,41 @@ void ImgFile::FreePrivateData()
 {
 
 }
+void ImgFile::DrawTransparent( CDC& dc, RECT& src, RECT& dst, float fTransparency)
+{
+	BLENDFUNCTION m_bf;
+	m_bf.BlendOp = AC_SRC_OVER;
+	m_bf.BlendFlags = 0;
+	m_bf.SourceConstantAlpha = 0;
+	m_bf.AlphaFormat = 0;
+		m_bf.SourceConstantAlpha = 128;
+
+
+		CDC  dcMem;
+		dcMem.CreateCompatibleDC(&dc);
+CBitmap m_bitmap;
+//m_bitmap.CreateCompatibleBitmap(&dcMem, src.right, src.bottom);
+
+	CBitmap *pOldBitmap  =  dcMem.SelectObject(&m_bitmap);
+
+	StretchToDC(dcMem, src, dst, SRCCOPY); 		
+		AlphaBlend(dc, 
+			
+			
+				dst.left,	// x-coordinate of upper-left corner of dest. rect. 
+				dst.top,	// y-coordinate of upper-left corner of dest. rect. 
+				dst.right - dst.left,	// width of destination rectangle 
+				dst.bottom - dst.top,	// height of destination rectangle 
+ dcMem, 
+ 				dst.left,	// x-coordinate of lower-left corner of source rect. 
+				dst.top,	// y-coordinate of lower-left corner of source rect. 
+				dst.right - src.left,	// source rectangle width 
+				dst.bottom - src.top,	// source rectangle height 
+
+ m_bf); 
+
+
+	dcMem.SelectObject(pOldBitmap);
+
+
+}

@@ -329,28 +329,7 @@
 				RelativePath=".\res\Toolbar.bmp"
 				>
 			</File>
-			<File
-				RelativePath=".\res\Toolbar256.bmp"
-				>
-			</File>
-			<File
-				RelativePath=".\UserImages.bmp"
-				>
-			</File>
 		</Filter>
-		<File
-			RelativePath=".\iStitch.reg"
-			>
-		</File>
-		<File
-			RelativePath=".\ontrolBar.htm"
-			DeploymentContent="true"
-			>
-		</File>
-		<File
-			RelativePath=".\ReadMe.txt"
-			>
-		</File>
 	</Files>
 	<Globals>
 		<Global

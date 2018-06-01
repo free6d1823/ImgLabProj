@@ -73,31 +73,34 @@ BOOL CMainDoc::OnNewDocument()
 
 BOOL CMainDoc::InitPropertySetting(PProjectSetting pPs)
 {
-		if(!pPs || pPs->nImages == 0)
-				return FALSE;
-		FreePropertySetting();
-		m_ProjectSetting.nImages = pPs->nImages;
-		m_ProjectSetting.canvas = pPs->canvas;
-		strcpy_s(m_ProjectSetting.title,sizeof(m_ProjectSetting.title), pPs->title);
-		for (int i=0; i< m_ProjectSetting.nImages; i++) {
-				m_ProjectSetting.ip[i].pos = pPs->ip[i].pos;
-				m_ProjectSetting.ip[i].size = pPs->ip[i].size;
-				m_ProjectSetting.ip[i].scale = pPs->ip[i].scale;
-				m_ProjectSetting.ip[i].rotate = pPs->ip[i].rotate;
-				CALCULATE_BOUND(m_ProjectSetting.ip[i].rcBound, pPs->ip[i].pos, pPs->ip[i].size, pPs->ip[i].scale);
+	if(!pPs || pPs->nImages == 0)
+		return FALSE;
+	FreePropertySetting();
+	m_ProjectSetting.nImages = pPs->nImages;
+	m_ProjectSetting.canvas = pPs->canvas;
+	strcpy_s(m_ProjectSetting.title,sizeof(m_ProjectSetting.title), pPs->title);
+	for (int i=0; i< m_ProjectSetting.nImages; i++) {
+		m_ProjectSetting.ip[i].pos = pPs->ip[i].pos;
+		m_ProjectSetting.ip[i].size = pPs->ip[i].size;
+		m_ProjectSetting.ip[i].scale = pPs->ip[i].scale;
+		m_ProjectSetting.ip[i].rotate = pPs->ip[i].rotate;
+		CALCULATE_BOUND(m_ProjectSetting.ip[i].rcBound, pPs->ip[i].pos, pPs->ip[i].size, pPs->ip[i].scale);
 
-				strcpy_s(m_ProjectSetting.ip[i].path,MAX_PATH, pPs->ip[i].path);
-				ImgFile* pImg = new ImgFile();
-				if(Img_OK != pImg->Load(m_ProjectSetting.ip[i].path)) {
-						delete pImg;
-						pImg = NULL;
-						CString szMessage;
-						szMessage.Format("Failed to open image file %s!", m_ProjectSetting.ip[i].path);
-						AfxMessageBox(szMessage);
-				}
-				m_ProjectSetting.ip[i].pImg = pImg;
+		if( pPs->ip[i].path[0] != 0) {
+			strcpy_s(m_ProjectSetting.ip[i].path,MAX_PATH, pPs->ip[i].path);
+			
+			ImgFile* pImg = new ImgFile();
+			if(Img_OK != pImg->Load(m_ProjectSetting.ip[i].path)) {
+					delete pImg;
+					pImg = NULL;
+					CString szMessage;
+					szMessage.Format("Failed to open image file %s!", m_ProjectSetting.ip[i].path);
+					AfxMessageBox(szMessage);
+			}
+			m_ProjectSetting.ip[i].pImg = pImg;
 		}
-		return TRUE;
+	}
+	return TRUE;
 }
 void CMainDoc::FreePropertySetting()
 {

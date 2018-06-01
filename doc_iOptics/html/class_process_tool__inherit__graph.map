@@ -1,0 +1,4 @@
+<map id="ProcessTool" name="ProcessTool">
+<area shape="rect" id="node3" href="$class_fec_tool.html" title="FecTool is used to control the settings of FEC process with UI in a dialog box. This class sends the ..." alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node4" href="$class_ldc_tool.html" title="LdccTool is used to control the settings of Ldc process with UI in a dialog box. This class sends the..." alt="" coords="98,155,165,181"/>
+</map>

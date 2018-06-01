@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_c_about_dlg.html" title="CAboutDlg" alt="" coords="125,5,209,32"/>
+<area shape="rect" id="node3" href="$class_process_tool.html" title="ProcessTool is the abstract class which is used to control the settings of a process with UI in a dia..." alt="" coords="120,56,215,83"/>
+<area shape="rect" id="node4" href="$class_fec_tool.html" title="FecTool is used to control the settings of FEC process with UI in a dialog box. This class sends the ..." alt="" coords="263,31,331,57"/>
+<area shape="rect" id="node5" href="$class_ldc_tool.html" title="LdccTool is used to control the settings of Ldc process with UI in a dialog box. This class sends the..." alt="" coords="263,81,330,108"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="ProcessView" name="ProcessView">
+<area shape="rect" id="node2" href="$class_basic_view.html" title="BasicView is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. " alt="" coords="5,81,88,108"/>
+<area shape="rect" id="node4" href="$class_gride.html" title="Gride" alt="" coords="112,81,165,108"/>
+</map>

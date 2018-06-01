@@ -1,0 +1,6 @@
+<map id="FecTool::SaveParameter" name="FecTool::SaveParameter">
+<area shape="rect" id="node2" href="$class_process_wrap.html#a14eafff7a715fb84f7b3a3b2dc37bd0c" title="ProcessWrap::LutColumns" alt="" coords="220,5,399,32"/>
+<area shape="rect" id="node3" href="$class_process_wrap.html#a805d35317ea071adec5d6a4497608e43" title="ProcessWrap::LutRows" alt="" coords="230,56,389,83"/>
+<area shape="rect" id="node4" href="$class_process_wrap.html#a21c63fcb4fec0ca44ad0d8dcd41d1fa3" title="ProcessWrap::GetLutDataX" alt="" coords="218,107,401,133"/>
+<area shape="rect" id="node5" href="$class_process_wrap.html#a644d6814dc0d8d744470d81862900ff8" title="ProcessWrap::GetLutDataY" alt="" coords="217,157,401,184"/>
+</map>

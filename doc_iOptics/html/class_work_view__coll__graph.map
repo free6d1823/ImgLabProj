@@ -1,0 +1,11 @@
+<map id="WorkView" name="WorkView">
+<area shape="rect" id="node2" href="$class_basic_view.html" title="BasicView is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. " alt="" coords="264,81,346,108"/>
+<area shape="rect" id="node11" href="$class_process_view.html" title="ProcessView is the basic image viewer for processing image viewing. It handles the video rendering pr..." alt="" coords="372,171,470,197"/>
+<area shape="rect" id="node6" href="$class_navigator.html" title="Navigator" alt="" coords="82,81,157,108"/>
+<area shape="rect" id="node4" href="$class_c_main_view.html" title="CMainView" alt="" coords="86,171,172,197"/>
+<area shape="rect" id="node7" href="$class_process_tool.html" title="ProcessTool is the abstract class which is used to control the settings of a process with UI in a dia..." alt="" coords="324,275,419,301"/>
+<area shape="rect" id="node9" href="$class_process_wrap.html" title="wrap process parameters " alt="" coords="494,171,596,197"/>
+<area shape="rect" id="node10" href="$struct___point_double.html" title="double precision types of position coordinates used in LUT " alt="" coords="464,81,562,108"/>
+<area shape="rect" id="node12" href="$class_gride.html" title="Gride" alt="" coords="596,81,649,108"/>
+<area shape="rect" id="node13" href="$class_mesh.html" title="Draw mesh on the specified area working flow. " alt="" coords="671,275,726,301"/>
+</map>

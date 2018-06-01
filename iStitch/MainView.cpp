@@ -138,23 +138,23 @@ void CMainView::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 			}
 	}
 	else {
-				SCROLLINFO si;
-				si.cbSize = sizeof(si);
-				si.fMask = SIF_POS;
-				GetScrollInfo(SB_HORZ, &si);
-				switch(nSBCode)
-				{
-				case SB_LINELEFT:  si.nPos -= 1; break;
-				case SB_LINERIGHT:  si.nPos += 1; break;
-				case SB_PAGELEFT: si.nPos -= si.nPage;break;
-				case SB_PAGERIGHT: si.nPos += si.nPage;break;
-				default: //no support
-					return;
-				}
-				if(si.nPos < si.nMin) si.nPos  = si.nMin;
-				if(si.nPos> si.nMax - (int)si.nPage) si.nPos  =si.nMax - (int)si.nPage+1;
-				SetScrollInfo(SB_HORZ, &si, TRUE);
-				m_view.SetScrollPos(si.nPos, -1);
+		SCROLLINFO si;
+		si.cbSize = sizeof(si);
+		si.fMask = SIF_POS;
+		GetScrollInfo(SB_HORZ, &si);
+		switch(nSBCode)
+		{
+		case SB_LINELEFT:  si.nPos -= 1; break;
+		case SB_LINERIGHT:  si.nPos += 1; break;
+		case SB_PAGELEFT: si.nPos -= si.nPage;break;
+		case SB_PAGERIGHT: si.nPos += si.nPage;break;
+		default: //no support
+			return;
+		}
+		if(si.nPos < si.nMin) si.nPos  = si.nMin;
+		if(si.nPos> si.nMax - (int)si.nPage) si.nPos  =si.nMax - (int)si.nPage+1;
+		SetScrollInfo(SB_HORZ, &si, TRUE);
+		m_view.SetScrollPos(si.nPos, -1);
 	}
 }
 
@@ -170,22 +170,22 @@ void CMainView::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 		}
 
 	}else {
-				SCROLLINFO si;
-				si.cbSize = sizeof(si);
-				si.fMask = SIF_POS;
-				GetScrollInfo(SB_VERT, &si);
-				switch(nSBCode)
-				{
-				case SB_LINELEFT:  si.nPos -= 1; break;
-				case SB_LINERIGHT:  si.nPos += 1; break;
-				case SB_PAGELEFT: si.nPos -= si.nPage;break;
-				case SB_PAGERIGHT: si.nPos += si.nPage;break;
-				default: //no support
-					return;
-				}
-				if(si.nPos < si.nMin) si.nPos  = si.nMin;
-				if(si.nPos> si.nMax - (int)si.nPage) si.nPos  =si.nMax - (int)si.nPage+1;
-				SetScrollInfo(SB_VERT, &si, TRUE);
-				m_view.SetScrollPos(-1, si.nPos);
+		SCROLLINFO si;
+		si.cbSize = sizeof(si);
+		si.fMask = SIF_POS;
+		GetScrollInfo(SB_VERT, &si);
+		switch(nSBCode)
+		{
+		case SB_LINELEFT:  si.nPos -= 1; break;
+		case SB_LINERIGHT:  si.nPos += 1; break;
+		case SB_PAGELEFT: si.nPos -= si.nPage;break;
+		case SB_PAGERIGHT: si.nPos += si.nPage;break;
+		default: //no support
+			return;
+		}
+		if(si.nPos < si.nMin) si.nPos  = si.nMin;
+		if(si.nPos> si.nMax - (int)si.nPage) si.nPos  =si.nMax - (int)si.nPage+1;
+		SetScrollInfo(SB_VERT, &si, TRUE);
+		m_view.SetScrollPos(-1, si.nPos);
 	}
 }

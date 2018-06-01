@@ -198,7 +198,8 @@ void ProjSettingDlg::OnEditItem(int nID, int nSub)
 {
 		switch(nSub) {
 				case ID_PATH: {
-								CString strFileName = m_pListImage->GetItemText(nID, 5);
+					
+								CString strFileName = m_Setting.ip[nID].path;
 								CString strFilter = "*.bmp|*.bmp|*.jpg|*.jpg||";
 								CFileDialog aFileDialog( TRUE, NULL, strFileName,
 										 OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
