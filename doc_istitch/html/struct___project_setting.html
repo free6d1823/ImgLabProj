@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="iStitch.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">iStitch
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Image stitching tool</div>
   </td>
@@ -71,30 +71,94 @@ $(function() {
 <div class="title">_ProjectSetting Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The stitching images parameters.  
+ <a href="struct___project_setting.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_main_doc_8h_source.html">MainDoc.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for _ProjectSetting:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct___project_setting__coll__graph.png" border="0" usemap="#___project_setting_coll__map" alt="Collaboration graph"/></div>
 <map name="___project_setting_coll__map" id="___project_setting_coll__map">
-<area shape="rect" id="node2" href="struct___image_property.html" title="_ImageProperty" alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node2" href="struct___image_property.html" title="The source image properties and stitching parameters. " alt="" coords="5,5,119,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a11c544eba27c389a923325da4258974f"><td class="memItemLeft" align="right" valign="top"><a id="a11c544eba27c389a923325da4258974f"></a>
-TCHAR&#160;</td><td class="memItemRight" valign="bottom"><b>title</b> [64]</td></tr>
+<tr class="memitem:a11c544eba27c389a923325da4258974f"><td class="memItemLeft" align="right" valign="top">TCHAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___project_setting.html#a11c544eba27c389a923325da4258974f">title</a> [64]</td></tr>
 <tr class="separator:a11c544eba27c389a923325da4258974f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71bd1d17c292d523b1c34c823a00c2d3"><td class="memItemLeft" align="right" valign="top"><a id="a71bd1d17c292d523b1c34c823a00c2d3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>nImages</b></td></tr>
+<tr class="memitem:a71bd1d17c292d523b1c34c823a00c2d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___project_setting.html#a71bd1d17c292d523b1c34c823a00c2d3">nImages</a></td></tr>
 <tr class="separator:a71bd1d17c292d523b1c34c823a00c2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb15cd0c890b9680cea6fbd85807978e"><td class="memItemLeft" align="right" valign="top"><a id="aeb15cd0c890b9680cea6fbd85807978e"></a>
-SIZE&#160;</td><td class="memItemRight" valign="bottom"><b>canvas</b></td></tr>
+<tr class="memitem:aeb15cd0c890b9680cea6fbd85807978e"><td class="memItemLeft" align="right" valign="top">SIZE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___project_setting.html#aeb15cd0c890b9680cea6fbd85807978e">canvas</a></td></tr>
 <tr class="separator:aeb15cd0c890b9680cea6fbd85807978e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a192d5602e18e47cc155414db57f2399c"><td class="memItemLeft" align="right" valign="top"><a id="a192d5602e18e47cc155414db57f2399c"></a>
-<a class="el" href="struct___image_property.html">ImageProperty</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ip</b> [MAX_IMAGES]</td></tr>
+<tr class="memitem:a192d5602e18e47cc155414db57f2399c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct___image_property.html">ImageProperty</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___project_setting.html#a192d5602e18e47cc155414db57f2399c">ip</a> [MAX_IMAGES]</td></tr>
 <tr class="separator:a192d5602e18e47cc155414db57f2399c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The stitching images parameters. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="aeb15cd0c890b9680cea6fbd85807978e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb15cd0c890b9680cea6fbd85807978e">&#9670;&nbsp;</a></span>canvas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SIZE _ProjectSetting::canvas</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>size of stitched image </p>
+
+</div>
+</div>
+<a id="a192d5602e18e47cc155414db57f2399c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192d5602e18e47cc155414db57f2399c">&#9670;&nbsp;</a></span>ip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct___image_property.html">ImageProperty</a> _ProjectSetting::ip[MAX_IMAGES]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>number of pictures </p>
+
+</div>
+</div>
+<a id="a71bd1d17c292d523b1c34c823a00c2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71bd1d17c292d523b1c34c823a00c2d3">&#9670;&nbsp;</a></span>nImages</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _ProjectSetting::nImages</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>number of pictures </p>
+
+</div>
+</div>
+<a id="a11c544eba27c389a923325da4258974f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c544eba27c389a923325da4258974f">&#9670;&nbsp;</a></span>title</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TCHAR _ProjectSetting::title[64]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>name of this project settings </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>iStitch/<a class="el" href="_main_doc_8h_source.html">MainDoc.h</a></li>
 </ul>

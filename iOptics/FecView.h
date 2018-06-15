@@ -25,6 +25,11 @@ class FecView : public ProcessView
 public:
 	FecView();
 	virtual ~FecView();
+	/*\brief Sets the original mage. This is a reference image pointer. ProcessView won't change its content 
+	* \param pImg the source image which is sued as a source reference image
+	*/
+	virtual	void SetImgFile(ImgFile* pImg);
+	
 	/*\brief Sets a reference pointer to FecWrap
 	* \param pWrapper pointer to ProcessWrap derrived class
 	*/

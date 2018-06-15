@@ -2,8 +2,8 @@
 //
 /////////////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_IMGVIEW_H__FBB8CABA_7C36_440D_9C69_9195B9FFA031__INCLUDED_)
-#define AFX_IMGVIEW_H__FBB8CABA_7C36_440D_9C69_9195B9FFA031__INCLUDED_
+#if !defined(MAINVIEW_H_)
+#define MAINVIEW_H_
 
 #if _MSC_VER > 1000
 #pragma once
@@ -11,7 +11,6 @@
 
 #include "Navigator.h"
 #include "RulerBar.h"
-#include "WorkView.h"
 
 class WorkView;
 class CMainView : public CView
@@ -91,4 +90,4 @@ inline CMainDoc* CMainView::GetDocument()
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
-#endif // !defined(AFX_IMGVIEW_H__FBB8CABA_7C36_440D_9C69_9195B9FFA031__INCLUDED_)
+#endif // !defined(MAINVIEW_H_)

@@ -1,0 +1,104 @@
+\hypertarget{class_process_view}{}\section{Process\+View Class Reference}
+\label{class_process_view}\index{Process\+View@{Process\+View}}
+
+
+\mbox{\hyperlink{class_process_view}{Process\+View}} is the basic image viewer for processing image viewing. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_process_tool}{Process\+Tool}}. It also can display gride lines on the image window.  
+
+
+
+
+{\ttfamily \#include $<$Process\+View.\+h$>$}
+
+Inheritance diagram for Process\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_process_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_process_view_a5b907e6d6920c9540fb6cefb287f5570}\label{class_process_view_a5b907e6d6920c9540fb6cefb287f5570}} 
+virtual void {\bfseries Set\+Img\+File} (Img\+File $\ast$p\+Img)
+\item 
+\mbox{\Hypertarget{class_process_view_a464aa6e662a5fe7670bf352f496ba60c}\label{class_process_view_a464aa6e662a5fe7670bf352f496ba60c}} 
+virtual void {\bfseries Set\+Param} (\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$p\+Wrapper)
+\item 
+\mbox{\Hypertarget{class_process_view_ae0f8b6cc39a64ece62ef206014cbc18e}\label{class_process_view_ae0f8b6cc39a64ece62ef206014cbc18e}} 
+B\+O\+OL {\bfseries Set\+Scroll\+Pos} (int nX, int nY)
+\item 
+\mbox{\Hypertarget{class_process_view_a4877a8e9b9a0d1afd9553e3c71142196}\label{class_process_view_a4877a8e9b9a0d1afd9553e3c71142196}} 
+virtual void {\bfseries Post\+Nc\+Destroy} ()
+\item 
+\mbox{\Hypertarget{class_process_view_a05940c5be5b5b213ff04c0088be1a865}\label{class_process_view_a05940c5be5b5b213ff04c0088be1a865}} 
+afx\+\_\+msg int {\bfseries On\+Create} (L\+P\+C\+R\+E\+A\+T\+E\+S\+T\+R\+U\+CT lp\+Create\+Struct)
+\item 
+\mbox{\Hypertarget{class_process_view_ada60d6fb93c2746f70c4074feb9279b5}\label{class_process_view_ada60d6fb93c2746f70c4074feb9279b5}} 
+afx\+\_\+msg void {\bfseries On\+Paint} ()
+\item 
+\mbox{\Hypertarget{class_process_view_a09f448c77e2887a5747e3036bc739f7a}\label{class_process_view_a09f448c77e2887a5747e3036bc739f7a}} 
+afx\+\_\+msg void {\bfseries On\+Preview} ()
+\item 
+\mbox{\Hypertarget{class_process_view_a0538625c6a1599287375668ef83dfd55}\label{class_process_view_a0538625c6a1599287375668ef83dfd55}} 
+afx\+\_\+msg void {\bfseries On\+Size} (U\+I\+NT n\+Type, int cx, int cy)
+\item 
+\mbox{\Hypertarget{class_process_view_a60b5b22454247990d2002555230dceb7}\label{class_process_view_a60b5b22454247990d2002555230dceb7}} 
+afx\+\_\+msg void {\bfseries On\+H\+Scroll} (U\+I\+NT n\+S\+B\+Code, U\+I\+NT n\+Pos, C\+Scroll\+Bar $\ast$p\+Scroll\+Bar)
+\item 
+\mbox{\Hypertarget{class_process_view_a6cd442b45537d007e354f6d6bb59a778}\label{class_process_view_a6cd442b45537d007e354f6d6bb59a778}} 
+afx\+\_\+msg void {\bfseries On\+V\+Scroll} (U\+I\+NT n\+S\+B\+Code, U\+I\+NT n\+Pos, C\+Scroll\+Bar $\ast$p\+Scroll\+Bar)
+\item 
+\mbox{\Hypertarget{class_process_view_a83b03b4d575bcb06ebf6bdd470c01942}\label{class_process_view_a83b03b4d575bcb06ebf6bdd470c01942}} 
+afx\+\_\+msg void {\bfseries On\+View\+Gride} ()
+\item 
+\mbox{\Hypertarget{class_process_view_acbb45aa45b32a59abd0b9a2193d7183e}\label{class_process_view_acbb45aa45b32a59abd0b9a2193d7183e}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Gride} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_process_view_a543224f665b9e4a819e753851815fc3d}\label{class_process_view_a543224f665b9e4a819e753851815fc3d}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Toolbox} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_process_view_aceb4f73ef0470ac2defa7240234ff8b2}\label{class_process_view_aceb4f73ef0470ac2defa7240234ff8b2}} 
+afx\+\_\+msg void {\bfseries On\+Command\+Toolbox} (U\+I\+NT n\+Cmd)
+\item 
+\mbox{\Hypertarget{class_process_view_a20ed42b9ec53e1c8a06c4583569c71fc}\label{class_process_view_a20ed42b9ec53e1c8a06c4583569c71fc}} 
+afx\+\_\+msg void {\bfseries On\+View\+Zoomin} ()
+\item 
+\mbox{\Hypertarget{class_process_view_a20aa12d6a33b71fc6a303c8a1af95268}\label{class_process_view_a20aa12d6a33b71fc6a303c8a1af95268}} 
+afx\+\_\+msg void {\bfseries On\+View\+Zoomout} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_process_view_aeef37b8953cb3c432954240c91e98a5d}\label{class_process_view_aeef37b8953cb3c432954240c91e98a5d}} 
+B\+O\+OL {\bfseries m\+\_\+b\+Show\+Gride}
+\item 
+\mbox{\Hypertarget{class_process_view_a7c7fc0bd7d0416172e7d00cf682f2bb5}\label{class_process_view_a7c7fc0bd7d0416172e7d00cf682f2bb5}} 
+\mbox{\hyperlink{class_gride}{Gride}} {\bfseries m\+\_\+gride}
+\item 
+\mbox{\Hypertarget{class_process_view_adc0115d468bba213de87ed1513fc673f}\label{class_process_view_adc0115d468bba213de87ed1513fc673f}} 
+Img\+File $\ast$ {\bfseries m\+\_\+p\+Original\+Img}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_process_view_af3bae21acece6d1027a873abb06bc26f}\label{class_process_view_af3bae21acece6d1027a873abb06bc26f}} 
+virtual B\+O\+OL {\bfseries Pos\+Map} (int u, int v, float \&x, float \&y)
+\item 
+\mbox{\Hypertarget{class_process_view_ae4c2be79e8aa2b37e2761801555975ae}\label{class_process_view_ae4c2be79e8aa2b37e2761801555975ae}} 
+virtual C\+O\+L\+O\+R\+R\+EF {\bfseries Get\+Color} (B\+Y\+TE $\ast$p\+Src, int stride, float x, float y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_process_view}{Process\+View}} is the basic image viewer for processing image viewing. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_process_tool}{Process\+Tool}}. It also can display gride lines on the image window. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_process_tool}{Process\+Tool}}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/Process\+View.\+h\item 
+i\+Optics/Process\+View.\+cpp\end{DoxyCompactItemize}

@@ -1,8 +1,11 @@
 #pragma once
 
 typedef struct _GrideParam{
-	int			nInterval; //number of grides between solide gride lines
-	int			nDivider;	//number of grides per row or column
+	int			nIntervalH; /*!<number of horz grides between solide gride lines */
+	int			nDividerH;	/*!<number of horz grides per row or column*/
+	int			nIntervalV; /*!<number of vert grides between solide gride lines*/
+	int			nDividerV;	/*!<number of vert grides per row or column*/
+
 }GrideParam;
 // Gride
 class Gride
@@ -18,6 +21,6 @@ protected:
 	RECT		m_rcViewPort; //display area
 	RECT		m_rcRange;		//image location
 	COLORREF	m_color;	//gride line color
-	int			m_nInterval; //number of grides between solide gride lines
-	int			m_nDivider;	//number of grides per row or column
+	GrideParam	m_param;
+
 };

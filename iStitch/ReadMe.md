@@ -13,7 +13,7 @@ This application is designed as a tool for images stitching
 		CMainDoc [ label="CMainDoc", fillcolor="grey75", style="filled",tooltip="This class encapsulate the source image file."];	 
 		ImageProperty [ label="ImageProperty[]",fillcolor="lightblue", style="filled", fontcolor="black", tooltip="source images"];		
 		WorkView [ label="WorkView",URL="$class_work_view.html",tooltip="WorkView is the window displays the original image."];	 	   
-		Image  [ label="ImgFile",fillcolor="yellow", style="filled", fontcolor="black", tooltip="canvas image"];		
+		Image  [ label="ImgFile",fillcolor="yellow", style="filled", fontcolor="black", tooltip="stitched image"];		
 		ControlBar [ label="ControlBar", tooltip="Stitching control bar - pan, tilt, zoom"];
 		ProjSettingDlg [ label="ProjSettingDlg", tooltip="images settings dialog box"];
 		ProjectSetting [ label="ProjectSetting", fillcolor="yellow", style="filled", fontcolor="black", tooltip="images settings and source buffer"];		
@@ -30,10 +30,12 @@ This application is designed as a tool for images stitching
 		CMainView -> WorkView [ arrowhead="open", style="solid", label = "m_view" ];	
 		WorkView -> Gride [color="midnightblue",fontsize="10",style="dashed"];			
 		WorkView -> ControlBar [color="midnightblue",fontsize="10",style="shed", label="m_ControlBar"];	  
-   		WorkView -> Image [label = "m_pImage"];	   
-		ControlBar -> Image [style="dotted"];
-		ControlBar -> ProjectSetting[style="dotted"];
+   		CMainDoc -> Image [label = "m_pImg"];	   
+		ControlBar -> ProjectSetting [style="dotted", label = "via CMainDoc"];
 		ProjectSetting -> Image [style="dotted"];
 		ProjectSetting -> ImageProperty [ arrowhead="open", style="solid", label="ip"];				
    }
 @enddot
+@section viewport DOC, ViewPort and Window Relationship
+@image html iStitchViewPort.png
+CMainDoc::m_pImg the stitched image.

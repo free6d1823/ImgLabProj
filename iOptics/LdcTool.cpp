@@ -26,7 +26,7 @@ void LdcWrap ::SetParam( void* pParam)
 
 IMPLEMENT_DYNAMIC(LdcTool, ProcessTool)
 
-LdcTool::LdcTool(CWnd* pParent /*=NULL*/)
+LdcTool::LdcTool(WorkView* pParent /*=NULL*/)
 	: ProcessTool(LdcTool::IDD, pParent)
 {
 	m_pProcessWrap = new LdcWrap();

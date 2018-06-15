@@ -1,0 +1,56 @@
+\hypertarget{class_ldc_view}{}\section{Ldc\+View Class Reference}
+\label{class_ldc_view}\index{Ldc\+View@{Ldc\+View}}
+
+
+\mbox{\hyperlink{class_ldc_view}{Ldc\+View}} is the image viewer for L\+DC processing image. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_ldc_tool}{Ldc\+Tool}}. It also can display gride lines on the image window.  
+
+
+
+
+{\ttfamily \#include $<$Ldc\+View.\+h$>$}
+
+Inheritance diagram for Ldc\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_ldc_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ldc_view_a20c9c453f1e600fb26768d749276a85f}\label{class_ldc_view_a20c9c453f1e600fb26768d749276a85f}} 
+virtual void {\bfseries Set\+Param} (\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$p\+Wrapper)
+\item 
+\mbox{\Hypertarget{class_ldc_view_a5028dabeae808988f124ef5e79418c00}\label{class_ldc_view_a5028dabeae808988f124ef5e79418c00}} 
+afx\+\_\+msg void {\bfseries On\+Preview} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ldc_view_aa6ebb786ca8301d34102439db0eca5e8}\label{class_ldc_view_aa6ebb786ca8301d34102439db0eca5e8}} 
+\mbox{\hyperlink{class_ldc_wrap}{Ldc\+Wrap}} $\ast$ {\bfseries m\+\_\+p\+Ldc\+Wrap}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ldc_view_af6dc85960c6eb59a8b942fcbdcac287a}\label{class_ldc_view_af6dc85960c6eb59a8b942fcbdcac287a}} 
+virtual B\+O\+OL {\bfseries Pos\+Map} (int u, int v, float \&x, float \&y)
+\item 
+\mbox{\Hypertarget{class_ldc_view_a5fff985c99999e4d012a0b8c3f15104c}\label{class_ldc_view_a5fff985c99999e4d012a0b8c3f15104c}} 
+virtual C\+O\+L\+O\+R\+R\+EF {\bfseries Get\+Color} (B\+Y\+TE $\ast$p\+Src, int stride, float x, float y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_ldc_view}{Ldc\+View}} is the image viewer for L\+DC processing image. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_ldc_tool}{Ldc\+Tool}}. It also can display gride lines on the image window. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_ldc_tool}{Ldc\+Tool}}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_ldc_view_8h}{Ldc\+View.\+h}}\item 
+i\+Optics/Ldc\+View.\+cpp\end{DoxyCompactItemize}

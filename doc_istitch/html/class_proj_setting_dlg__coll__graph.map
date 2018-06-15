@@ -1,4 +1,4 @@
 <map id="ProjSettingDlg" name="ProjSettingDlg">
-<area shape="rect" id="node3" href="$struct___project_setting.html" title="_ProjectSetting" alt="" coords="97,95,207,121"/>
-<area shape="rect" id="node4" href="$struct___image_property.html" title="_ImageProperty" alt="" coords="95,5,209,32"/>
+<area shape="rect" id="node3" href="$struct___project_setting.html" title="The stitching images parameters. " alt="" coords="97,95,207,121"/>
+<area shape="rect" id="node4" href="$struct___image_property.html" title="The source image properties and stitching parameters. " alt="" coords="95,5,209,32"/>
 </map>

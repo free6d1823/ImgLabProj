@@ -12,10 +12,8 @@
 #include "resource.h"
 #include "Gride.h"
 #include "Mesh.h"
-#include "MainDoc.h"
-#include "MainView.h"
-#include "BasicView.h"
 #include "FecTool.h"
+#include "HomoGride.h"
 
 class CMainDoc;
 class CMainView;
@@ -38,6 +36,11 @@ public:
 	virtual void UpdateScrollbarPosition();
 	CMainDoc* GetDocument();
 	ImgFile* GetImage();
+	/*!< Set current tool settings to WorkView. The content is defined dependently by current ProcessTool */
+	void	SetToolParam(void* pParam);
+
+	/*!< Get current tool settings on WorkView. The content is defined dependently by current ProcessTool */
+	void	GetToolParam(void* pParam);
 	virtual void OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint);
 
 	POINT	m_ptCursorPos;/*!< current cursor position on original image */
@@ -55,8 +58,8 @@ protected:
 
 	//gride
 	BOOL			m_bShowGride;
-	Gride			m_gride;
-	Gride*	m_pToolGride;	/*!< gride line for the selected processing tool*/
+	Gride		m_gride;
+	ToolGride*	m_pToolGride;	/*!< facility line for the selected processing tool*/
 
 	//mesh
 	BOOL			m_bShowMesh;
@@ -64,6 +67,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnViewZoomin();
 	afx_msg void OnUpdateViewZoomin(CCmdUI* pCmdUI);
@@ -87,6 +91,8 @@ public:
 	afx_msg void OnUpdateProcessFec(CCmdUI *pCmdUI);
 	afx_msg void OnProcessLdc();
 	afx_msg void OnUpdateProcessLdc(CCmdUI *pCmdUI);
+	afx_msg void OnProcessHomo();
+	afx_msg void OnUpdateProcessHomo(CCmdUI *pCmdUI);
 	afx_msg void OnProcessExit();
 	afx_msg void  OnToolboxApply();
 	afx_msg void OnProcessPreview();

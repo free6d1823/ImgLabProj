@@ -1,0 +1,56 @@
+\hypertarget{class_homo_view}{}\section{Homo\+View Class Reference}
+\label{class_homo_view}\index{Homo\+View@{Homo\+View}}
+
+
+\mbox{\hyperlink{class_homo_view}{Homo\+View}} is the image viewer for Homography matrix processing image. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_homo_tool}{Homo\+Tool}}. It also can display gride lines on the image window.  
+
+
+
+
+{\ttfamily \#include $<$Homo\+View.\+h$>$}
+
+Inheritance diagram for Homo\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_homo_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_view_a53f404f767b1fd329d07ad28a544c51e}\label{class_homo_view_a53f404f767b1fd329d07ad28a544c51e}} 
+virtual void {\bfseries Set\+Param} (\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$p\+Wrapper)
+\item 
+\mbox{\Hypertarget{class_homo_view_a216c8d44c93a078ef6ab750225d8fa79}\label{class_homo_view_a216c8d44c93a078ef6ab750225d8fa79}} 
+afx\+\_\+msg void {\bfseries On\+Preview} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_view_a0eedb6c31537837e538865ce30c87645}\label{class_homo_view_a0eedb6c31537837e538865ce30c87645}} 
+\mbox{\hyperlink{class_homo_wrap}{Homo\+Wrap}} $\ast$ {\bfseries m\+\_\+p\+Ldc\+Wrap}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_homo_view_aaaa286aa764b94ccae653b34369a8036}\label{class_homo_view_aaaa286aa764b94ccae653b34369a8036}} 
+virtual B\+O\+OL {\bfseries Pos\+Map} (int u, int v, float \&x, float \&y)
+\item 
+\mbox{\Hypertarget{class_homo_view_af79fa4c9d889d996557d6f9ee4979e6c}\label{class_homo_view_af79fa4c9d889d996557d6f9ee4979e6c}} 
+virtual C\+O\+L\+O\+R\+R\+EF {\bfseries Get\+Color} (B\+Y\+TE $\ast$p\+Src, int stride, float x, float y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_homo_view}{Homo\+View}} is the image viewer for Homography matrix processing image. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_homo_tool}{Homo\+Tool}}. It also can display gride lines on the image window. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_homo_tool}{Homo\+Tool}}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_homo_view_8h}{Homo\+View.\+h}}\item 
+i\+Optics/Homo\+View.\+cpp\end{DoxyCompactItemize}

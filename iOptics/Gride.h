@@ -14,8 +14,10 @@ public:
 	virtual ~Gride();
 	virtual void Draw(CDC* pDC);
 	virtual void SetParam(void* pParam);
+	virtual void GetParam(void* pParam){};
 	void SetImageArea(RECT& rcRange);
 	void SetViewPort(RECT& rcViewPort);
+
 protected:
 	RECT		m_rcViewPort; //display area
 	RECT		m_rcRange;		//image location
@@ -23,16 +25,4 @@ protected:
 	int			m_nInterval; //number of grides between solide gride lines
 	int			m_nDivider;	//number of grides per row or column
 };
-
-class FecGride :  Gride
-{
-public:
-	FecGride(COLORREF color);
-	virtual ~FecGride();
-	virtual void Draw(CDC* pDC);
-	virtual void SetParam(void* pParam);
-protected:
-	FecParam m_param;
-};
-
 

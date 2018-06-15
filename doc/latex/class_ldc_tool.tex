@@ -1,0 +1,85 @@
+\hypertarget{class_ldc_tool}{}\section{Ldc\+Tool Class Reference}
+\label{class_ldc_tool}\index{Ldc\+Tool@{Ldc\+Tool}}
+
+
+Ldcc\+Tool is used to control the settings of Ldc process with UI in a dialog box. This class sends the parameters to a \mbox{\hyperlink{class_fec_view}{Fec\+View}} to display the resulted image. It also connects to a \mbox{\hyperlink{class_ldc_wrap}{Ldc\+Wrap}} class to maintain the L\+DC process related parameters and L\+UT data.  
+
+
+
+
+{\ttfamily \#include $<$Ldc\+Tool.\+h$>$}
+
+Inheritance diagram for Ldc\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ldc_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ldc_tool_af2f77d69d4f8b26d5c400d16edbe88e1}\label{class_ldc_tool_af2f77d69d4f8b26d5c400d16edbe88e1}} 
+enum \{ {\bfseries I\+DD} = I\+D\+D\+\_\+\+L\+DC
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ldc_tool_a136828a14c1f5cda892687c7b28ede87}\label{class_ldc_tool_a136828a14c1f5cda892687c7b28ede87}} 
+{\bfseries Ldc\+Tool} (C\+Wnd $\ast$p\+Parent=N\+U\+LL)
+\item 
+virtual void \mbox{\hyperlink{class_ldc_tool_a1c98303e0ab2dfea1f1dcca8f1548307}{Set\+Param}} (\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$p\+Param)
+\item 
+virtual \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$ \mbox{\hyperlink{class_ldc_tool_af9828a2daf501b328a07dd8fa3d6abeb}{Get\+Param}} ()
+\item 
+virtual void \mbox{\hyperlink{class_ldc_tool_a07d1a547f02d4dea6a480c1be875a685}{Set\+Img\+File}} (Img\+File $\ast$p\+Image)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ldc_tool_a339d49ce8a034e52ed1dcfaf2a50b2d2}\label{class_ldc_tool_a339d49ce8a034e52ed1dcfaf2a50b2d2}} 
+virtual void {\bfseries Do\+Data\+Exchange} (C\+Data\+Exchange $\ast$p\+DX)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Ldcc\+Tool is used to control the settings of Ldc process with UI in a dialog box. This class sends the parameters to a \mbox{\hyperlink{class_fec_view}{Fec\+View}} to display the resulted image. It also connects to a \mbox{\hyperlink{class_ldc_wrap}{Ldc\+Wrap}} class to maintain the L\+DC process related parameters and L\+UT data. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ldc_tool_af9828a2daf501b328a07dd8fa3d6abeb}\label{class_ldc_tool_af9828a2daf501b328a07dd8fa3d6abeb}} 
+\index{Ldc\+Tool@{Ldc\+Tool}!Get\+Param@{Get\+Param}}
+\index{Get\+Param@{Get\+Param}!Ldc\+Tool@{Ldc\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Param()}{GetParam()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}}$\ast$ Ldc\+Tool\+::\+Get\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} class pointer of the process tool. 
+
+Reimplemented from \mbox{\hyperlink{class_process_tool_a355ebcf991f86f59f4241ea4345547fc}{Process\+Tool}}.
+
+\mbox{\Hypertarget{class_ldc_tool_a07d1a547f02d4dea6a480c1be875a685}\label{class_ldc_tool_a07d1a547f02d4dea6a480c1be875a685}} 
+\index{Ldc\+Tool@{Ldc\+Tool}!Set\+Img\+File@{Set\+Img\+File}}
+\index{Set\+Img\+File@{Set\+Img\+File}!Ldc\+Tool@{Ldc\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Img\+File()}{SetImgFile()}}
+{\footnotesize\ttfamily void Ldc\+Tool\+::\+Set\+Img\+File (\begin{DoxyParamCaption}\item[{Img\+File $\ast$}]{p\+Image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the image to be processed from. The processed imaged won\textquotesingle{}t replace this original image. 
+
+Reimplemented from \mbox{\hyperlink{class_process_tool_a178bc06abf5a20220bd2306a14708a93}{Process\+Tool}}.
+
+\mbox{\Hypertarget{class_ldc_tool_a1c98303e0ab2dfea1f1dcca8f1548307}\label{class_ldc_tool_a1c98303e0ab2dfea1f1dcca8f1548307}} 
+\index{Ldc\+Tool@{Ldc\+Tool}!Set\+Param@{Set\+Param}}
+\index{Set\+Param@{Set\+Param}!Ldc\+Tool@{Ldc\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Param()}{SetParam()}}
+{\footnotesize\ttfamily virtual void Ldc\+Tool\+::\+Set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$}]{p\+Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Copys contents of process parameters into related \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}}. 
+
+Reimplemented from \mbox{\hyperlink{class_process_tool_a50caa175198cece00b39a146715bf3eb}{Process\+Tool}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_ldc_tool_8h}{Ldc\+Tool.\+h}}\item 
+i\+Optics/Ldc\+Tool.\+cpp\end{DoxyCompactItemize}

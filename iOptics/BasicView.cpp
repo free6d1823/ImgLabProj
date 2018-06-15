@@ -7,7 +7,7 @@
 #include "ImgFile.h"
 
 #define BACKGND_COLOR	RGB(120,120,120)
-int BasicView::ZOOM_FACTOR[MAX_ZOOM] = { 10, 25, 33, 50, 75, 100,150, 200, 300, 400};
+int BasicView::ZOOM_FACTOR[MAX_ZOOM] = { 10, 25, 33, 50,60,75,80,90, 100,110, 120, 125, 150, 175, 200, 250, 300, 400};
 
 
 // BasicView
@@ -37,6 +37,12 @@ void BasicView::DocToViewPort(SIZE& size)
 	size.cy = size.cy * ZOOM_FACTOR[m_nZoomFactor] /100;
 
 }
+void BasicView::DocToViewPort(POINT& pt)
+{
+	pt.x = pt.x * ZOOM_FACTOR[m_nZoomFactor] /100;
+	pt.y = pt.y * ZOOM_FACTOR[m_nZoomFactor] /100;
+
+}
 void BasicView::DocToViewPort(RECT& rect)
 {
 	rect.left = rect.left  * ZOOM_FACTOR[m_nZoomFactor] /100;
@@ -50,6 +56,12 @@ void BasicView::ViewPortToDoc(SIZE& size)
 	ASSERT(ZOOM_FACTOR[m_nZoomFactor] > 0);
 	size.cx = size.cx * 100 / ZOOM_FACTOR[m_nZoomFactor];
 	size.cy = size.cy * 100 / ZOOM_FACTOR[m_nZoomFactor];
+}
+void BasicView::ViewPortToDoc(POINT& pt)
+{
+	ASSERT(ZOOM_FACTOR[m_nZoomFactor] > 0);
+	pt.x = pt.x * 100 / ZOOM_FACTOR[m_nZoomFactor];
+	pt.y = pt.y * 100 / ZOOM_FACTOR[m_nZoomFactor];
 }
 void BasicView::ViewPortToDoc(RECT& rect)
 {

@@ -1,0 +1,194 @@
+\hypertarget{class_work_view}{}\section{Work\+View Class Reference}
+\label{class_work_view}\index{Work\+View@{Work\+View}}
+
+
+\mbox{\hyperlink{class_work_view}{Work\+View}} is the current opened image display window. It can display gride and mesh for comparision with processed image. It also provides zooming and scrolling functions for viewing.  
+
+
+
+
+{\ttfamily \#include $<$Work\+View.\+h$>$}
+
+Inheritance diagram for Work\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_work_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_work_view_a52d32e6dc47500c5146d54f4ba424fa2}\label{class_work_view_a52d32e6dc47500c5146d54f4ba424fa2}} 
+B\+O\+OL {\bfseries Create} (C\+Wnd $\ast$p\+Parent)
+\item 
+\mbox{\Hypertarget{class_work_view_ac30e92784349602e62a91164d6527be9}\label{class_work_view_ac30e92784349602e62a91164d6527be9}} 
+B\+O\+OL {\bfseries Set\+Scroll\+Pos} (int nX, int nY)
+\item 
+\mbox{\Hypertarget{class_work_view_a8926eb6da1d3b26cab931bb77cc89bbc}\label{class_work_view_a8926eb6da1d3b26cab931bb77cc89bbc}} 
+virtual void {\bfseries Update\+Scrollbar\+Position} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a0a258afb445a0c3233e898811c9b5723}\label{class_work_view_a0a258afb445a0c3233e898811c9b5723}} 
+\mbox{\hyperlink{class_c_main_doc}{C\+Main\+Doc}} $\ast$ {\bfseries Get\+Document} ()
+\item 
+\mbox{\Hypertarget{class_work_view_aac149cb4e97f4067e350ff2df2f2e0bc}\label{class_work_view_aac149cb4e97f4067e350ff2df2f2e0bc}} 
+Img\+File $\ast$ {\bfseries Get\+Image} ()
+\item 
+\mbox{\Hypertarget{class_work_view_ac396e13c1bf765c6add07386c3fc02c4}\label{class_work_view_ac396e13c1bf765c6add07386c3fc02c4}} 
+virtual void {\bfseries On\+Update} (C\+View $\ast$p\+Sender, L\+P\+A\+R\+AM l\+Hint, C\+Object $\ast$p\+Hint)
+\item 
+\mbox{\Hypertarget{class_work_view_ae5fa678c052b3d9ac2dd6bc58d3210c8}\label{class_work_view_ae5fa678c052b3d9ac2dd6bc58d3210c8}} 
+afx\+\_\+msg void {\bfseries On\+Size} (U\+I\+NT n\+Type, int cx, int cy)
+\item 
+\mbox{\Hypertarget{class_work_view_ae85f3de8ad0f27895e47f130630cea85}\label{class_work_view_ae85f3de8ad0f27895e47f130630cea85}} 
+afx\+\_\+msg void {\bfseries On\+View\+Zoomin} ()
+\item 
+\mbox{\Hypertarget{class_work_view_ac2f07c79088ef99c6d5a90a377a8db6b}\label{class_work_view_ac2f07c79088ef99c6d5a90a377a8db6b}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Zoomin} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a158434a846836afca5ba607102303951}\label{class_work_view_a158434a846836afca5ba607102303951}} 
+afx\+\_\+msg void {\bfseries On\+View\+Zoomout} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a25b12d323ee4b426bba4b738d6b60cb8}\label{class_work_view_a25b12d323ee4b426bba4b738d6b60cb8}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Zoomout} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a3408bfe423d38af42731966bc6b1b5f8}\label{class_work_view_a3408bfe423d38af42731966bc6b1b5f8}} 
+afx\+\_\+msg void {\bfseries On\+Mouse\+Move} (U\+I\+NT n\+Flags, C\+Point point)
+\item 
+\mbox{\Hypertarget{class_work_view_a251a6f512bd43f40a647517fb41eb68a}\label{class_work_view_a251a6f512bd43f40a647517fb41eb68a}} 
+afx\+\_\+msg void {\bfseries On\+L\+Button\+Down} (U\+I\+NT n\+Flags, C\+Point point)
+\item 
+\mbox{\Hypertarget{class_work_view_ad66b49ccc4663eccbe9589a0754f9775}\label{class_work_view_ad66b49ccc4663eccbe9589a0754f9775}} 
+afx\+\_\+msg void {\bfseries On\+L\+Button\+Up} (U\+I\+NT n\+Flags, C\+Point point)
+\item 
+\mbox{\Hypertarget{class_work_view_aa7974658428c358313f8c5578c89665d}\label{class_work_view_aa7974658428c358313f8c5578c89665d}} 
+afx\+\_\+msg void {\bfseries On\+Destroy} ()
+\item 
+\mbox{\Hypertarget{class_work_view_affa363a468b358c178ab2feb5956c4e6}\label{class_work_view_affa363a468b358c178ab2feb5956c4e6}} 
+afx\+\_\+msg int {\bfseries On\+Create} (L\+P\+C\+R\+E\+A\+T\+E\+S\+T\+R\+U\+CT lp\+Create\+Struct)
+\item 
+\mbox{\Hypertarget{class_work_view_acf3b77c19540468ff5b385dc1d3a05d7}\label{class_work_view_acf3b77c19540468ff5b385dc1d3a05d7}} 
+afx\+\_\+msg void {\bfseries On\+Paint} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a4eaa90a69961395efbfeaa4773e0588f}\label{class_work_view_a4eaa90a69961395efbfeaa4773e0588f}} 
+afx\+\_\+msg void {\bfseries On\+View\+Gride} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a86baee2b4009eea98833b3e98b352ae9}\label{class_work_view_a86baee2b4009eea98833b3e98b352ae9}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Gride} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_af3688036af8f371f405093e2f48fcc75}\label{class_work_view_af3688036af8f371f405093e2f48fcc75}} 
+afx\+\_\+msg void {\bfseries On\+View\+Mesh} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a9db7abfddac74a04efcf6a7249152965}\label{class_work_view_a9db7abfddac74a04efcf6a7249152965}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Mesh} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_ab1f8dafc5e94041874cab2efe9b1647a}\label{class_work_view_ab1f8dafc5e94041874cab2efe9b1647a}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Indicate\+Pos} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a02ab5b22f1df54d47048a3132a6be0eb}\label{class_work_view_a02ab5b22f1df54d47048a3132a6be0eb}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Indicate\+Color} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a7532947de83575c7930d2030245927be}\label{class_work_view_a7532947de83575c7930d2030245927be}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Indicate\+Zoom\+Factor} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a3b5e67652e2a38805d1f7733845b438c}\label{class_work_view_a3b5e67652e2a38805d1f7733845b438c}} 
+afx\+\_\+msg void {\bfseries On\+Process\+Fec} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a9dbcece36f66807285bcda9d74e18768}\label{class_work_view_a9dbcece36f66807285bcda9d74e18768}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Process\+Fec} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a2e21dab769506c6cbd2226c0e3afda3b}\label{class_work_view_a2e21dab769506c6cbd2226c0e3afda3b}} 
+afx\+\_\+msg void {\bfseries On\+Process\+Ldc} ()
+\item 
+\mbox{\Hypertarget{class_work_view_afad796ba220493bff71a108948454d1b}\label{class_work_view_afad796ba220493bff71a108948454d1b}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Process\+Ldc} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a471b522ecb40aa8c9387faeca6955a5e}\label{class_work_view_a471b522ecb40aa8c9387faeca6955a5e}} 
+afx\+\_\+msg void {\bfseries On\+Process\+Homo} ()
+\item 
+\mbox{\Hypertarget{class_work_view_aac95c904a9d4d6592b0aa8ffd7205545}\label{class_work_view_aac95c904a9d4d6592b0aa8ffd7205545}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Process\+Homo} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_a3792019ca2113e37d5f890d73083e9a6}\label{class_work_view_a3792019ca2113e37d5f890d73083e9a6}} 
+afx\+\_\+msg void {\bfseries On\+Process\+Exit} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a4d3c4931b25cfdaf1068d8d3e40fd285}\label{class_work_view_a4d3c4931b25cfdaf1068d8d3e40fd285}} 
+afx\+\_\+msg void {\bfseries On\+Toolbox\+Apply} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a9a92da21e55e9f8a86bdf1100bc91047}\label{class_work_view_a9a92da21e55e9f8a86bdf1100bc91047}} 
+afx\+\_\+msg void {\bfseries On\+Process\+Preview} ()
+\item 
+\mbox{\Hypertarget{class_work_view_a98b3f9ac9bea52d9bbc3e2ecaffdf78b}\label{class_work_view_a98b3f9ac9bea52d9bbc3e2ecaffdf78b}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Toolbox} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_work_view_af3a6f050b573a4eb9c5dd1dc95cc7f68}\label{class_work_view_af3a6f050b573a4eb9c5dd1dc95cc7f68}} 
+afx\+\_\+msg void {\bfseries On\+Command\+Toolbox} (U\+I\+NT n\+Cmd)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+P\+O\+I\+NT \mbox{\hyperlink{class_work_view_ac4c6b3ea30ed20afd8fc96dc9be9a5b6}{m\+\_\+pt\+Cursor\+Pos}}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_work_view_a66b822a6f10fe9b452faa3d1675cc3d4}\label{class_work_view_a66b822a6f10fe9b452faa3d1675cc3d4}} 
+virtual B\+O\+OL {\bfseries On\+Command} (W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_work_view_aa9e63e4f5c106048c266408640295045}\label{class_work_view_aa9e63e4f5c106048c266408640295045}} 
+\mbox{\hyperlink{class_c_main_view}{C\+Main\+View}} $\ast$ {\bfseries m\+\_\+parent}
+\item 
+\mbox{\hyperlink{class_process_tool}{Process\+Tool}} $\ast$ \mbox{\hyperlink{class_work_view_ae70044302a41f2ad4315159eb07c6451}{m\+\_\+p\+Process\+Tool}}
+\item 
+\mbox{\Hypertarget{class_work_view_a22980da53a224fb6bc98fd1761196561}\label{class_work_view_a22980da53a224fb6bc98fd1761196561}} 
+B\+O\+OL {\bfseries m\+\_\+b\+Show\+Gride}
+\item 
+\mbox{\Hypertarget{class_work_view_a684a8e103025c104c7b39c1c26e5a5b3}\label{class_work_view_a684a8e103025c104c7b39c1c26e5a5b3}} 
+\mbox{\hyperlink{class_gride}{Gride}} {\bfseries m\+\_\+gride}
+\item 
+\mbox{\hyperlink{class_gride}{Gride}} $\ast$ \mbox{\hyperlink{class_work_view_a9e286bc84a23735521f04f1c93598a07}{m\+\_\+p\+Tool\+Gride}}
+\item 
+\mbox{\Hypertarget{class_work_view_a6ffb988df047900be9e1281a1a322c96}\label{class_work_view_a6ffb988df047900be9e1281a1a322c96}} 
+B\+O\+OL {\bfseries m\+\_\+b\+Show\+Mesh}
+\item 
+\mbox{\hyperlink{class_mesh}{Mesh}} \mbox{\hyperlink{class_work_view_a75b75053528bcfe74fc2805fd723bc05}{m\+\_\+mesh}}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_work_view}{Work\+View}} is the current opened image display window. It can display gride and mesh for comparision with processed image. It also provides zooming and scrolling functions for viewing. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_work_view_a75b75053528bcfe74fc2805fd723bc05}\label{class_work_view_a75b75053528bcfe74fc2805fd723bc05}} 
+\index{Work\+View@{Work\+View}!m\+\_\+mesh@{m\+\_\+mesh}}
+\index{m\+\_\+mesh@{m\+\_\+mesh}!Work\+View@{Work\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+mesh}{m\_mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}} Work\+View\+::m\+\_\+mesh\hspace{0.3cm}{\ttfamily [protected]}}
+
+mesh control class \mbox{\Hypertarget{class_work_view_ae70044302a41f2ad4315159eb07c6451}\label{class_work_view_ae70044302a41f2ad4315159eb07c6451}} 
+\index{Work\+View@{Work\+View}!m\+\_\+p\+Process\+Tool@{m\+\_\+p\+Process\+Tool}}
+\index{m\+\_\+p\+Process\+Tool@{m\+\_\+p\+Process\+Tool}!Work\+View@{Work\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+Process\+Tool}{m\_pProcessTool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_process_tool}{Process\+Tool}}$\ast$ Work\+View\+::m\+\_\+p\+Process\+Tool\hspace{0.3cm}{\ttfamily [protected]}}
+
+pointer to current process control dialog box \mbox{\Hypertarget{class_work_view_ac4c6b3ea30ed20afd8fc96dc9be9a5b6}\label{class_work_view_ac4c6b3ea30ed20afd8fc96dc9be9a5b6}} 
+\index{Work\+View@{Work\+View}!m\+\_\+pt\+Cursor\+Pos@{m\+\_\+pt\+Cursor\+Pos}}
+\index{m\+\_\+pt\+Cursor\+Pos@{m\+\_\+pt\+Cursor\+Pos}!Work\+View@{Work\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+pt\+Cursor\+Pos}{m\_ptCursorPos}}
+{\footnotesize\ttfamily P\+O\+I\+NT Work\+View\+::m\+\_\+pt\+Cursor\+Pos}
+
+current cursor position on original image \mbox{\Hypertarget{class_work_view_a9e286bc84a23735521f04f1c93598a07}\label{class_work_view_a9e286bc84a23735521f04f1c93598a07}} 
+\index{Work\+View@{Work\+View}!m\+\_\+p\+Tool\+Gride@{m\+\_\+p\+Tool\+Gride}}
+\index{m\+\_\+p\+Tool\+Gride@{m\+\_\+p\+Tool\+Gride}!Work\+View@{Work\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+Tool\+Gride}{m\_pToolGride}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_gride}{Gride}}$\ast$ Work\+View\+::m\+\_\+p\+Tool\+Gride\hspace{0.3cm}{\ttfamily [protected]}}
+
+gride line for the selected processing tool 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_work_view_8h}{Work\+View.\+h}}\item 
+i\+Optics/Work\+View.\+cpp\end{DoxyCompactItemize}

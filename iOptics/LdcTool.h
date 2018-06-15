@@ -67,7 +67,7 @@ class LdcTool : public ProcessTool
 	DECLARE_DYNAMIC(LdcTool)
 
 public:
-	LdcTool(CWnd* pParent = NULL);   
+	LdcTool(WorkView* pParent);   
 	virtual ~LdcTool();
 	virtual void SetParam(ProcessWrap* pParam){};
 	virtual ProcessWrap* GetParam(){return m_pProcessWrap;};

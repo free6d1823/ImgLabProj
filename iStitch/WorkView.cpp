@@ -10,7 +10,8 @@
 #define BACKGND_COLOR	RGB(130,130,130)
 #define SELECTED_COLOR		RGB(0,60,200)
 #define BORDER_SIZE		20
-int WorkView::ZOOM_FACTOR[MAX_ZOOM] = { 10, 25, 33, 50, 75, 100,150, 200, 300, 400};
+#define DEFAULT_ZOOM_FACTOR  	8
+int WorkView::ZOOM_FACTOR[MAX_ZOOM] = { 10, 25, 33, 50,60,75,80,90, 100,110, 120, 125, 150, 175, 200, 250, 300, 400};
 
 // WorkView
 
@@ -93,9 +94,11 @@ BEGIN_MESSAGE_MAP(WorkView, CWnd)
 		ON_WM_LBUTTONDBLCLK()
 END_MESSAGE_MAP()
 
+
 // WorkView message handlers
 BOOL	WorkView::Create(CWnd* pParent)
 {
+
 	m_parent = (CMainView*) pParent;
 	LPCTSTR lpszClass = AfxRegisterWndClass(CS_VREDRAW | CS_HREDRAW|CS_DBLCLKS);
 	return CreateEx(0, lpszClass, _T("WorkView"),WS_CHILD|WS_VISIBLE,
@@ -111,6 +114,7 @@ int WorkView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 // WorkView message handlers
+
 void WorkView::OnSize(UINT nType, int cx, int cy)
 {
 	CWnd::OnSize(nType, cx, cy);
@@ -171,13 +175,11 @@ void WorkView::CalculateRects()
 		CRect rcBound;
 		GetDocument()->GetImagesBoundary(rcBound);
 		m_rcCanvas.left =  - min(0, rcBound.left) + BORDER_SIZE;
-		m_rcCanvas.right = max(pPs->canvas.cx, rcBound.right) ;
+		m_rcCanvas.right = m_rcCanvas.left + pPs->canvas.cx;
 		m_rcCanvas.top=  - min(0, rcBound.top) + BORDER_SIZE;
-		m_rcCanvas.bottom = max(pPs->canvas.cy, rcBound.bottom);
-		m_szWorkspace.cx = m_rcCanvas.left  +  m_rcCanvas.right  + BORDER_SIZE;
-		m_szWorkspace.cy = m_rcCanvas.top + m_rcCanvas.bottom +BORDER_SIZE;
-		m_rcCanvas.right = m_rcCanvas.left + pPs->canvas.cx ;
 		m_rcCanvas.bottom = m_rcCanvas.top + pPs->canvas.cy;
+		m_szWorkspace.cx = max(m_rcCanvas.right, rcBound.right+m_rcCanvas.left)  + BORDER_SIZE;
+		m_szWorkspace.cy = max(m_rcCanvas.bottom, rcBound.bottom+m_rcCanvas.top) +BORDER_SIZE;
 
 		DocToViewPort(m_szWorkspace);
 		DocToViewPort(m_rcCanvas);//the area of pPs->canvas on ViewPort 
@@ -185,12 +187,14 @@ void WorkView::CalculateRects()
 	}
 		//convert to zoomed size
 	if( rcClient.right > m_szWorkspace.cx) {
-		m_rcPort.left = 0; m_rcPort.right = rcClient.right;
-		m_rcCanvas.left = (rcClient.right - m_szWorkspace.cx)/2;
-		m_rcCanvas.right = m_rcCanvas.left + m_szWorkspace.cx;
+		m_rcCanvas.left += (rcClient.right - m_szWorkspace.cx)/2;
+		m_rcCanvas.right += (rcClient.right - m_szWorkspace.cx)/2;
 		m_szWorkspace.cx = rcClient.right;
+		m_rcPort.left = 0; m_rcPort.right = rcClient.right;
 	} else {
+		//scroll position don't change
 		m_rcPort.right = m_rcPort.left + rcClient.right;
+		//move back if right side over workspace
 		if(m_rcPort.right > m_szWorkspace.cx) {
 			m_rcPort.right = m_szWorkspace.cx;
 			m_rcPort.left = m_szWorkspace.cx - rcClient.right;
@@ -199,8 +203,8 @@ void WorkView::CalculateRects()
 	if( rcClient.bottom > m_szWorkspace.cy) {
 		//canvas equals t client
 		m_rcPort.top = 0; m_rcPort.bottom = rcClient.bottom;
-		m_rcCanvas.top = (rcClient.bottom - m_szWorkspace.cy)/2;
-		m_rcCanvas.bottom = m_rcCanvas.top + m_szWorkspace.cy;
+		m_rcCanvas.top += (rcClient.bottom - m_szWorkspace.cy)/2;
+		m_rcCanvas.bottom += (rcClient.bottom - m_szWorkspace.cy)/2;
 		m_szWorkspace.cy = rcClient.bottom;
 	} else {
 		//image equals to canvas
@@ -246,10 +250,7 @@ void WorkView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 
 	CalculateRects();
 	UpdateScrollbarPosition();
-	GrideParam gp;
-	gp.nInterval = 5;
-	gp.nDivider = 20;
-	m_gride.SetParam(&gp);
+
 	m_gride.SetImageArea(m_rcCanvas);
 	m_gride.SetViewPort(m_rcPort);
 	m_ptCursorPos.x = m_ptCursorPos.y =  -1;
@@ -276,9 +277,9 @@ void WorkView::OnPaint()
 	GetClientRect(&rcClient);
 	if((m_rcCanvas.right - m_rcCanvas.left > 0) || (m_rcCanvas.bottom - m_rcCanvas.top> 0))	{
 		//draw background
-		CRect rcDest;
-		rcDest.IntersectRect(&m_rcPort, &m_rcCanvas);
-		rcDest.OffsetRect(-m_rcPort.left, -m_rcPort.top);
+		CRect rcDest;	//visible image area in ViewPort, 
+		rcDest.IntersectRect(&m_rcPort, &m_rcCanvas);   //w.r.t. canvas
+		rcDest.OffsetRect(-m_rcPort.left, -m_rcPort.top); //now w.r.t. window client
 		CRect rcBkgnd = CRect(0,0, rcClient.right, rcDest.top);
 		pDC->FillSolidRect(&rcBkgnd,BACKGND_COLOR);
 		rcBkgnd = CRect(0, rcDest.bottom, rcClient.right, rcClient.bottom);
@@ -287,8 +288,39 @@ void WorkView::OnPaint()
 		pDC->FillSolidRect(&rcBkgnd,BACKGND_COLOR);
 		rcBkgnd = CRect(rcDest.right, rcDest.top, rcClient.right, rcDest.bottom);
 		pDC->FillSolidRect(&rcBkgnd,BACKGND_COLOR);
-		pDC->FillSolidRect(&rcDest,FORGND_COLOR);
+		//t pDC->FillSolidRect(&rcDest,FORGND_COLOR);
 		//shift to m_rcWord space
+//
+	ImgFile* pImg   = GetDocument()->GetImage();
+	if (!pImg)
+		return;
+	CRect rcSource; //visible image area in pImg
+	rcSource.IntersectRect(&m_rcPort, &m_rcCanvas); //w.r.t workspace
+	rcSource.OffsetRect(-m_rcCanvas.left, -m_rcCanvas.top); //w.r.t canvas
+	ViewPortToDoc(rcSource);	//w.r.t doc
+	pImg->StretchToDC(*pDC, rcSource, rcDest, SRCCOPY); 
+
+	//draw the selected image frame
+	PProjectSetting pPs = GetDocument()->GetProjectSetting();
+	if (m_nCurrentSelectedImage >= 0 && m_nCurrentSelectedImage <pPs->nImages) {
+			CPen pen(PS_SOLID, 1, SELECTED_COLOR);
+			CBrush brush; 
+			brush.CreateStockObject(HOLLOW_BRUSH);
+
+			CPen* pOld = pDC->SelectObject(&pen);
+			CBrush* pOldBrush = pDC->SelectObject(&brush);
+			CRect rcDest = pPs->ip[m_nCurrentSelectedImage].rcBound; //w.r.t doc
+			//buttom up
+			rcDest.top = pPs->canvas.cy - rcDest.bottom;
+			rcDest.bottom = pPs->canvas.cy - pPs->ip[m_nCurrentSelectedImage].rcBound.top;
+			//
+			DocToViewPort(rcDest);	//w.r.t canvas
+			rcDest.OffsetRect(m_rcCanvas.left-m_rcPort.left, m_rcCanvas.top-m_rcPort.top);	//to ViewPort then to Window
+			pDC->Rectangle(&rcDest);
+			pDC->SelectObject(pOld);
+			pDC->SelectObject(pOldBrush);	
+	}
+#if 0 
 		CRect rc = m_rcCanvas;
 		CRect vp = m_rcCanvas; //shift to relative to ViewPort
 		vp.OffsetRect(-m_rcPort.left, -m_rcPort.top);
@@ -304,6 +336,7 @@ void WorkView::OnPaint()
 		pDC->SetViewportExt(szViewExt);
 		pDC->SetViewportOrg(ptV);
 		pDC->SetWindowOrg(ptW);
+#endif
 		if(m_bShowGride) {
 			m_gride.Draw(pDC);
 		}
@@ -321,7 +354,13 @@ void WorkView::SetCurrentSel(int nSel)
 
 void WorkView::DrawImages(CDC* pDC)
 {
-		PProjectSetting pPs = GetDocument()->GetProjectSetting();
+	PProjectSetting pPs = GetDocument()->GetProjectSetting();
+	ImgFile* pImg   = GetDocument()->GetImage();
+	if (!pImg)
+		return;
+	CRect rcCanvas = CRect(0,0,pImg->Width(), pImg->Height());
+	pImg->StretchToDC(*pDC, rcCanvas, rcCanvas, SRCCOPY); 
+	return ;
 
 	for(int i=0;i< pPs->nImages; i++ )
 	{
@@ -342,7 +381,28 @@ void WorkView::DrawImages(CDC* pDC)
 							pPs->ip[m_nCurrentSelectedImage].pImg->Height());
 
 					pPs->ip[m_nCurrentSelectedImage].pImg->StretchToDC(*pDC, rcSrc, rcDest, SRCCOPY); 	
+#if 0
+					//find inter-sections
+					for(int i=0;i< pPs->nImages; i++ ) {
+						if (i == m_nCurrentSelectedImage)
+							continue;
+						CRect rci;		//intersection area
+						CRect rc1 = pPs->ip[i].rcBound;  //image area in doc
+						DocToViewPort(rc1); //image area in view port
+						if (rci.IntersectRect( rc1, rcDest)) { //alpha blending
+							//find source area in image 1
+							CRect rcs = rci;
+							rcs.OffsetRect(-rc1.left, -rc1.top);
+							ViewPortToDoc(rcs);
+							//find source area of image 2
+							CRect rct = rci;
+							rcs.OffsetRect(-rcDest.left, -rcDest.top);
+							ViewPortToDoc(rct);
+							//create DIB
+						}//end of 	alpha blending				
 
+					}
+#endif 
 			}
 			CPen pen(PS_SOLID, 1, SELECTED_COLOR);
 			CBrush brush; 
@@ -358,10 +418,18 @@ void WorkView::DrawImages(CDC* pDC)
 void WorkView::OnViewZoomin() 
 {
 	m_nZoomFactor++;
+	POINT pt;
+	pt.x = (m_rcPort.left + m_rcPort.right)/2* ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor-1] ;
+	pt.y = (m_rcPort.top + m_rcPort.bottom)/2* ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor-1] ;
+
+	m_rcPort.left = pt.x  - (m_rcPort.right - m_rcPort.left )/2;
+	m_rcPort.top = pt.y  - (m_rcPort.bottom - m_rcPort.top )/2;
+
 	//shift origin
-	m_rcPort.left = m_rcPort.left * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor-1] ;
-	m_rcPort.top = m_rcPort.top * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor-1] ;
+	//m_rcPort.left = m_rcPort.left * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor-1] ;
+	//m_rcPort.top = m_rcPort.top * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor-1] ;
 	CalculateRects();
+
 	InvalidateRect(NULL);
 	UpdateScrollbarPosition();
 
@@ -374,21 +442,30 @@ void WorkView::OnUpdateViewZoomin(CCmdUI* pCmdUI)
 {
 	pCmdUI->Enable( (BOOL)(m_nZoomFactor < MAX_ZOOM-1));
 }
+void WorkView::OnUpdateViewZoomout(CCmdUI* pCmdUI) 
+{
+	pCmdUI->Enable( (BOOL)(m_nZoomFactor > 0));	
+}
 
 void WorkView::OnViewZoomout() 
 {
-	if(	m_nZoomFactor > 0){
 		m_nZoomFactor --;
+
+	POINT pt;
+	pt.x = (m_rcPort.left + m_rcPort.right)/2* ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor+1] ;
+	pt.y = (m_rcPort.top + m_rcPort.bottom)/2* ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor+1] ;
+
+	m_rcPort.left = pt.x  - (m_rcPort.right - m_rcPort.left )/2;
+	m_rcPort.top = pt.y  - (m_rcPort.bottom - m_rcPort.top )/2;
+
 		//shift origin
-		m_rcPort.left = m_rcPort.left * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor+1]; 
-		m_rcPort.top = m_rcPort.top * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor+1]; 
+		//m_rcPort.left = m_rcPort.left * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor+1]; 
+		//m_rcPort.top = m_rcPort.top * ZOOM_FACTOR[m_nZoomFactor]/ZOOM_FACTOR[m_nZoomFactor+1]; 
 		CalculateRects();
+		UpdateScrollbarPosition();
+		m_gride.SetImageArea(m_rcCanvas);
+		m_gride.SetViewPort(m_rcPort);
 		InvalidateRect(NULL);
-	}
-	UpdateScrollbarPosition();
-	m_gride.SetImageArea(m_rcCanvas);
-	m_gride.SetViewPort(m_rcPort);
-	InvalidateRect(NULL);
 }
 void WorkView::OnUpdateIndicatePos(CCmdUI *pCmdUI)
 {
@@ -409,22 +486,17 @@ void WorkView::OnUpdateIndicateSize(CCmdUI *pCmdUI)
 	CString szText="";
 	CMainDoc* pDoc = GetDocument();
 	if( pDoc ) {
-		CRect rc = m_rcCanvas;
-		ViewPortToDoc(rc);
-		szText.Format("(%4dx%4d)", rc.Width(), rc.Height());
+		szText.Format("(%4dx%4d)", pDoc->GetProjectSetting()->canvas.cx, 
+			pDoc->GetProjectSetting()->canvas.cy);
 	}
 	pCmdUI->SetText(szText);
-}
-void WorkView::OnUpdateViewZoomout(CCmdUI* pCmdUI) 
-{
-	pCmdUI->Enable( (BOOL)(m_nZoomFactor > 0));	
 }
 
 void WorkView::OnMouseMove(UINT nFlags, CPoint point)
 {
 	CPoint ptCan;
-	ptCan = point + m_rcPort.TopLeft();
-	m_ptCursorPos.x = (ptCan.x - m_rcCanvas.left)* 100 / ZOOM_FACTOR[m_nZoomFactor];
+	ptCan = point + m_rcPort.TopLeft(); //w.r.t workspace
+	m_ptCursorPos.x = (ptCan.x - m_rcCanvas.left)* 100 / ZOOM_FACTOR[m_nZoomFactor];	//to DOC
 	m_ptCursorPos.y = (ptCan.y - m_rcCanvas.top)* 100 / ZOOM_FACTOR[m_nZoomFactor];
 
 
@@ -441,6 +513,12 @@ inline BOOL IsPtInRegion(POINT p, POINT q, SIZE s)
 		if (p.y <q.y || p.y > (q.y + s.cy)) return FALSE;
 		return TRUE;
 }
+inline BOOL IsPtInRegion(POINT p, RECT rc)
+{
+		if (p.x <rc.left || p.x >= rc.right) return FALSE;
+		if (p.y <rc.top || p.y >= rc.bottom) return FALSE;
+		return TRUE;
+}
 void WorkView::OnLButtonDblClk(UINT nFlags, CPoint point)
 {
 		CPoint ptCan;
@@ -452,14 +530,13 @@ void WorkView::OnLButtonDblClk(UINT nFlags, CPoint point)
 		int i;
 		//find region by display order
 		if (m_nCurrentSelectedImage >=0 && m_nCurrentSelectedImage < pPs->nImages &&
-						IsPtInRegion(m_ptCursorPos, pPs->ip[m_nCurrentSelectedImage].pos, 
-										pPs->ip[m_nCurrentSelectedImage].size)) {
+			IsPtInRegion(m_ptCursorPos, pPs->ip[m_nCurrentSelectedImage].rcBound)) {
 				m_nCurrentSelectedImage = -1;
 		} else {
 				for (i =pPs->nImages-1 ; i>= 0; i--) {
 						if (i == m_nCurrentSelectedImage)
 								continue;
-						if(IsPtInRegion(m_ptCursorPos, pPs->ip[i].pos, pPs->ip[i].size)) {
+						if(IsPtInRegion(m_ptCursorPos, pPs->ip[i].rcBound)) {
 								m_nCurrentSelectedImage = i;
 								break;
 						}

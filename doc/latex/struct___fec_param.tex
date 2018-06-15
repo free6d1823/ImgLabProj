@@ -1,0 +1,137 @@
+\hypertarget{struct___fec_param}{}\section{\+\_\+\+Fec\+Param Struct Reference}
+\label{struct___fec_param}\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+
+
+F\+EC processing parameters.  
+
+
+
+
+{\ttfamily \#include $<$common.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\+I\+ZE \mbox{\hyperlink{struct___fec_param_aa83db363e7cdb88bf398152068f373fe}{sz\+Input}}
+\item 
+P\+O\+I\+NT \mbox{\hyperlink{struct___fec_param_a4a9ab36b8886d09177989d8f5ad4636b}{pt\+Center}}
+\item 
+S\+I\+ZE \mbox{\hyperlink{struct___fec_param_aa981a92a6da32125e1b044dff603df4e}{sz\+Radius}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_ac5bc4b6bb2ff5381458001e7106b0db7}{pitch}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_a420253746bf3b988571baff716521f50}{yaw}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_a519744a92fa4b5f27d8e80f4cac6d029}{roll}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_a72350a015193ca8450c7a87f315028a4}{ratio}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_a25e29757d04be1e6b7b1cf8709670d49}{curveH}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_aa254903d8631ae012dc4c3d4b0ab3969}{curveV}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_acc8b9b08bfeabd57a76ac89e7bac4a59}{fovH}}
+\item 
+float \mbox{\hyperlink{struct___fec_param_a5f4a6533e68132c4a9d7fdbde282ed28}{fovV}}
+\item 
+S\+I\+ZE \mbox{\hyperlink{struct___fec_param_a8012431882fcb79b1e4ec3291fd24f56}{sz\+Output}}
+\item 
+Mount\+Mode \mbox{\hyperlink{struct___fec_param_af218d4cb5ba8a680830dced86a4e1d31}{mm}}
+\item 
+Lens\+Type \mbox{\hyperlink{struct___fec_param_a91947fce0433e75078979f4a1b0ebc81}{lt}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\+EC processing parameters. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___fec_param_a25e29757d04be1e6b7b1cf8709670d49}\label{struct___fec_param_a25e29757d04be1e6b7b1cf8709670d49}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!curveH@{curveH}}
+\index{curveH@{curveH}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{curveH}{curveH}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::curveH}
+
+curvature coefficient of hoizontal, upper or lower \mbox{\Hypertarget{struct___fec_param_aa254903d8631ae012dc4c3d4b0ab3969}\label{struct___fec_param_aa254903d8631ae012dc4c3d4b0ab3969}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!curveV@{curveV}}
+\index{curveV@{curveV}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{curveV}{curveV}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::curveV}
+
+curvature coefficient of vertical, lefter or righter \mbox{\Hypertarget{struct___fec_param_acc8b9b08bfeabd57a76ac89e7bac4a59}\label{struct___fec_param_acc8b9b08bfeabd57a76ac89e7bac4a59}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!fovH@{fovH}}
+\index{fovH@{fovH}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{fovH}{fovH}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::fovH}
+
+hoizontal F\+OV factor, -\/1 to 1, maps to P\+I/2$\sim$ 3\+P\+I/2, default 0 (PI) \mbox{\Hypertarget{struct___fec_param_a5f4a6533e68132c4a9d7fdbde282ed28}\label{struct___fec_param_a5f4a6533e68132c4a9d7fdbde282ed28}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!fovV@{fovV}}
+\index{fovV@{fovV}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{fovV}{fovV}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::fovV}
+
+vertical F\+OV factor, -\/1 to 1, maps to P\+I/2$\sim$ 3\+P\+I/2, default 0 (PI) \mbox{\Hypertarget{struct___fec_param_a91947fce0433e75078979f4a1b0ebc81}\label{struct___fec_param_a91947fce0433e75078979f4a1b0ebc81}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!lt@{lt}}
+\index{lt@{lt}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{lt}{lt}}
+{\footnotesize\ttfamily Lens\+Type \+\_\+\+Fec\+Param\+::lt}
+
+lens type \mbox{\Hypertarget{struct___fec_param_af218d4cb5ba8a680830dced86a4e1d31}\label{struct___fec_param_af218d4cb5ba8a680830dced86a4e1d31}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!mm@{mm}}
+\index{mm@{mm}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{mm}{mm}}
+{\footnotesize\ttfamily Mount\+Mode \+\_\+\+Fec\+Param\+::mm}
+
+mount type \mbox{\Hypertarget{struct___fec_param_ac5bc4b6bb2ff5381458001e7106b0db7}\label{struct___fec_param_ac5bc4b6bb2ff5381458001e7106b0db7}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!pitch@{pitch}}
+\index{pitch@{pitch}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{pitch}{pitch}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::pitch}
+
+pitch angle in radiun \mbox{\Hypertarget{struct___fec_param_a4a9ab36b8886d09177989d8f5ad4636b}\label{struct___fec_param_a4a9ab36b8886d09177989d8f5ad4636b}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!pt\+Center@{pt\+Center}}
+\index{pt\+Center@{pt\+Center}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{pt\+Center}{ptCenter}}
+{\footnotesize\ttfamily P\+O\+I\+NT \+\_\+\+Fec\+Param\+::pt\+Center}
+
+symmetry center of image \mbox{\Hypertarget{struct___fec_param_a72350a015193ca8450c7a87f315028a4}\label{struct___fec_param_a72350a015193ca8450c7a87f315028a4}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!ratio@{ratio}}
+\index{ratio@{ratio}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{ratio}{ratio}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::ratio}
+
+ratio of remap from small sphere to big sphere \mbox{\Hypertarget{struct___fec_param_a519744a92fa4b5f27d8e80f4cac6d029}\label{struct___fec_param_a519744a92fa4b5f27d8e80f4cac6d029}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!roll@{roll}}
+\index{roll@{roll}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{roll}{roll}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::roll}
+
+rotate with respect to z-\/axis \mbox{\Hypertarget{struct___fec_param_aa83db363e7cdb88bf398152068f373fe}\label{struct___fec_param_aa83db363e7cdb88bf398152068f373fe}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!sz\+Input@{sz\+Input}}
+\index{sz\+Input@{sz\+Input}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{sz\+Input}{szInput}}
+{\footnotesize\ttfamily S\+I\+ZE \+\_\+\+Fec\+Param\+::sz\+Input}
+
+input image size \mbox{\Hypertarget{struct___fec_param_a8012431882fcb79b1e4ec3291fd24f56}\label{struct___fec_param_a8012431882fcb79b1e4ec3291fd24f56}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!sz\+Output@{sz\+Output}}
+\index{sz\+Output@{sz\+Output}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{sz\+Output}{szOutput}}
+{\footnotesize\ttfamily S\+I\+ZE \+\_\+\+Fec\+Param\+::sz\+Output}
+
+desired output image size \mbox{\Hypertarget{struct___fec_param_aa981a92a6da32125e1b044dff603df4e}\label{struct___fec_param_aa981a92a6da32125e1b044dff603df4e}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!sz\+Radius@{sz\+Radius}}
+\index{sz\+Radius@{sz\+Radius}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{sz\+Radius}{szRadius}}
+{\footnotesize\ttfamily S\+I\+ZE \+\_\+\+Fec\+Param\+::sz\+Radius}
+
+radius of fisheye lens, in pixels \mbox{\Hypertarget{struct___fec_param_a420253746bf3b988571baff716521f50}\label{struct___fec_param_a420253746bf3b988571baff716521f50}} 
+\index{\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}!yaw@{yaw}}
+\index{yaw@{yaw}!\+\_\+\+Fec\+Param@{\+\_\+\+Fec\+Param}}
+\subsubsection{\texorpdfstring{yaw}{yaw}}
+{\footnotesize\ttfamily float \+\_\+\+Fec\+Param\+::yaw}
+
+rotate with respect to y-\/axis 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{common_8h}{common.\+h}}\end{DoxyCompactItemize}

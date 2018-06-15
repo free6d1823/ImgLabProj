@@ -10,7 +10,7 @@
 
 class ProcessView;
 class ImgFile;
-
+class WorkView;
 /**
  * \class ProcessWrap 
  * \brief wrap process parameters 
@@ -127,14 +127,14 @@ public:
 	 * \param pImage the original image to be processed from
 	 * \return the derrived ProcessTool class pointer of the specified process.
 	 */
-static ProcessTool* CreateProcessTool(CWnd* pOwner,int nType, ImgFile* pImage);
+static ProcessTool* CreateProcessTool(WorkView* pOwner,int nType, ImgFile* pImage);
 	/*!
 	 * Gets the ProcessTool ID.
 	 * \public \memberof ProcessTool
 	 */
 int GetProcessToolID(){ return IDD;}
 	enum { IDD = 0 };
-	ProcessTool(UINT nIDTemplate, CWnd* pParent = NULL);   // standard constructor
+	ProcessTool(UINT nIDTemplate, WorkView* pParent );   // standard constructor
 	virtual ~ProcessTool();
 
 	/*!
@@ -161,10 +161,12 @@ int GetProcessToolID(){ return IDD;}
 
 // Dialog Data
 protected:
-	float GetDlgItemFloat(int nID);
+	double GetDlgItemDouble(int nID);
 	void SetDlgItemFloat(int nID, float fValue);
+	void SetDlgItemDouble(int nID, double dValue);
 	virtual void UpdateData(BOOL bSaveAndValidate = TRUE){};		
 	virtual void PostNcDestroy();
+	WorkView*			m_pOwner;
 	ProcessWrap*		m_pProcessWrap;		/*!< pointer to parameter capsulator class*/
 	ProcessView*	m_pBasicView;			/*!< pointer to processed image viewer */
 	void OnSaveParameter();/*!< UI request to save process parameters */

@@ -1,7 +1,7 @@
 #pragma once
 #include "basicview.h"
 #include "Gride.h"
-#include "FecTool.h"
+
 
 /**
  * \class ProcessView
@@ -12,6 +12,7 @@
  */
 
 class ProcessWrap;
+class DistMeasure;
 class ProcessView : public BasicView
 {
 	DECLARE_DYNAMIC(ProcessView)
@@ -24,12 +25,16 @@ public:
 	*/
 	virtual	void SetImgFile(ImgFile* pImg);
 	
-	/*\brief Sets a reference pointer to the process parameters wrapper class. 
+	/*\brief Sets a reference pointer to the process parameters wrapper class and construct image according to the settings
 	* \param pWrapper pointer to ProcessWrap derrived class
 	*/	
-	virtual	void SetParam(ProcessWrap* pWrapper){};
+	virtual	void SetParam(ProcessWrap* pWrapper);
 
 protected:
+	/*\brief Update tools position based on new Image
+	*/
+	void UpdateView();
+
 	/*\brief Position mapping from processed image to original image
 	* \param (u, v) destination coordinates
 	* \param (x, y) the ideal position in source image
@@ -48,7 +53,9 @@ protected:
 public:
 	BOOL SetScrollPos(int nX, int nY);
 	BOOL			m_bShowGride;
+	BOOL			m_bShowMeasure;
 	Gride m_gride;
+	DistMeasure* m_pDistMeasure;
 	//}}AFX_VIRTUAL
 	ImgFile*	m_pOriginalImg;	/*<! the reference pointer to original image */
 
@@ -56,6 +63,9 @@ public:
 	DECLARE_MESSAGE_MAP()
 
 public:
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnPaint();
 	afx_msg void OnPreview();
@@ -63,9 +73,11 @@ public:
 	afx_msg void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
 	afx_msg void OnViewGride();
+	afx_msg void OnViewMeasure();
 	afx_msg void OnUpdateViewGride(CCmdUI *pCmdUI);
 	afx_msg void OnUpdateToolbox(CCmdUI *pCmdUI);
 	afx_msg void OnCommandToolbox(UINT nCmd);
+	afx_msg void OnUpdateViewMeasure(CCmdUI *pCmdUI);
 	afx_msg void OnViewZoomin();
 	afx_msg void OnViewZoomout();
 protected:

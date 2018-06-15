@@ -6,6 +6,8 @@
 #include "MainFrm.h"
 
 #include "MainDoc.h"
+#include "BasicView.h"
+#include "WorkView.h"
 #include "MainView.h"
 
 #ifdef _DEBUG

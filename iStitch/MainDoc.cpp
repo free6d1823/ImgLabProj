@@ -8,6 +8,7 @@
 #include "MainDoc.h"
 #include "ProjSettingDlg.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -34,12 +35,21 @@ END_MESSAGE_MAP()
 CMainDoc::CMainDoc()
 {
 	memset(&m_ProjectSetting, 0, sizeof(m_ProjectSetting));
-
+	m_pImg = NULL;
+	m_pImgLab = ImgLab::Create(TRUE);
 }
 
 CMainDoc::~CMainDoc()
 {
 		FreePropertySetting();
+		if (m_pImg){
+			delete m_pImg;
+			m_pImg = NULL;
+		}
+		if(m_pImgLab) {
+			delete m_pImgLab;
+			m_pImgLab = NULL;
+		}
 }
 
 BOOL CMainDoc::OnNewDocument()
@@ -54,7 +64,7 @@ BOOL CMainDoc::OnNewDocument()
 		memset(&ps, 0, sizeof(ps));
 		strcpy_s(ps.title, sizeof(ps.title), this->GetTitle());
 		ps.nImages = 4;
-		ps.canvas.cx = 2560;
+		ps.canvas.cx = 1024;
 		ps.canvas.cy = 480;
 		for(int i=0; i< ps.nImages; i++ ) {
 				ps.ip[i].pos.x = i* (ps.canvas.cx/ps.nImages);
@@ -64,14 +74,14 @@ BOOL CMainDoc::OnNewDocument()
 		}
 		dlg.SetProperty(&ps);
 		if( dlg.DoModal() == IDOK) {
-				InitPropertySetting(dlg.GetProperty());
+				UpdatePropertySetting(dlg.GetProperty());
 		}
 		//keep created
 		this->SetTitle("Empty Project");
 		return TRUE;
 }
 
-BOOL CMainDoc::InitPropertySetting(PProjectSetting pPs)
+BOOL CMainDoc::UpdatePropertySetting(PProjectSetting pPs)
 {
 	if(!pPs || pPs->nImages == 0)
 		return FALSE;
@@ -100,6 +110,11 @@ BOOL CMainDoc::InitPropertySetting(PProjectSetting pPs)
 			m_ProjectSetting.ip[i].pImg = pImg;
 		}
 	}
+	//
+	if (m_pImg) delete m_pImg;
+	m_pImg = new ImgFile;
+	m_pImg->Create(m_ProjectSetting.canvas.cx, m_ProjectSetting.canvas.cy, 24);
+	DoStitching(0,0);
 	return TRUE;
 }
 void CMainDoc::FreePropertySetting()
@@ -124,7 +139,49 @@ void CMainDoc::Dump(CDumpContext& dc) const
 }
 #endif //_DEBUG
 
-
+/*!
+ *  Apply stitching parameters and make the image
+ * \param nTopID index of the image to be shown on top
+ * \param mode	0 no transparent, 1 50% alpha blending, 2= linear blending
+ */
+int CMainDoc::DoStitching(int nTopID, int mode)
+{
+	ASSERT(m_pImg);
+	m_pImg->FillColor(0xff);
+	
+	Image24 desImg;
+	desImg.data = (BYTE*) m_pImg->GetBits();
+	desImg.width = m_pImg->Width();
+	desImg.stride = m_pImg->BytesPerLine();
+	desImg.height = m_pImg->Height();
+	for (int i=0;i<m_ProjectSetting.nImages; i++) {
+		if(nTopID == i)
+			continue;
+		if(m_ProjectSetting.ip[i].pImg) {
+			Image24 srcImg;
+			srcImg.data = (BYTE*) m_ProjectSetting.ip[i].pImg->GetBits();
+			srcImg.stride = m_ProjectSetting.ip[i].pImg->BytesPerLine();
+			srcImg.width = m_ProjectSetting.ip[i].pImg->Width();
+			srcImg.height = m_ProjectSetting.ip[i].pImg->Height();
+			CRect rcSourc = CRect(0,0,srcImg.width, srcImg.height );
+			if(m_pImgLab){
+				m_pImgLab->StretchImage(&srcImg,  rcSourc, &desImg, m_ProjectSetting.ip[i].rcBound);
+			}
+		}
+	}
+	if(nTopID >=0 && nTopID <m_ProjectSetting.nImages && m_ProjectSetting.ip[nTopID].pImg) {
+			Image24 srcImg;
+			srcImg.data = (BYTE*) m_ProjectSetting.ip[nTopID].pImg->GetBits();
+			srcImg.stride = m_ProjectSetting.ip[nTopID].pImg->BytesPerLine();
+			srcImg.width = m_ProjectSetting.ip[nTopID].pImg->Width();
+			srcImg.height = m_ProjectSetting.ip[nTopID].pImg->Height();
+			CRect rcSourc = CRect(0,0,srcImg.width, srcImg.height );
+			if(m_pImgLab){
+				m_pImgLab->StretchImage(&srcImg,  rcSourc, &desImg, m_ProjectSetting.ip[nTopID].rcBound);
+			}
+	}
+	return 0;
+}
 // CMainDoc commands
 
 BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
@@ -171,7 +228,7 @@ BOOL CMainDoc::OnOpenDocument(LPCTSTR lpszPathName)
 
 		}
 
-		return InitPropertySetting(&ps);
+		return UpdatePropertySetting(&ps);
 }
 
 BOOL CMainDoc::OnSaveDocument(LPCTSTR lpszPathName)
@@ -216,6 +273,7 @@ void CMainDoc::IncreaseImagePosX(int id, int x)
 		m_ProjectSetting.ip[id].pos.x += x;
 		CALCULATE_BOUND(m_ProjectSetting.ip[id].rcBound,m_ProjectSetting.ip[id].pos,
 				m_ProjectSetting.ip[id].size, m_ProjectSetting.ip[id].scale);
+		DoStitching(id, 1);
 }
 void CMainDoc::IncreaseImagePosY(int id, int y)
 {
@@ -223,6 +281,7 @@ void CMainDoc::IncreaseImagePosY(int id, int y)
 		m_ProjectSetting.ip[id].pos.y += y;
 		CALCULATE_BOUND(m_ProjectSetting.ip[id].rcBound,m_ProjectSetting.ip[id].pos,
 				m_ProjectSetting.ip[id].size, m_ProjectSetting.ip[id].scale);
+		DoStitching(id, 1);
 }
 void CMainDoc::IncreaseImageScale(int id, float scale)
 {
@@ -232,6 +291,8 @@ void CMainDoc::IncreaseImageScale(int id, float scale)
 				m_ProjectSetting.ip[id].scale = 0.1f;
 		CALCULATE_BOUND(m_ProjectSetting.ip[id].rcBound,m_ProjectSetting.ip[id].pos,
 				m_ProjectSetting.ip[id].size, m_ProjectSetting.ip[id].scale);
+		DoStitching(id, 1);
+
 }
 void CMainDoc::GetImagesBoundary(CRect& rc)
 {
@@ -247,6 +308,7 @@ void CMainDoc::GetImagesBoundary(CRect& rc)
 void CMainDoc::IncreaseImageRotate(int id, float radiun)
 {
 		TRACE("No support rotation!!\n");
+		DoStitching(id, 1);
 }
 void CMainDoc::OnFileProperties()
 {
@@ -285,7 +347,7 @@ void CMainDoc::OnFileProperties()
 				}while(0);
 
 				if(bModified){
-						InitPropertySetting(dlg.GetProperty());
+						UpdatePropertySetting(dlg.GetProperty());
 
 						this->UpdateAllViews(NULL);
 				} 

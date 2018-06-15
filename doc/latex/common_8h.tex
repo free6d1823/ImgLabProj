@@ -1,0 +1,132 @@
+\hypertarget{common_8h}{}\section{i\+Optics/common.h File Reference}
+\label{common_8h}\index{i\+Optics/common.\+h@{i\+Optics/common.\+h}}
+
+
+This file declars process-\/related struc and data type.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___point_double}{\+\_\+\+Point\+Double}}
+\begin{DoxyCompactList}\small\item\em double precision types of position coordinates used in L\+UT \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct___fec_param}{\+\_\+\+Fec\+Param}}
+\begin{DoxyCompactList}\small\item\em F\+EC processing parameters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct___homo_param}{\+\_\+\+Homo\+Param}}
+\begin{DoxyCompactList}\small\item\em Homography Matrix parameters. Q(u,v) = \mbox{[}H\mbox{]} $\ast$ P(x,y), where P is the vector of original pixels, Q is the vector of transformed pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{common_8h_a916e92ae9237b31e838e362c5e75ab51}\label{common_8h_a916e92ae9237b31e838e362c5e75ab51}} 
+\#define {\bfseries C\+L\+IP}(x)~min(255, max(0,x))
+\item 
+\mbox{\Hypertarget{common_8h_a598a3330b3c21701223ee0ca14316eca}\label{common_8h_a598a3330b3c21701223ee0ca14316eca}} 
+\#define {\bfseries PI}~3.\+14159265358979323846f /$\ast$ pi $\ast$/
+\item 
+\mbox{\Hypertarget{common_8h_a7c7671235d3f0d09bc5c011920fe0d5b}\label{common_8h_a7c7671235d3f0d09bc5c011920fe0d5b}} 
+\#define {\bfseries P\+I\+\_\+2}~1.\+57079632679489661923f /$\ast$ pi/2 $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{common_8h_aa960c1131ba75a7afd8877c2a1c7b238}\label{common_8h_aa960c1131ba75a7afd8877c2a1c7b238}} 
+typedef struct \mbox{\hyperlink{struct___point_double}{\+\_\+\+Point\+Double}} {\bfseries Point\+Double}
+\item 
+\mbox{\Hypertarget{common_8h_a13b907420152fb8bd1de1482ebba2b03}\label{common_8h_a13b907420152fb8bd1de1482ebba2b03}} 
+typedef enum \mbox{\hyperlink{common_8h_a4493c1033486227a5340672c32384eda}{\+\_\+\+Mount\+Mode}} {\bfseries Mount\+Mode}
+\item 
+\mbox{\Hypertarget{common_8h_a3a73d064a8538a6f7c4239a71b517d6e}\label{common_8h_a3a73d064a8538a6f7c4239a71b517d6e}} 
+typedef enum \mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7}{\+\_\+\+Lens\+Type}} {\bfseries Lens\+Type}
+\item 
+\mbox{\Hypertarget{common_8h_a82fa6e4dc23f551122da509b0ed8bacb}\label{common_8h_a82fa6e4dc23f551122da509b0ed8bacb}} 
+typedef struct \mbox{\hyperlink{struct___fec_param}{\+\_\+\+Fec\+Param}} {\bfseries Fec\+Param}
+\item 
+\mbox{\Hypertarget{common_8h_a39063049f8cb0a595d5271e6832cd1fe}\label{common_8h_a39063049f8cb0a595d5271e6832cd1fe}} 
+typedef struct \mbox{\hyperlink{struct___homo_param}{\+\_\+\+Homo\+Param}} {\bfseries Homo\+Param}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{common_8h_a4493c1033486227a5340672c32384eda}{\+\_\+\+Mount\+Mode}} \{ \mbox{\hyperlink{common_8h_a4493c1033486227a5340672c32384edaafd0a6f0b9be724fddb3cb101edacacde}{Mount\+Mode\+\_\+\+W\+A\+LL}} = 0, 
+\mbox{\hyperlink{common_8h_a4493c1033486227a5340672c32384edaaabf9054e23c9d38482238add78c9b2c4}{Mount\+Mode\+\_\+\+C\+E\+I\+L\+I\+NG}} = 1, 
+\mbox{\hyperlink{common_8h_a4493c1033486227a5340672c32384edaa86b32e48aba9f304809ba9ada97c7542}{Mount\+Mode\+\_\+\+T\+A\+B\+LE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em camera mounting position \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7}{\+\_\+\+Lens\+Type}} \{ \newline
+\mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7a9fb7343a9809d42474e503898c152165}{Lens\+Type\+\_\+0}}, 
+\mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7a13954ac30fe273506a2cb0ca6b85bd20}{Lens\+Type\+\_\+1}}, 
+\mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7a641c46a975322bcc7ac720b202bc1ed0}{Lens\+Type\+\_\+2}}, 
+\mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7a909c2a26cfadb53f5e08925d633db945}{Lens\+Type\+\_\+3}}, 
+\newline
+\mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7a3336f117afd63125fcb79ea01010b2d3}{Lens\+Type\+\_\+4}}, 
+\mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7addaf12b4ef4cce1a3a78166a5b8c3091}{Lens\+Type\+\_\+5}}
+ \}
+\begin{DoxyCompactList}\small\item\em defines lens distortion model \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file declars process-\/related struc and data type. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7}\label{common_8h_ac251312fa48af25715d391f384b78be7}} 
+\index{common.\+h@{common.\+h}!\+\_\+\+Lens\+Type@{\+\_\+\+Lens\+Type}}
+\index{\+\_\+\+Lens\+Type@{\+\_\+\+Lens\+Type}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+Lens\+Type}{\_LensType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{common_8h_ac251312fa48af25715d391f384b78be7}{\+\_\+\+Lens\+Type}}}
+
+
+
+defines lens distortion model 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lens\+Type\+\_\+0@{Lens\+Type\+\_\+0}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Lens\+Type\+\_\+0@{Lens\+Type\+\_\+0}}}\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7a9fb7343a9809d42474e503898c152165}\label{common_8h_ac251312fa48af25715d391f384b78be7a9fb7343a9809d42474e503898c152165}} 
+Lens\+Type\+\_\+0&no correction \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lens\+Type\+\_\+1@{Lens\+Type\+\_\+1}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Lens\+Type\+\_\+1@{Lens\+Type\+\_\+1}}}\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7a13954ac30fe273506a2cb0ca6b85bd20}\label{common_8h_ac251312fa48af25715d391f384b78be7a13954ac30fe273506a2cb0ca6b85bd20}} 
+Lens\+Type\+\_\+1&tan(angle/2) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lens\+Type\+\_\+2@{Lens\+Type\+\_\+2}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Lens\+Type\+\_\+2@{Lens\+Type\+\_\+2}}}\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7a641c46a975322bcc7ac720b202bc1ed0}\label{common_8h_ac251312fa48af25715d391f384b78be7a641c46a975322bcc7ac720b202bc1ed0}} 
+Lens\+Type\+\_\+2&sin(angle/2) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lens\+Type\+\_\+3@{Lens\+Type\+\_\+3}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Lens\+Type\+\_\+3@{Lens\+Type\+\_\+3}}}\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7a909c2a26cfadb53f5e08925d633db945}\label{common_8h_ac251312fa48af25715d391f384b78be7a909c2a26cfadb53f5e08925d633db945}} 
+Lens\+Type\+\_\+3&angle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lens\+Type\+\_\+4@{Lens\+Type\+\_\+4}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Lens\+Type\+\_\+4@{Lens\+Type\+\_\+4}}}\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7a3336f117afd63125fcb79ea01010b2d3}\label{common_8h_ac251312fa48af25715d391f384b78be7a3336f117afd63125fcb79ea01010b2d3}} 
+Lens\+Type\+\_\+4&sin(angle) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lens\+Type\+\_\+5@{Lens\+Type\+\_\+5}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Lens\+Type\+\_\+5@{Lens\+Type\+\_\+5}}}\mbox{\Hypertarget{common_8h_ac251312fa48af25715d391f384b78be7addaf12b4ef4cce1a3a78166a5b8c3091}\label{common_8h_ac251312fa48af25715d391f384b78be7addaf12b4ef4cce1a3a78166a5b8c3091}} 
+Lens\+Type\+\_\+5&user defined curve \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{common_8h_a4493c1033486227a5340672c32384eda}\label{common_8h_a4493c1033486227a5340672c32384eda}} 
+\index{common.\+h@{common.\+h}!\+\_\+\+Mount\+Mode@{\+\_\+\+Mount\+Mode}}
+\index{\+\_\+\+Mount\+Mode@{\+\_\+\+Mount\+Mode}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+Mount\+Mode}{\_MountMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{common_8h_a4493c1033486227a5340672c32384eda}{\+\_\+\+Mount\+Mode}}}
+
+
+
+camera mounting position 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mount\+Mode\+\_\+\+W\+A\+LL@{Mount\+Mode\+\_\+\+W\+A\+LL}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Mount\+Mode\+\_\+\+W\+A\+LL@{Mount\+Mode\+\_\+\+W\+A\+LL}}}\mbox{\Hypertarget{common_8h_a4493c1033486227a5340672c32384edaafd0a6f0b9be724fddb3cb101edacacde}\label{common_8h_a4493c1033486227a5340672c32384edaafd0a6f0b9be724fddb3cb101edacacde}} 
+Mount\+Mode\+\_\+\+W\+A\+LL&on the wall, only support this \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mount\+Mode\+\_\+\+C\+E\+I\+L\+I\+NG@{Mount\+Mode\+\_\+\+C\+E\+I\+L\+I\+NG}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Mount\+Mode\+\_\+\+C\+E\+I\+L\+I\+NG@{Mount\+Mode\+\_\+\+C\+E\+I\+L\+I\+NG}}}\mbox{\Hypertarget{common_8h_a4493c1033486227a5340672c32384edaaabf9054e23c9d38482238add78c9b2c4}\label{common_8h_a4493c1033486227a5340672c32384edaaabf9054e23c9d38482238add78c9b2c4}} 
+Mount\+Mode\+\_\+\+C\+E\+I\+L\+I\+NG&on celling, not support yet \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mount\+Mode\+\_\+\+T\+A\+B\+LE@{Mount\+Mode\+\_\+\+T\+A\+B\+LE}!common.\+h@{common.\+h}}\index{common.\+h@{common.\+h}!Mount\+Mode\+\_\+\+T\+A\+B\+LE@{Mount\+Mode\+\_\+\+T\+A\+B\+LE}}}\mbox{\Hypertarget{common_8h_a4493c1033486227a5340672c32384edaa86b32e48aba9f304809ba9ada97c7542}\label{common_8h_a4493c1033486227a5340672c32384edaa86b32e48aba9f304809ba9ada97c7542}} 
+Mount\+Mode\+\_\+\+T\+A\+B\+LE&on table, not support yet \\
+\hline
+
+\end{DoxyEnumFields}

@@ -8,9 +8,10 @@ Gride::Gride(COLORREF color)
 	m_rcViewPort = CRect(0,0,800,600); //display area
 	m_color = color;	//gride line color
 	m_rcRange  = m_rcViewPort;		//image location
-	m_nInterval = 2;
-	m_nDivider = 8;
-
+	m_param.nDividerH = 8;
+	m_param.nDividerV = 16;
+	m_param.nIntervalH = 2;
+	m_param.nIntervalV = 4;
 }
 
 Gride::~Gride()
@@ -19,8 +20,7 @@ Gride::~Gride()
 void Gride::SetParam(void* pParam)
 {
 	GrideParam* pPar = (GrideParam*) pParam;
-	m_nInterval = pPar->nInterval;
-	m_nDivider= pPar->nDivider;
+	m_param = *pPar;
 }
 void Gride::SetImageArea(RECT& rcRange)
 {
@@ -65,10 +65,10 @@ void Gride::Draw(CDC* pDC)
 	}
 	//draw vertical
 	p2 = p1;
-	float  interval = (float)(m_rcRange.right - m_rcRange.left)/(float)m_nDivider;
-	for(int i=1;i<= m_nDivider/2; i++) {
+	float  interval = (float)(m_rcRange.right - m_rcRange.left)/(float)m_param.nDividerV;
+	for(int i=1;i<= m_param.nDividerV/2; i++) {
 
-		if (i%m_nInterval == 0)
+		if (i%m_param.nIntervalV == 0)
 			pDC->SelectObject(&penMain);
 		else
 			pDC->SelectObject(&penMinor);
@@ -108,10 +108,10 @@ void Gride::Draw(CDC* pDC)
 	}
 //draw vertical
 	p2 = p1;
-	interval = (float)(m_rcRange.bottom - m_rcRange.top)/(float) m_nDivider;
-	for(int i=1;i<= m_nDivider/2; i++) {
+	interval = (float)(m_rcRange.bottom - m_rcRange.top)/(float) m_param.nDividerH;
+	for(int i=1;i<= m_param.nDividerH/2; i++) {
 
-		if (i%m_nInterval == 0)
+		if (i%m_param.nIntervalH == 0)
 			pDC->SelectObject(&penMain);
 		else
 			pDC->SelectObject(&penMinor);

@@ -11,8 +11,8 @@
 
 
 // BasicView
-#define MAX_ZOOM		10
-#define DEFAULT_ZOOM_FACTOR  	5
+#define MAX_ZOOM		18
+#define DEFAULT_ZOOM_FACTOR  	8
 class ImgFile;
 
 /**
@@ -30,7 +30,7 @@ public:
 	virtual	void SetImgFile(ImgFile* pImg);
 	ImgFile* GetImgFile(){return m_pImage;}
 static int ZOOM_FACTOR[MAX_ZOOM];	/*!< zoom factor table, value divided by 100 is the scale-up factor. */
-	void DrawImage(CDC* pDC);
+	virtual void DrawImage(CDC* pDC);
 	virtual BOOL Create(LPCTSTR szName, CWnd* pParentWnd, BOOL bPopup);
 	virtual void UpdateScrollbarPosition();
 	virtual void SetParam(void* pParam) {}/*!< setup class dependent parameters */
@@ -41,13 +41,17 @@ public:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CMainView)
 public:
-	//}}AFX_VIRTUAL
-protected:
-	virtual void PostNcDestroy();
 	void DocToViewPort(SIZE& size);
+	void DocToViewPort(POINT& pt);
 	void DocToViewPort(RECT& rect);
 	void ViewPortToDoc(SIZE& size);
 	void ViewPortToDoc(RECT& rect);
+	void ViewPortToDoc(POINT& pt);	
+	//}}AFX_VIRTUAL
+protected:
+	virtual void PostNcDestroy();
+
+
 	void CalculateRects();
 	int m_nZoomFactor;		/*!< current zoom factor index */
 	RECT	m_rcPort;			/*!< he display area in zoomed image. top-left is scroll thumb poition*/

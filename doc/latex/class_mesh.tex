@@ -1,0 +1,106 @@
+\hypertarget{class_mesh}{}\section{Mesh Class Reference}
+\label{class_mesh}\index{Mesh@{Mesh}}
+
+
+Draw mesh on the specified area working flow.  
+
+
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\+O\+OL \mbox{\hyperlink{class_mesh_a79aa8ef87d68988f999a00bfea114632}{Set\+Table}} (\mbox{\hyperlink{struct___point_double}{Point\+Double}} $\ast$p\+Lut, int column, int row)
+\item 
+void \mbox{\hyperlink{class_mesh_a2c9670a5720afe8ee5bcaa6c433455d5}{Release}} ()
+\item 
+void \mbox{\hyperlink{class_mesh_a28a00f1a751e2a5cca3425670befc376}{Set\+Location\+On\+Canvas}} (R\+E\+CT \&rc\+Location)
+\item 
+void \mbox{\hyperlink{class_mesh_ab55d4ba1fb6a9e49651dc4801392df6d}{Draw}} (C\+DC $\ast$p\+DC, R\+E\+CT $\ast$p\+View\+Port, B\+O\+OL b\+Show\+All)
+\item 
+void \mbox{\hyperlink{class_mesh_a40ac4b15e3c738aab4c701d774e65ce9}{Move\+Control\+Point}} (int m, int n, P\+O\+I\+NT offset)
+\item 
+B\+O\+OL \mbox{\hyperlink{class_mesh_a945caa648924bf3336a54c075b83e019}{Is\+On\+Control\+Point}} (P\+O\+I\+NT pt\+Cursor, P\+O\+I\+NT \&index)
+\item 
+void \mbox{\hyperlink{class_mesh_ad644e7f3d14e64774bc32c356898109c}{On\+Mouse\+Move}} (C\+Wnd $\ast$p\+Wnd, P\+O\+I\+NT pos)
+\item 
+\mbox{\Hypertarget{class_mesh_af80676782b87f7a31b7c8d6d0fbe29af}\label{class_mesh_af80676782b87f7a31b7c8d6d0fbe29af}} 
+void {\bfseries On\+L\+Button\+Down} (C\+Wnd $\ast$p\+Wnd, P\+O\+I\+NT pos)
+\item 
+\mbox{\Hypertarget{class_mesh_a7cd53f709a59db03c99998e0402e9852}\label{class_mesh_a7cd53f709a59db03c99998e0402e9852}} 
+void {\bfseries On\+L\+Button\+Up} (C\+Wnd $\ast$p\+Wnd, P\+O\+I\+NT pos)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Draw mesh on the specified area working flow. 
+
+
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_1}}
+\end{DoxyImageNoCaption}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_ab55d4ba1fb6a9e49651dc4801392df6d}\label{class_mesh_ab55d4ba1fb6a9e49651dc4801392df6d}} 
+\index{Mesh@{Mesh}!Draw@{Draw}}
+\index{Draw@{Draw}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Mesh\+::\+Draw (\begin{DoxyParamCaption}\item[{C\+DC $\ast$}]{p\+DC,  }\item[{R\+E\+CT $\ast$}]{p\+View\+Port,  }\item[{B\+O\+OL}]{b\+Show\+All }\end{DoxyParamCaption})}
+
+Display mesh within rc\+View\+Port, show Control point only if b\+Show\+All is F\+A\+L\+SE \mbox{\Hypertarget{class_mesh_a945caa648924bf3336a54c075b83e019}\label{class_mesh_a945caa648924bf3336a54c075b83e019}} 
+\index{Mesh@{Mesh}!Is\+On\+Control\+Point@{Is\+On\+Control\+Point}}
+\index{Is\+On\+Control\+Point@{Is\+On\+Control\+Point}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Is\+On\+Control\+Point()}{IsOnControlPoint()}}
+{\footnotesize\ttfamily B\+O\+OL Mesh\+::\+Is\+On\+Control\+Point (\begin{DoxyParamCaption}\item[{P\+O\+I\+NT}]{pt\+Cursor,  }\item[{P\+O\+I\+NT \&}]{index }\end{DoxyParamCaption})}
+
+Check if pt\+Cursor (canvas coordinate) is on a control point if return T\+R\+UE, CP index is write tp index Display mesh within rc\+View\+Port, show Control point only if b\+Show\+All is F\+A\+L\+SE \mbox{\Hypertarget{class_mesh_a40ac4b15e3c738aab4c701d774e65ce9}\label{class_mesh_a40ac4b15e3c738aab4c701d774e65ce9}} 
+\index{Mesh@{Mesh}!Move\+Control\+Point@{Move\+Control\+Point}}
+\index{Move\+Control\+Point@{Move\+Control\+Point}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Move\+Control\+Point()}{MoveControlPoint()}}
+{\footnotesize\ttfamily void Mesh\+::\+Move\+Control\+Point (\begin{DoxyParamCaption}\item[{int}]{m,  }\item[{int}]{n,  }\item[{P\+O\+I\+NT}]{offset }\end{DoxyParamCaption})}
+
+Move indexed control point by offset with real world coordinates \mbox{\Hypertarget{class_mesh_ad644e7f3d14e64774bc32c356898109c}\label{class_mesh_ad644e7f3d14e64774bc32c356898109c}} 
+\index{Mesh@{Mesh}!On\+Mouse\+Move@{On\+Mouse\+Move}}
+\index{On\+Mouse\+Move@{On\+Mouse\+Move}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Move()}{OnMouseMove()}}
+{\footnotesize\ttfamily void Mesh\+::\+On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{C\+Wnd $\ast$}]{p\+Wnd,  }\item[{P\+O\+I\+NT}]{pos }\end{DoxyParamCaption})}
+
+Mouse event handling. pos is Canvas coordinate. \mbox{\Hypertarget{class_mesh_a2c9670a5720afe8ee5bcaa6c433455d5}\label{class_mesh_a2c9670a5720afe8ee5bcaa6c433455d5}} 
+\index{Mesh@{Mesh}!Release@{Release}}
+\index{Release@{Release}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily void Mesh\+::\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clears all resource. \mbox{\Hypertarget{class_mesh_a28a00f1a751e2a5cca3425670befc376}\label{class_mesh_a28a00f1a751e2a5cca3425670befc376}} 
+\index{Mesh@{Mesh}!Set\+Location\+On\+Canvas@{Set\+Location\+On\+Canvas}}
+\index{Set\+Location\+On\+Canvas@{Set\+Location\+On\+Canvas}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Set\+Location\+On\+Canvas()}{SetLocationOnCanvas()}}
+{\footnotesize\ttfamily void Mesh\+::\+Set\+Location\+On\+Canvas (\begin{DoxyParamCaption}\item[{R\+E\+CT \&}]{rc\+Location }\end{DoxyParamCaption})}
+
+Remap mesh to real world coordinates \mbox{\Hypertarget{class_mesh_a79aa8ef87d68988f999a00bfea114632}\label{class_mesh_a79aa8ef87d68988f999a00bfea114632}} 
+\index{Mesh@{Mesh}!Set\+Table@{Set\+Table}}
+\index{Set\+Table@{Set\+Table}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Set\+Table()}{SetTable()}}
+{\footnotesize\ttfamily B\+O\+OL Mesh\+::\+Set\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___point_double}{Point\+Double}} $\ast$}]{p\+Lut,  }\item[{int}]{column,  }\item[{int}]{row }\end{DoxyParamCaption})}
+
+Sets the L\+UT data and specify its dimension. this function is called when content of table is changed 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p\+Lut} & L\+UT contents to set. If p\+Lut != N\+U\+LL, copy p\+Lut to p\+Cp, else makes p\+Cp as rectangle grides \\
+\hline
+\mbox{\tt in}  & {\em column} & numbers of vertical lines, including border \\
+\hline
+\mbox{\tt in}  & {\em row} & numbers of horizontal lines, including border \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if failed to allocat internal L\+UT memory. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}}\item 
+i\+Optics/\mbox{\hyperlink{_mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}

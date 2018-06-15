@@ -1,0 +1,163 @@
+\hypertarget{class_basic_view}{}\section{Basic\+View Class Reference}
+\label{class_basic_view}\index{Basic\+View@{Basic\+View}}
+
+
+\mbox{\hyperlink{class_basic_view}{Basic\+View}} is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff.  
+
+
+
+
+{\ttfamily \#include $<$Basic\+View.\+h$>$}
+
+Inheritance diagram for Basic\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_basic_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_basic_view_ad48fb56fa9b09b92f541a79c66901cea}\label{class_basic_view_ad48fb56fa9b09b92f541a79c66901cea}} 
+virtual void {\bfseries Set\+Img\+File} (Img\+File $\ast$p\+Img)
+\item 
+\mbox{\Hypertarget{class_basic_view_a6efb4e96e3f56d57bca547016980e12c}\label{class_basic_view_a6efb4e96e3f56d57bca547016980e12c}} 
+Img\+File $\ast$ {\bfseries Get\+Img\+File} ()
+\item 
+\mbox{\Hypertarget{class_basic_view_a4d5fefc55235b1b84bcf6cfe5c9f140d}\label{class_basic_view_a4d5fefc55235b1b84bcf6cfe5c9f140d}} 
+void {\bfseries Draw\+Image} (C\+DC $\ast$p\+DC)
+\item 
+\mbox{\Hypertarget{class_basic_view_a70a63eea47d1e23d50f67c62080e42c5}\label{class_basic_view_a70a63eea47d1e23d50f67c62080e42c5}} 
+virtual B\+O\+OL {\bfseries Create} (L\+P\+C\+T\+S\+TR sz\+Name, C\+Wnd $\ast$p\+Parent\+Wnd, B\+O\+OL b\+Popup)
+\item 
+\mbox{\Hypertarget{class_basic_view_af13f4ac91b170f02e60f1ff231402ac2}\label{class_basic_view_af13f4ac91b170f02e60f1ff231402ac2}} 
+virtual void {\bfseries Update\+Scrollbar\+Position} ()
+\item 
+virtual void \mbox{\hyperlink{class_basic_view_ab553e969a295d6d6933a7a701ade79bc}{Set\+Param}} (void $\ast$p\+Param)
+\item 
+\mbox{\Hypertarget{class_basic_view_a495262f5dc8aa19a66a11f28fd73ca3b}\label{class_basic_view_a495262f5dc8aa19a66a11f28fd73ca3b}} 
+afx\+\_\+msg B\+O\+OL {\bfseries On\+Erase\+Bkgnd} (C\+DC $\ast$p\+DC)
+\item 
+\mbox{\Hypertarget{class_basic_view_ae459b872e7b726d8e1c23ad0b7516a08}\label{class_basic_view_ae459b872e7b726d8e1c23ad0b7516a08}} 
+afx\+\_\+msg void {\bfseries On\+Paint} ()
+\item 
+\mbox{\Hypertarget{class_basic_view_a99599b49df57fdb7526d97dd9cbc63dd}\label{class_basic_view_a99599b49df57fdb7526d97dd9cbc63dd}} 
+afx\+\_\+msg void {\bfseries On\+Size} (U\+I\+NT n\+Type, int cx, int cy)
+\item 
+\mbox{\Hypertarget{class_basic_view_a8f9fbf9908c3e133b732fca6048f776a}\label{class_basic_view_a8f9fbf9908c3e133b732fca6048f776a}} 
+afx\+\_\+msg void {\bfseries On\+H\+Scroll} (U\+I\+NT n\+S\+B\+Code, U\+I\+NT n\+Pos, C\+Scroll\+Bar $\ast$p\+Scroll\+Bar)
+\item 
+\mbox{\Hypertarget{class_basic_view_aa15ef76fc3123761dabf6c26d2079a44}\label{class_basic_view_aa15ef76fc3123761dabf6c26d2079a44}} 
+afx\+\_\+msg void {\bfseries On\+V\+Scroll} (U\+I\+NT n\+S\+B\+Code, U\+I\+NT n\+Pos, C\+Scroll\+Bar $\ast$p\+Scroll\+Bar)
+\item 
+\mbox{\Hypertarget{class_basic_view_a80315db783abe2477eda76b66750b571}\label{class_basic_view_a80315db783abe2477eda76b66750b571}} 
+afx\+\_\+msg void {\bfseries On\+View\+Zoomin} ()
+\item 
+\mbox{\Hypertarget{class_basic_view_abdf4441d048617debebd65959130c4ea}\label{class_basic_view_abdf4441d048617debebd65959130c4ea}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Zoomin} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_basic_view_a6683be2d4eaf00df6bf3c865de183719}\label{class_basic_view_a6683be2d4eaf00df6bf3c865de183719}} 
+afx\+\_\+msg void {\bfseries On\+View\+Zoomout} ()
+\item 
+\mbox{\Hypertarget{class_basic_view_a8413f54e94417ffd14feb39687c02e3a}\label{class_basic_view_a8413f54e94417ffd14feb39687c02e3a}} 
+afx\+\_\+msg void {\bfseries On\+Update\+View\+Zoomout} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_basic_view_a7e588e703875860f0c83de89c1256b9f}\label{class_basic_view_a7e588e703875860f0c83de89c1256b9f}} 
+afx\+\_\+msg void {\bfseries On\+Close} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_basic_view_ad66db924d3a8a6937720a656336825a7}{Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR}} \mbox{[}M\+A\+X\+\_\+\+Z\+O\+OM\mbox{]} = \{ 10, 25, 33, 50, 75, 100,150, 200, 300, 400\}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_basic_view_aafdbf24eb9c7260ac8c51c05839b5dd8}\label{class_basic_view_aafdbf24eb9c7260ac8c51c05839b5dd8}} 
+virtual void {\bfseries Post\+Nc\+Destroy} ()
+\item 
+\mbox{\Hypertarget{class_basic_view_a2fa0648d41595e81c91cc58dbea5488f}\label{class_basic_view_a2fa0648d41595e81c91cc58dbea5488f}} 
+void {\bfseries Doc\+To\+View\+Port} (S\+I\+ZE \&size)
+\item 
+\mbox{\Hypertarget{class_basic_view_a948bff6deaaa0d5a546dd7bb6c063d79}\label{class_basic_view_a948bff6deaaa0d5a546dd7bb6c063d79}} 
+void {\bfseries Doc\+To\+View\+Port} (R\+E\+CT \&rect)
+\item 
+\mbox{\Hypertarget{class_basic_view_aba477b0400f6152ee6971142eba519a6}\label{class_basic_view_aba477b0400f6152ee6971142eba519a6}} 
+void {\bfseries View\+Port\+To\+Doc} (S\+I\+ZE \&size)
+\item 
+\mbox{\Hypertarget{class_basic_view_abf35d7d7d7ae89a8e5ff607111be6167}\label{class_basic_view_abf35d7d7d7ae89a8e5ff607111be6167}} 
+void {\bfseries View\+Port\+To\+Doc} (R\+E\+CT \&rect)
+\item 
+\mbox{\Hypertarget{class_basic_view_a896292cd23b8fa853fcf1451e5949d33}\label{class_basic_view_a896292cd23b8fa853fcf1451e5949d33}} 
+void {\bfseries Calculate\+Rects} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_basic_view_a45c68c0cbfcd5275bed1d76af7272c22}{m\+\_\+n\+Zoom\+Factor}}
+\item 
+R\+E\+CT \mbox{\hyperlink{class_basic_view_ae0c220c7659c120bae97c43e5e79cf3f}{m\+\_\+rc\+Port}}
+\item 
+S\+I\+ZE \mbox{\hyperlink{class_basic_view_a576f84883374c4ca07a7071967434396}{m\+\_\+sz\+Canvas}}
+\item 
+R\+E\+CT \mbox{\hyperlink{class_basic_view_a9d8a549c1bcfc0e077f3d68c326a7cab}{m\+\_\+rc\+Image}}
+\item 
+Img\+File $\ast$ \mbox{\hyperlink{class_basic_view_a4b8c2fb4f3b0d69dcc227947b8933629}{m\+\_\+p\+Image}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_basic_view}{Basic\+View}} is the basic image viewer window. It handles image preview, zoom in/out, and window scrolling stuff. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_basic_view_ab553e969a295d6d6933a7a701ade79bc}\label{class_basic_view_ab553e969a295d6d6933a7a701ade79bc}} 
+\index{Basic\+View@{Basic\+View}!Set\+Param@{Set\+Param}}
+\index{Set\+Param@{Set\+Param}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{Set\+Param()}{SetParam()}}
+{\footnotesize\ttfamily virtual void Basic\+View\+::\+Set\+Param (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+setup class dependent parameters 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_basic_view_a45c68c0cbfcd5275bed1d76af7272c22}\label{class_basic_view_a45c68c0cbfcd5275bed1d76af7272c22}} 
+\index{Basic\+View@{Basic\+View}!m\+\_\+n\+Zoom\+Factor@{m\+\_\+n\+Zoom\+Factor}}
+\index{m\+\_\+n\+Zoom\+Factor@{m\+\_\+n\+Zoom\+Factor}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+n\+Zoom\+Factor}{m\_nZoomFactor}}
+{\footnotesize\ttfamily int Basic\+View\+::m\+\_\+n\+Zoom\+Factor\hspace{0.3cm}{\ttfamily [protected]}}
+
+current zoom factor index \mbox{\Hypertarget{class_basic_view_a4b8c2fb4f3b0d69dcc227947b8933629}\label{class_basic_view_a4b8c2fb4f3b0d69dcc227947b8933629}} 
+\index{Basic\+View@{Basic\+View}!m\+\_\+p\+Image@{m\+\_\+p\+Image}}
+\index{m\+\_\+p\+Image@{m\+\_\+p\+Image}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+Image}{m\_pImage}}
+{\footnotesize\ttfamily Img\+File$\ast$ Basic\+View\+::m\+\_\+p\+Image\hspace{0.3cm}{\ttfamily [protected]}}
+
+The image to be displayed in the window \mbox{\Hypertarget{class_basic_view_a9d8a549c1bcfc0e077f3d68c326a7cab}\label{class_basic_view_a9d8a549c1bcfc0e077f3d68c326a7cab}} 
+\index{Basic\+View@{Basic\+View}!m\+\_\+rc\+Image@{m\+\_\+rc\+Image}}
+\index{m\+\_\+rc\+Image@{m\+\_\+rc\+Image}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+rc\+Image}{m\_rcImage}}
+{\footnotesize\ttfamily R\+E\+CT Basic\+View\+::m\+\_\+rc\+Image\hspace{0.3cm}{\ttfamily [protected]}}
+
+location of zoomed image on canvas \mbox{\Hypertarget{class_basic_view_ae0c220c7659c120bae97c43e5e79cf3f}\label{class_basic_view_ae0c220c7659c120bae97c43e5e79cf3f}} 
+\index{Basic\+View@{Basic\+View}!m\+\_\+rc\+Port@{m\+\_\+rc\+Port}}
+\index{m\+\_\+rc\+Port@{m\+\_\+rc\+Port}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+rc\+Port}{m\_rcPort}}
+{\footnotesize\ttfamily R\+E\+CT Basic\+View\+::m\+\_\+rc\+Port\hspace{0.3cm}{\ttfamily [protected]}}
+
+he display area in zoomed image. top-\/left is scroll thumb poition \mbox{\Hypertarget{class_basic_view_a576f84883374c4ca07a7071967434396}\label{class_basic_view_a576f84883374c4ca07a7071967434396}} 
+\index{Basic\+View@{Basic\+View}!m\+\_\+sz\+Canvas@{m\+\_\+sz\+Canvas}}
+\index{m\+\_\+sz\+Canvas@{m\+\_\+sz\+Canvas}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{m\+\_\+sz\+Canvas}{m\_szCanvas}}
+{\footnotesize\ttfamily S\+I\+ZE Basic\+View\+::m\+\_\+sz\+Canvas\hspace{0.3cm}{\ttfamily [protected]}}
+
+size of total area, the scroll area \mbox{\Hypertarget{class_basic_view_ad66db924d3a8a6937720a656336825a7}\label{class_basic_view_ad66db924d3a8a6937720a656336825a7}} 
+\index{Basic\+View@{Basic\+View}!Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR@{Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR}}
+\index{Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR@{Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR}!Basic\+View@{Basic\+View}}
+\subsubsection{\texorpdfstring{Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR}{ZOOM\_FACTOR}}
+{\footnotesize\ttfamily int Basic\+View\+::\+Z\+O\+O\+M\+\_\+\+F\+A\+C\+T\+OR = \{ 10, 25, 33, 50, 75, 100,150, 200, 300, 400\}\hspace{0.3cm}{\ttfamily [static]}}
+
+zoom factor table, value divided by 100 is the scale-\/up factor. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_basic_view_8h}{Basic\+View.\+h}}\item 
+i\+Optics/Basic\+View.\+cpp\end{DoxyCompactItemize}

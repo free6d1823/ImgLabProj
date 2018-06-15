@@ -1,0 +1,126 @@
+\hypertarget{class_fec_wrap}{}\section{Fec\+Wrap Class Reference}
+\label{class_fec_wrap}\index{Fec\+Wrap@{Fec\+Wrap}}
+
+
+F\+EC process parameters wrapper This class wrap F\+EC parameters and L\+UT table, as well as L\+UT generating function.  
+
+
+
+
+{\ttfamily \#include $<$Fec\+Tool.\+h$>$}
+
+Inheritance diagram for Fec\+Wrap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fec_wrap}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_fec_wrap_a989dbae7d3f292f4e686eee8f19a1ad7}{Set\+Param}} (void $\ast$p\+Param)
+\item 
+virtual void \mbox{\hyperlink{class_fec_wrap_ac1c213fd03716ce0bb6430e2d2bf7962}{Make\+Map\+Table}} ()
+\item 
+virtual B\+O\+OL \mbox{\hyperlink{class_fec_wrap_a50575c4f361b71e6de2e8c1073b4a26a}{Pos\+Map}} (int u, int v, float \&x, float \&y)
+\item 
+virtual B\+O\+OL \mbox{\hyperlink{class_fec_wrap_abd377e205b42ec6725293c3c9ff76a34}{Save\+Parameter}} (L\+P\+C\+T\+S\+TR filename)
+\item 
+virtual B\+O\+OL \mbox{\hyperlink{class_fec_wrap_a3f55d86b6b99108b360b66d1d180a66c}{Load\+Parameter}} (L\+P\+C\+T\+S\+TR filename)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fec_wrap_aee89ac5ae8a164efc12e3ffdba0f5cc6}\label{class_fec_wrap_aee89ac5ae8a164efc12e3ffdba0f5cc6}} 
+class {\bfseries Fec\+Tool}
+\item 
+\mbox{\Hypertarget{class_fec_wrap_a6bf8ef1e5b278887294b17a7aa714e7b}\label{class_fec_wrap_a6bf8ef1e5b278887294b17a7aa714e7b}} 
+class {\bfseries Fec\+View}
+\item 
+\mbox{\Hypertarget{class_fec_wrap_a8dfb14a6a11e1fad081be201e28a0f37}\label{class_fec_wrap_a8dfb14a6a11e1fad081be201e28a0f37}} 
+class {\bfseries Fec\+Gride}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+F\+EC process parameters wrapper This class wrap F\+EC parameters and L\+UT table, as well as L\+UT generating function. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_fec_view}{Fec\+View}} \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_fec_wrap_a3f55d86b6b99108b360b66d1d180a66c}\label{class_fec_wrap_a3f55d86b6b99108b360b66d1d180a66c}} 
+\index{Fec\+Wrap@{Fec\+Wrap}!Load\+Parameter@{Load\+Parameter}}
+\index{Load\+Parameter@{Load\+Parameter}!Fec\+Wrap@{Fec\+Wrap}}
+\subsubsection{\texorpdfstring{Load\+Parameter()}{LoadParameter()}}
+{\footnotesize\ttfamily B\+O\+OL Fec\+Wrap\+::\+Load\+Parameter (\begin{DoxyParamCaption}\item[{L\+P\+C\+T\+S\+TR}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Read process specified parameters from a file. The format of data can be defined dependently by the correspondent \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} class. 
+
+Implements \mbox{\hyperlink{class_process_wrap_a1cb75a423ff8f5ef736fc00a34792493}{Process\+Wrap}}.
+
+\mbox{\Hypertarget{class_fec_wrap_ac1c213fd03716ce0bb6430e2d2bf7962}\label{class_fec_wrap_ac1c213fd03716ce0bb6430e2d2bf7962}} 
+\index{Fec\+Wrap@{Fec\+Wrap}!Make\+Map\+Table@{Make\+Map\+Table}}
+\index{Make\+Map\+Table@{Make\+Map\+Table}!Fec\+Wrap@{Fec\+Wrap}}
+\subsubsection{\texorpdfstring{Make\+Map\+Table()}{MakeMapTable()}}
+{\footnotesize\ttfamily void Fec\+Wrap\+::\+Make\+Map\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Create the L\+UT data according the internal Fec\+Param 
+
+Implements \mbox{\hyperlink{class_process_wrap_a22910a91f52147b8631b7e880509996e}{Process\+Wrap}}.
+
+\mbox{\Hypertarget{class_fec_wrap_a50575c4f361b71e6de2e8c1073b4a26a}\label{class_fec_wrap_a50575c4f361b71e6de2e8c1073b4a26a}} 
+\index{Fec\+Wrap@{Fec\+Wrap}!Pos\+Map@{Pos\+Map}}
+\index{Pos\+Map@{Pos\+Map}!Fec\+Wrap@{Fec\+Wrap}}
+\subsubsection{\texorpdfstring{Pos\+Map()}{PosMap()}}
+{\footnotesize\ttfamily B\+O\+OL Fec\+Wrap\+::\+Pos\+Map (\begin{DoxyParamCaption}\item[{int}]{u,  }\item[{int}]{v,  }\item[{float \&}]{x,  }\item[{float \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Position mapping from processed image to original image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em u} & \mbox{[}0$\sim$sz\+Output.cx) in rocessed image \\
+\hline
+\mbox{\tt in}  & {\em v} & \mbox{[}0$\sim$sz\+Output.cy) in rocessed image \\
+\hline
+\mbox{\tt out}  & {\em x} & \mbox{[}0$\sim$sz\+Input.cx) in rocessed image \\
+\hline
+\mbox{\tt out}  & {\em y} & \mbox{[}0$\sim$sz\+Input.cy) in rocessed image \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_process_wrap_a536c940a16b6331109aa5d30763974fe}{Process\+Wrap}}.
+
+\mbox{\Hypertarget{class_fec_wrap_abd377e205b42ec6725293c3c9ff76a34}\label{class_fec_wrap_abd377e205b42ec6725293c3c9ff76a34}} 
+\index{Fec\+Wrap@{Fec\+Wrap}!Save\+Parameter@{Save\+Parameter}}
+\index{Save\+Parameter@{Save\+Parameter}!Fec\+Wrap@{Fec\+Wrap}}
+\subsubsection{\texorpdfstring{Save\+Parameter()}{SaveParameter()}}
+{\footnotesize\ttfamily B\+O\+OL Fec\+Wrap\+::\+Save\+Parameter (\begin{DoxyParamCaption}\item[{L\+P\+C\+T\+S\+TR}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Save process specified parameters in a file. The format of data can be defined dependently in this function. 
+
+Implements \mbox{\hyperlink{class_process_wrap_aa5d4361a42a7a65cac877beb6d4ffa97}{Process\+Wrap}}.
+
+\mbox{\Hypertarget{class_fec_wrap_a989dbae7d3f292f4e686eee8f19a1ad7}\label{class_fec_wrap_a989dbae7d3f292f4e686eee8f19a1ad7}} 
+\index{Fec\+Wrap@{Fec\+Wrap}!Set\+Param@{Set\+Param}}
+\index{Set\+Param@{Set\+Param}!Fec\+Wrap@{Fec\+Wrap}}
+\subsubsection{\texorpdfstring{Set\+Param()}{SetParam()}}
+{\footnotesize\ttfamily void Fec\+Wrap\+::\+Set\+Param (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets F\+EC processing prameters, which is copied to class members and generate the L\+UT data. 
+\begin{DoxyParams}{Parameters}
+{\em p\+Param} & pointer to Fec\+Param. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_process_wrap_a6c7130837d4713b0462f42cfc25aca98}{Process\+Wrap}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_fec_tool_8h}{Fec\+Tool.\+h}}\item 
+i\+Optics/Fec\+Tool.\+cpp\end{DoxyCompactItemize}

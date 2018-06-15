@@ -1,0 +1,123 @@
+\hypertarget{struct___homo_param}{}\section{\+\_\+\+Homo\+Param Struct Reference}
+\label{struct___homo_param}\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+
+
+Homography Matrix parameters. Q(u,v) = \mbox{[}H\mbox{]} $\ast$ P(x,y), where P is the vector of original pixels, Q is the vector of transformed pixels.  
+
+
+
+
+{\ttfamily \#include $<$common.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\+I\+ZE \mbox{\hyperlink{struct___homo_param_ad4ae576eb7ce7447d24027227f39212e}{sz\+Input}}
+\item 
+S\+I\+ZE \mbox{\hyperlink{struct___homo_param_a2867aab6560d4a6ed0299cb425acdd75}{sz\+Output}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_a115e689b4a04a4c084199abd52ada276}{a}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_a6bf6d63208b553c9b23389b4757062ba}{b}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_a14f426f73e6461dce1be2019115601c0}{c}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_afb50d3702e446ae39dc7fe35011049f4}{d}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_ab88060be804013eb2a53a79aa567acac}{e}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_ab2ae30e36db1679302959fa47316837e}{f}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_a7707b9cdca4b270d8dfbc0c183577e2a}{g}}
+\item 
+float \mbox{\hyperlink{struct___homo_param_ae9b878884bff7393ef6b9653610c35c6}{h}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Homography Matrix parameters. Q(u,v) = \mbox{[}H\mbox{]} $\ast$ P(x,y), where P is the vector of original pixels, Q is the vector of transformed pixels. 
+
+\hypertarget{struct___homo_param_multi_row}{}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{Coefficents}\label{struct___homo_param_multi_row}\\
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Q }&\textbf{ \mbox{[}H\mbox{]} }&\textbf{ P }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Q }&\textbf{ \mbox{[}H\mbox{]} }&\textbf{ P }\\\cline{1-3}
+\endhead
+u&a,b,c&x \\\cline{1-3}
+v&d,e,f&y \\\cline{1-3}
+1&g,h,1&1 \\\cline{1-3}
+\end{longtabu}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct___homo_param_a115e689b4a04a4c084199abd52ada276}\label{struct___homo_param_a115e689b4a04a4c084199abd52ada276}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!a@{a}}
+\index{a@{a}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::a}
+
+Homography Matrix coef. h11 \mbox{\Hypertarget{struct___homo_param_a6bf6d63208b553c9b23389b4757062ba}\label{struct___homo_param_a6bf6d63208b553c9b23389b4757062ba}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!b@{b}}
+\index{b@{b}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::b}
+
+Homography Matrix coef. h12 \mbox{\Hypertarget{struct___homo_param_a14f426f73e6461dce1be2019115601c0}\label{struct___homo_param_a14f426f73e6461dce1be2019115601c0}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!c@{c}}
+\index{c@{c}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{c}{c}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::c}
+
+Homography Matrix coef. h13 \mbox{\Hypertarget{struct___homo_param_afb50d3702e446ae39dc7fe35011049f4}\label{struct___homo_param_afb50d3702e446ae39dc7fe35011049f4}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!d@{d}}
+\index{d@{d}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::d}
+
+Homography Matrix coef. h21 \mbox{\Hypertarget{struct___homo_param_ab88060be804013eb2a53a79aa567acac}\label{struct___homo_param_ab88060be804013eb2a53a79aa567acac}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!e@{e}}
+\index{e@{e}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::e}
+
+Homography Matrix coef. h22 \mbox{\Hypertarget{struct___homo_param_ab2ae30e36db1679302959fa47316837e}\label{struct___homo_param_ab2ae30e36db1679302959fa47316837e}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!f@{f}}
+\index{f@{f}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{f}{f}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::f}
+
+Homography Matrix coef. h23 \mbox{\Hypertarget{struct___homo_param_a7707b9cdca4b270d8dfbc0c183577e2a}\label{struct___homo_param_a7707b9cdca4b270d8dfbc0c183577e2a}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!g@{g}}
+\index{g@{g}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::g}
+
+Homography Matrix coef. h31 \mbox{\Hypertarget{struct___homo_param_ae9b878884bff7393ef6b9653610c35c6}\label{struct___homo_param_ae9b878884bff7393ef6b9653610c35c6}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!h@{h}}
+\index{h@{h}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily float \+\_\+\+Homo\+Param\+::h}
+
+Homography Matrix coef. h32 \mbox{\Hypertarget{struct___homo_param_ad4ae576eb7ce7447d24027227f39212e}\label{struct___homo_param_ad4ae576eb7ce7447d24027227f39212e}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!sz\+Input@{sz\+Input}}
+\index{sz\+Input@{sz\+Input}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{sz\+Input}{szInput}}
+{\footnotesize\ttfamily S\+I\+ZE \+\_\+\+Homo\+Param\+::sz\+Input}
+
+input image size \mbox{\Hypertarget{struct___homo_param_a2867aab6560d4a6ed0299cb425acdd75}\label{struct___homo_param_a2867aab6560d4a6ed0299cb425acdd75}} 
+\index{\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}!sz\+Output@{sz\+Output}}
+\index{sz\+Output@{sz\+Output}!\+\_\+\+Homo\+Param@{\+\_\+\+Homo\+Param}}
+\subsubsection{\texorpdfstring{sz\+Output}{szOutput}}
+{\footnotesize\ttfamily S\+I\+ZE \+\_\+\+Homo\+Param\+::sz\+Output}
+
+desired output image size 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{common_8h}{common.\+h}}\end{DoxyCompactItemize}

@@ -5,6 +5,8 @@
 #include "resource.h"
 
 #include "MainDoc.h"
+#include "BasicView.h"
+#include "WorkView.h"
 #include "MainView.h"
 #include "imgfile.h"
 

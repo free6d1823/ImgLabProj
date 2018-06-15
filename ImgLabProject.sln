@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImgReader", "ImgReader\ImgReader.vcproj", "{6E6DF1E6-1BE6-4EB8-8FAE-69F4600FEAF1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImgLab", "ImgLab\ImgLab.vcproj", "{6E6DF1E6-1BE6-4EB8-8FAE-69F4600FEAF1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iStitch", "iStitch\iStitch.vcproj", "{F980EB4A-79FC-41CB-ADB8-6E41D0771472}"
 EndProject

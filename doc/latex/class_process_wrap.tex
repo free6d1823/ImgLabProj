@@ -1,0 +1,202 @@
+\hypertarget{class_process_wrap}{}\section{Process\+Wrap Class Reference}
+\label{class_process_wrap}\index{Process\+Wrap@{Process\+Wrap}}
+
+
+wrap process parameters  
+
+
+
+
+{\ttfamily \#include $<$Process\+Tool.\+h$>$}
+
+Inheritance diagram for Process\+Wrap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_process_wrap}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_process_wrap_a6c7130837d4713b0462f42cfc25aca98}{Set\+Param}} (void $\ast$p\+Param)
+\item 
+virtual void \mbox{\hyperlink{class_process_wrap_a22910a91f52147b8631b7e880509996e}{Make\+Map\+Table}} ()=0
+\item 
+virtual B\+O\+OL \mbox{\hyperlink{class_process_wrap_a536c940a16b6331109aa5d30763974fe}{Pos\+Map}} (int u, int v, float \&x, float \&y)=0
+\item 
+\mbox{\hyperlink{struct___point_double}{Point\+Double}} $\ast$ \mbox{\hyperlink{class_process_wrap_a69ce0c8809b27258dd416b4a806b347d}{Get\+Lut\+Table}} ()
+\item 
+int \mbox{\hyperlink{class_process_wrap_a14eafff7a715fb84f7b3a3b2dc37bd0c}{Lut\+Columns}} ()
+\item 
+int \mbox{\hyperlink{class_process_wrap_a805d35317ea071adec5d6a4497608e43}{Lut\+Rows}} ()
+\item 
+void \mbox{\hyperlink{class_process_wrap_a8a33b5609c68b5273cddbdd28dd9881b}{Reset\+Lut\+Data}} ()
+\item 
+double \mbox{\hyperlink{class_process_wrap_a21c63fcb4fec0ca44ad0d8dcd41d1fa3}{Get\+Lut\+DataX}} (int x, int y)
+\item 
+double \mbox{\hyperlink{class_process_wrap_a644d6814dc0d8d744470d81862900ff8}{Get\+Lut\+DataY}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_process_wrap_a8e4e346bc28b54e1f789ed6c7d3cd0f4}{Set\+Lut\+DataX}} (int x, int y, double value)
+\item 
+void \mbox{\hyperlink{class_process_wrap_a86c91328a42d3a3bee76507595050fd1}{Set\+Lut\+DataY}} (int x, int y, double value)
+\item 
+virtual B\+O\+OL \mbox{\hyperlink{class_process_wrap_aa5d4361a42a7a65cac877beb6d4ffa97}{Save\+Parameter}} (L\+P\+C\+T\+S\+TR filename)=0
+\item 
+virtual B\+O\+OL \mbox{\hyperlink{class_process_wrap_a1cb75a423ff8f5ef736fc00a34792493}{Load\+Parameter}} (L\+P\+C\+T\+S\+TR filename)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_process_wrap_aa7b1b1ab80a42889823b0357de5d3c4a}{cx\+Lut}}
+\item 
+int \mbox{\hyperlink{class_process_wrap_ab18b53afcd7d7b0d941a45a9c89e177c}{cy\+Lut}}
+\item 
+\mbox{\hyperlink{struct___point_double}{Point\+Double}} $\ast$ \mbox{\hyperlink{class_process_wrap_a39358a35e911d631f6bd46f6bf815d25}{lut}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+wrap process parameters 
+
+The data of process parameters are depedent on individual process tool. Each tool will produce L\+UT data, which is maintained by this class. The \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} keeps process\textquotesingle{}s parameters and allocate memory space for L\+UT. The struct of a Process\textquotesingle{}s parameter is defined by each Process and decalred in \mbox{\hyperlink{common_8h}{common.\+h}} \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_process_view}{Process\+View}} \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_process_wrap_a21c63fcb4fec0ca44ad0d8dcd41d1fa3}\label{class_process_wrap_a21c63fcb4fec0ca44ad0d8dcd41d1fa3}} 
+\index{Process\+Wrap@{Process\+Wrap}!Get\+Lut\+DataX@{Get\+Lut\+DataX}}
+\index{Get\+Lut\+DataX@{Get\+Lut\+DataX}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Get\+Lut\+Data\+X()}{GetLutDataX()}}
+{\footnotesize\ttfamily double Process\+Wrap\+::\+Get\+Lut\+DataX (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get normalized X coordinate the L\+UT in the position (X,Y) which is on processed image \mbox{\Hypertarget{class_process_wrap_a644d6814dc0d8d744470d81862900ff8}\label{class_process_wrap_a644d6814dc0d8d744470d81862900ff8}} 
+\index{Process\+Wrap@{Process\+Wrap}!Get\+Lut\+DataY@{Get\+Lut\+DataY}}
+\index{Get\+Lut\+DataY@{Get\+Lut\+DataY}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Get\+Lut\+Data\+Y()}{GetLutDataY()}}
+{\footnotesize\ttfamily double Process\+Wrap\+::\+Get\+Lut\+DataY (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get normalized Y coordinate the L\+UT in the position (X,Y) which is on processed image \mbox{\Hypertarget{class_process_wrap_a69ce0c8809b27258dd416b4a806b347d}\label{class_process_wrap_a69ce0c8809b27258dd416b4a806b347d}} 
+\index{Process\+Wrap@{Process\+Wrap}!Get\+Lut\+Table@{Get\+Lut\+Table}}
+\index{Get\+Lut\+Table@{Get\+Lut\+Table}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Get\+Lut\+Table()}{GetLutTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___point_double}{Point\+Double}}$\ast$ Get\+Lut\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the start address of L\+UT buffer \mbox{\Hypertarget{class_process_wrap_a1cb75a423ff8f5ef736fc00a34792493}\label{class_process_wrap_a1cb75a423ff8f5ef736fc00a34792493}} 
+\index{Process\+Wrap@{Process\+Wrap}!Load\+Parameter@{Load\+Parameter}}
+\index{Load\+Parameter@{Load\+Parameter}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Load\+Parameter()}{LoadParameter()}}
+{\footnotesize\ttfamily virtual B\+O\+OL Load\+Parameter (\begin{DoxyParamCaption}\item[{L\+P\+C\+T\+S\+TR}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Read process specified parameters from a file. The format of data can be defined dependently by the correspondent \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} class. 
+
+Implemented in \mbox{\hyperlink{class_ldc_wrap_a5409cdfe65bc28ec3779f35eb3af22b4}{Ldc\+Wrap}}, \mbox{\hyperlink{class_fec_wrap_a3f55d86b6b99108b360b66d1d180a66c}{Fec\+Wrap}}, and \mbox{\hyperlink{class_homo_wrap_a5409cdfe65bc28ec3779f35eb3af22b4}{Homo\+Wrap}}.
+
+\mbox{\Hypertarget{class_process_wrap_a14eafff7a715fb84f7b3a3b2dc37bd0c}\label{class_process_wrap_a14eafff7a715fb84f7b3a3b2dc37bd0c}} 
+\index{Process\+Wrap@{Process\+Wrap}!Lut\+Columns@{Lut\+Columns}}
+\index{Lut\+Columns@{Lut\+Columns}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Lut\+Columns()}{LutColumns()}}
+{\footnotesize\ttfamily int Lut\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the numbers of column of the L\+UT, including bondary \mbox{\Hypertarget{class_process_wrap_a805d35317ea071adec5d6a4497608e43}\label{class_process_wrap_a805d35317ea071adec5d6a4497608e43}} 
+\index{Process\+Wrap@{Process\+Wrap}!Lut\+Rows@{Lut\+Rows}}
+\index{Lut\+Rows@{Lut\+Rows}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Lut\+Rows()}{LutRows()}}
+{\footnotesize\ttfamily int Lut\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the numbers of rows of the L\+UT, including bondary \mbox{\Hypertarget{class_process_wrap_a22910a91f52147b8631b7e880509996e}\label{class_process_wrap_a22910a91f52147b8631b7e880509996e}} 
+\index{Process\+Wrap@{Process\+Wrap}!Make\+Map\+Table@{Make\+Map\+Table}}
+\index{Make\+Map\+Table@{Make\+Map\+Table}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Make\+Map\+Table()}{MakeMapTable()}}
+{\footnotesize\ttfamily virtual void Process\+Wrap\+::\+Make\+Map\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create the L\+UT data according its processing parameters 
+
+Implemented in \mbox{\hyperlink{class_fec_wrap_ac1c213fd03716ce0bb6430e2d2bf7962}{Fec\+Wrap}}, \mbox{\hyperlink{class_ldc_wrap_a0c6a77b5857bf0bc57c935b8612df9ad}{Ldc\+Wrap}}, and \mbox{\hyperlink{class_homo_wrap_a04c5506434d9afe322bfd6c08c51868f}{Homo\+Wrap}}.
+
+\mbox{\Hypertarget{class_process_wrap_a536c940a16b6331109aa5d30763974fe}\label{class_process_wrap_a536c940a16b6331109aa5d30763974fe}} 
+\index{Process\+Wrap@{Process\+Wrap}!Pos\+Map@{Pos\+Map}}
+\index{Pos\+Map@{Pos\+Map}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Pos\+Map()}{PosMap()}}
+{\footnotesize\ttfamily virtual B\+O\+OL Process\+Wrap\+::\+Pos\+Map (\begin{DoxyParamCaption}\item[{int}]{u,  }\item[{int}]{v,  }\item[{float \&}]{x,  }\item[{float \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Position mapping from processed image to ideal position of original image 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em u} & \mbox{[}0$\sim$sz\+Output.cx) in rocessed image \\
+\hline
+\mbox{\tt in}  & {\em v} & \mbox{[}0$\sim$sz\+Output.cy) in rocessed image \\
+\hline
+\mbox{\tt out}  & {\em x} & \mbox{[}0$\sim$sz\+Input.cx) in rocessed image \\
+\hline
+\mbox{\tt out}  & {\em y} & \mbox{[}0$\sim$sz\+Input.cy) in rocessed image \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_fec_wrap_a50575c4f361b71e6de2e8c1073b4a26a}{Fec\+Wrap}}, \mbox{\hyperlink{class_ldc_wrap_ad427e8c69a36be35bf5b95afa1d4fca3}{Ldc\+Wrap}}, and \mbox{\hyperlink{class_homo_wrap_a028ad1fea13805568dbe891f51dec7b2}{Homo\+Wrap}}.
+
+\mbox{\Hypertarget{class_process_wrap_a8a33b5609c68b5273cddbdd28dd9881b}\label{class_process_wrap_a8a33b5609c68b5273cddbdd28dd9881b}} 
+\index{Process\+Wrap@{Process\+Wrap}!Reset\+Lut\+Data@{Reset\+Lut\+Data}}
+\index{Reset\+Lut\+Data@{Reset\+Lut\+Data}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Reset\+Lut\+Data()}{ResetLutData()}}
+{\footnotesize\ttfamily void Reset\+Lut\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cleans the L\+UT buffer \mbox{\Hypertarget{class_process_wrap_aa5d4361a42a7a65cac877beb6d4ffa97}\label{class_process_wrap_aa5d4361a42a7a65cac877beb6d4ffa97}} 
+\index{Process\+Wrap@{Process\+Wrap}!Save\+Parameter@{Save\+Parameter}}
+\index{Save\+Parameter@{Save\+Parameter}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Save\+Parameter()}{SaveParameter()}}
+{\footnotesize\ttfamily virtual B\+O\+OL Save\+Parameter (\begin{DoxyParamCaption}\item[{L\+P\+C\+T\+S\+TR}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Save process specified parameters in a file. The format of data can be defined dependently in this function. 
+
+Implemented in \mbox{\hyperlink{class_fec_wrap_abd377e205b42ec6725293c3c9ff76a34}{Fec\+Wrap}}, \mbox{\hyperlink{class_ldc_wrap_aafd5595ef17a6be3074186204c39a550}{Ldc\+Wrap}}, and \mbox{\hyperlink{class_homo_wrap_aafd5595ef17a6be3074186204c39a550}{Homo\+Wrap}}.
+
+\mbox{\Hypertarget{class_process_wrap_a8e4e346bc28b54e1f789ed6c7d3cd0f4}\label{class_process_wrap_a8e4e346bc28b54e1f789ed6c7d3cd0f4}} 
+\index{Process\+Wrap@{Process\+Wrap}!Set\+Lut\+DataX@{Set\+Lut\+DataX}}
+\index{Set\+Lut\+DataX@{Set\+Lut\+DataX}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Set\+Lut\+Data\+X()}{SetLutDataX()}}
+{\footnotesize\ttfamily void Process\+Wrap\+::\+Set\+Lut\+DataX (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set normalized X coordinate the L\+UT in the position (X,Y) which is on processed image \mbox{\Hypertarget{class_process_wrap_a86c91328a42d3a3bee76507595050fd1}\label{class_process_wrap_a86c91328a42d3a3bee76507595050fd1}} 
+\index{Process\+Wrap@{Process\+Wrap}!Set\+Lut\+DataY@{Set\+Lut\+DataY}}
+\index{Set\+Lut\+DataY@{Set\+Lut\+DataY}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Set\+Lut\+Data\+Y()}{SetLutDataY()}}
+{\footnotesize\ttfamily void Process\+Wrap\+::\+Set\+Lut\+DataY (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set normalized Y coordinate the L\+UT in the position (X,Y) which is on processed image \mbox{\Hypertarget{class_process_wrap_a6c7130837d4713b0462f42cfc25aca98}\label{class_process_wrap_a6c7130837d4713b0462f42cfc25aca98}} 
+\index{Process\+Wrap@{Process\+Wrap}!Set\+Param@{Set\+Param}}
+\index{Set\+Param@{Set\+Param}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{Set\+Param()}{SetParam()}}
+{\footnotesize\ttfamily virtual void Set\+Param (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets processing prameters, defined in its derived class, into the capasolutor 
+
+Reimplemented in \mbox{\hyperlink{class_fec_wrap_a989dbae7d3f292f4e686eee8f19a1ad7}{Fec\+Wrap}}, \mbox{\hyperlink{class_ldc_wrap_a0e99416d80b36d5da0faaa5a11da9ee7}{Ldc\+Wrap}}, and \mbox{\hyperlink{class_homo_wrap_aecc7d5180e979679ad9e41ceaa846d05}{Homo\+Wrap}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_process_wrap_aa7b1b1ab80a42889823b0357de5d3c4a}\label{class_process_wrap_aa7b1b1ab80a42889823b0357de5d3c4a}} 
+\index{Process\+Wrap@{Process\+Wrap}!cx\+Lut@{cx\+Lut}}
+\index{cx\+Lut@{cx\+Lut}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{cx\+Lut}{cxLut}}
+{\footnotesize\ttfamily int Process\+Wrap\+::cx\+Lut\hspace{0.3cm}{\ttfamily [protected]}}
+
+numbers of column of the L\+UT \mbox{\Hypertarget{class_process_wrap_ab18b53afcd7d7b0d941a45a9c89e177c}\label{class_process_wrap_ab18b53afcd7d7b0d941a45a9c89e177c}} 
+\index{Process\+Wrap@{Process\+Wrap}!cy\+Lut@{cy\+Lut}}
+\index{cy\+Lut@{cy\+Lut}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{cy\+Lut}{cyLut}}
+{\footnotesize\ttfamily int Process\+Wrap\+::cy\+Lut\hspace{0.3cm}{\ttfamily [protected]}}
+
+numbers of row of the L\+UT \mbox{\Hypertarget{class_process_wrap_a39358a35e911d631f6bd46f6bf815d25}\label{class_process_wrap_a39358a35e911d631f6bd46f6bf815d25}} 
+\index{Process\+Wrap@{Process\+Wrap}!lut@{lut}}
+\index{lut@{lut}!Process\+Wrap@{Process\+Wrap}}
+\subsubsection{\texorpdfstring{lut}{lut}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___point_double}{Point\+Double}}$\ast$ Process\+Wrap\+::lut\hspace{0.3cm}{\ttfamily [protected]}}
+
+stat address of the L\+UT 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_process_tool_8h}{Process\+Tool.\+h}}\item 
+i\+Optics/Process\+Tool.\+cpp\end{DoxyCompactItemize}

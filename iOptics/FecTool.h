@@ -64,7 +64,7 @@ class FecTool : public ProcessTool
 	DECLARE_DYNAMIC(FecTool)
 
 public:
-	FecTool(CWnd* pParent = NULL); 
+	FecTool(WorkView* pParent); 
 	virtual ~FecTool();
 
 	virtual void SetParam(ProcessWrap* pParam);
@@ -76,6 +76,7 @@ public:
 
 protected:
 	void UpdateData(BOOL bSaveAndValidate = TRUE);
+	BOOL CheckParameters(FecParam* pParam);
 	
 	DECLARE_MESSAGE_MAP()
 public:
@@ -83,10 +84,12 @@ public:
 	afx_msg void OnDeltaposCenterYSpin(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnDeltaposRadiusXSpin(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnDeltaposRadiusYSpin(NMHDR *pNMHDR, LRESULT *pResult);
-	afx_msg void OnDeltaposCurveHSpin(NMHDR *pNMHDR, LRESULT *pResult);
-	afx_msg void OnDeltaposCurveVSpin(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnDeltaposPitchSpin(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnDeltaposYawSpin(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnDeltaposRollSpin(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnDeltaposSpin1(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnDeltaposSpin2(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnDeltaposSpin3(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnDeltaposSpin4(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedOk();
 };

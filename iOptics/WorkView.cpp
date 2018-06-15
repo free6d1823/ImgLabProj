@@ -3,8 +3,10 @@
 
 #include "stdafx.h"
 #include "resource.h"
-#include "MainView.h"
+#include "MainDoc.h"
+#include "BasicView.h"
 #include "WorkView.h"
+#include "MainView.h"
 #include "LdcView.h"
 #include "FecView.h"
 
@@ -68,6 +70,8 @@ BEGIN_MESSAGE_MAP(WorkView, CWnd)
 		ON_UPDATE_COMMAND_UI(ID_PROCESS_FEC, &WorkView::OnUpdateProcessFec)
 		ON_COMMAND(ID_PROCESS_LDC, &WorkView::OnProcessLdc)
 		ON_UPDATE_COMMAND_UI(ID_PROCESS_LDC, &WorkView::OnUpdateProcessLdc)
+		ON_COMMAND(ID_PROCESS_HOMO, &WorkView::OnProcessHomo)
+		ON_UPDATE_COMMAND_UI(ID_PROCESS_HOMO, &WorkView::OnUpdateProcessHomo)
 		ON_COMMAND(ID_PROCESS_EXIT, &WorkView::OnProcessExit)
 		ON_COMMAND(ID_PROCESS_PREVIEW, &WorkView::OnProcessPreview)
 		ON_COMMAND(ID_TOOLBOX_APPLY, &WorkView::OnToolboxApply)
@@ -75,9 +79,6 @@ BEGIN_MESSAGE_MAP(WorkView, CWnd)
 		ON_COMMAND_RANGE(ID_TOOLBOX_BASE, ID_TOOLBOX_LAST,  OnCommandToolbox) 
 		ON_WM_DESTROY()
 END_MESSAGE_MAP()
-
-
-
 
 // WorkView message handlers
 BOOL	WorkView::Create(CWnd* pParent)
@@ -293,6 +294,9 @@ void WorkView::OnMouseMove(UINT nFlags, CPoint point)
 	m_ptCursorPos.x = (ptCan.x - m_rcImage.left)* 100 / ZOOM_FACTOR[m_nZoomFactor];
 	m_ptCursorPos.y = (ptCan.y - m_rcImage.top)* 100 / ZOOM_FACTOR[m_nZoomFactor];
 
+	if(m_pToolGride) {
+		m_pToolGride->OnMouseMove(this, m_ptCursorPos);
+	}
 	if(m_bShowMesh) {
 		m_mesh.OnMouseMove(this, ptCan);
 	}
@@ -309,13 +313,21 @@ void WorkView::OnLButtonDown(UINT nFlags, CPoint point)
 	if(m_bShowMesh) {
 		m_mesh.OnLButtonDown(this, ptCan);
 	}
-
+	if(m_pToolGride) {
+		m_pToolGride->OnLButtonDown(this, m_ptCursorPos);
+	}
 	CWnd::OnLButtonDown(nFlags, point);
 }
 
 void WorkView::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	m_mesh.OnLButtonUp(this, point);
+	POINT ptCan;
+	ptCan.x = (point.x + m_rcPort.left);
+	ptCan.y = (point.y + m_rcPort.top);
+	if(m_pToolGride) {
+		m_pToolGride->OnLButtonUp(this, m_ptCursorPos);
+	}
+	m_mesh.OnLButtonUp(this, ptCan);
 	CWnd::OnLButtonUp(nFlags, point);
 }
 
@@ -358,13 +370,7 @@ void WorkView::OnProcessFec()
 		m_pProcessTool =  ProcessTool::CreateProcessTool(this, IDD_FEC, GetImage());
 		//create 
 	}
-	if(!m_pToolGride) {
-		m_pToolGride = (Gride*) new FecGride(RGB(0,0,255));
-		m_pToolGride->SetParam(m_pProcessTool->GetParam());
-		m_pToolGride->SetImageArea(m_rcImage);
-		m_pToolGride->SetViewPort(m_rcPort);
-		InvalidateRect(NULL, FALSE);
-	}
+	
 	m_pProcessTool->ShowWindow(SW_SHOW);
 }
 
@@ -378,6 +384,60 @@ void WorkView::OnUpdateProcessFec(CCmdUI *pCmdUI)
 		pCmdUI->Enable(FALSE);
 	}
 }
+
+
+void WorkView::OnProcessHomo()
+{
+	if(m_pProcessTool && m_pProcessTool->GetProcessToolID() != IDD_HOMO) {
+		if (m_pProcessTool) {
+			m_pProcessTool->DestroyWindow();
+			m_pProcessTool = NULL;
+
+			if(m_pToolGride) {
+				delete m_pToolGride;
+				m_pToolGride = NULL;
+			}
+		} 
+	}
+	if(!m_pProcessTool) {
+		m_pProcessTool =  ProcessTool::CreateProcessTool(this, IDD_HOMO, GetImage());
+	}
+
+	m_pProcessTool->ShowWindow(SW_SHOW);
+
+	if(!m_pToolGride) {
+		m_pToolGride = (ToolGride*) new HomoGride(this);
+		m_pToolGride->SetParam(m_pProcessTool->GetParam());
+		m_pToolGride->SetImageArea(m_rcImage);
+		m_pToolGride->SetViewPort(m_rcPort);
+		InvalidateRect(NULL, FALSE);
+	}
+}
+/*!< Set current tool settings to WorkView. The content is defined dependently by current ProcessTool */
+void	WorkView::SetToolParam(void* pParam)
+{
+	if(m_pToolGride){
+			m_pToolGride->SetParam(pParam);
+	}
+}
+/*!< Get current tool settings on WorkView. The content is defined dependently by current ProcessTool */
+void	WorkView::GetToolParam(void* pParam)
+{
+	if(m_pToolGride){
+			m_pToolGride->GetParam(pParam);
+	}
+}
+void WorkView::OnUpdateProcessHomo(CCmdUI *pCmdUI)
+{
+	if ( GetImage()){
+		pCmdUI->Enable(TRUE);
+		if(m_pProcessTool) 
+			pCmdUI->SetRadio(m_pProcessTool->GetProcessToolID() == IDD_HOMO);
+	} else {
+		pCmdUI->Enable(FALSE);
+	}
+}
+
 void WorkView::OnProcessExit()
 {
 	if(m_pProcessTool) 

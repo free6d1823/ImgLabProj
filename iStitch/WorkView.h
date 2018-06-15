@@ -1,14 +1,25 @@
+/****************************************************************************
+ * Copyright (C) 2018 nFore Technology Co. Inc.,                                                                              *
+ *                                                                                                                                                                       *
+ ****************************************************************************/
+/**
+ * \file WorkView.h : interface of the WorkView class
+ */
+
 #pragma once
 
 #include "Gride.h"
 #include "ControlBar.h"
 
-#define MAX_ZOOM		10
-#define DEFAULT_ZOOM_FACTOR  	5
+#define MAX_ZOOM		18
+
 
 class CMainView;
 class CMainDoc;
-
+/**
+ * \class WorkView 
+ * \brief WorkView is a workspace for operating stitching and viewing images
+  */
 class WorkView : public CWnd
 {
 		DECLARE_DYNAMIC(WorkView)
@@ -32,23 +43,22 @@ virtual void OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint);
 protected:
 	CMainView* m_parent;
 //convert image size to Scren coord
-	void DocToViewPort(SIZE& size);
-	void DocToViewPort(RECT& rect);
-	void ViewPortToDoc(SIZE& size);
-	void ViewPortToDoc(RECT& rect);
+	void DocToViewPort(SIZE& size); /*!<convert position on original to zoomed, related to m_szWorkspace*/
+	void DocToViewPort(RECT& rect);  /*!<convert position on original to zoomed, related to m_szWorkspace*/
+	void ViewPortToDoc(SIZE& size); /*!<convert position on zoomed workspace to original doc*/
+	void ViewPortToDoc(RECT& rect);/*!<convert position on zoomed workspace to original doc*/
+	void CalculateRects();		/*!<recalculate m_szWorkspace, m_rcCanvas, m_rcPort, scrollbar position, when Window size changed, image changed*/
 
-	ControlBar		m_ControlBar;
+	ControlBar		m_ControlBar;		/*!<The stitching controller*/
 	static int ZOOM_FACTOR[MAX_ZOOM];
-	CPoint	m_ptCursorPos;//current cursor position on original image
-	void CalculateRects();
-	BOOL			m_bShowGride;
+	CPoint	m_ptCursorPos;/*!<current cursor position on original image*/
+	BOOL			m_bShowGride;		/*!< TRUE to display gride */
 	Gride			m_gride;
 	int m_nZoomFactor;
-	CRect	m_rcPort;			//顯示試窗對應到Workspace的作標, top-left is scroll poition
-											//Shif t 到top-left 即為client Window 
-	CSize	m_szWorkspace;	//size of total area, the scroll area
-	CRect	m_rcCanvas;		//canvas location, related to Workspace
-	int				m_nCurrentSelectedImage;
+	CRect	m_rcPort;			/*!< the display area of window (client area of WorkView) mapped to workspace. top-left is the scroll poition on window 	*/
+	CSize	m_szWorkspace;	/*!<  size of total area, including border (gray ) */
+	CRect	m_rcCanvas;			/*!< The zoomed canvas area on Workspace */
+	int				m_nCurrentSelectedImage; /*!< Current image id under controlling */
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnSize(UINT nType, int cx, int cy);

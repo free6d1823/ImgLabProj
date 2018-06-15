@@ -1,5 +1,6 @@
 <map id="WorkView" name="WorkView">
-<area shape="rect" id="node6" href="$class_control_bar.html" title="ControlBar" alt="" coords="41,260,124,287"/>
-<area shape="rect" id="node3" href="$class_c_main_view.html" title="CMainView" alt="" coords="115,81,202,108"/>
-<area shape="rect" id="node5" href="$class_gride.html" title="Gride" alt="" coords="227,81,280,108"/>
+<area shape="rect" id="node7" href="$class_control_bar.html" title="ControlBar" alt="" coords="41,273,124,300"/>
+<area shape="rect" id="node3" href="$class_c_main_view.html" title="CMainView" alt="" coords="115,95,202,121"/>
+<area shape="rect" id="node5" href="$class_gride.html" title="Gride" alt="" coords="231,95,284,121"/>
+<area shape="rect" id="node6" href="$struct___gride_param.html" title="_GrideParam" alt="" coords="209,5,308,32"/>
 </map>

@@ -24,6 +24,7 @@ This application is designed as a lens correction tool.
 		
 		CMainDoc -> ImgFile [ arrowhead="open", style="dashed", label="m_pImg" ];		   
 		CMainView -> WorkView [ arrowhead="open", style="solid", label = "m_view" ];	
+		CMainView -> CMainDoc [ arrowhead="open", style="dashed", label = "m_pDocument" ];	
 		WorkView -> ProcessTool [color="midnightblue",fontsize="10",style="dashed", label="m_pProcessTool"];	
 
 		CStatusBar [ label="CStatusBar", fillcolor="grey75", style="filled"];

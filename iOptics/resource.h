@@ -2,6 +2,12 @@
 // Microsoft Visual C++ generated include file.
 // Used by iOptics.rc
 //
+#define ID_UPDATE                       3
+#define ID_SET_P                        4
+#define ID_SET_Q                        5
+#define ID_GET_P                        6
+#define ID_GET_Q                        7
+#define IDD_HOMO                        9
 #define IDD_ABOUTBOX                    100
 #define IDB_TOOLBOX                     106
 #define ID_TOOLBOX                      106
@@ -12,11 +18,11 @@
 #define ID_TOOLBOX_BASE                 601
 #define ID_TOOLBOX_FEC                  601
 #define ID_TOOLBOX_LDC                  602
-#define ID_TOOLBOX_3                    603
+#define ID_TOOLBOX_HOMO                 603
 #define ID_TOOLBOX_4                    604
 #define ID_TOOLBOX_5                    605
 #define ID_TOOLBOX_6                    606
-#define ID_TOOLBOX_7                    607
+#define ID_TOOLBOX_MEASURE              607
 #define ID_TOOLBOX_TOOGLE               611
 #define ID_TOOLBOX_APPLY                612
 #define ID_TOOLBOX_ZOOMIN               613
@@ -44,12 +50,43 @@
 #define IDC_RADIO2                      1017
 #define IDC_RADIO3                      1018
 #define IDC_RADIO4                      1019
-#define IDC_CURVE_H                     1021
-#define IDC_CURVEH_SPIN                 1022
-#define IDC_CURVE_V                     1023
-#define IDC_CURVEV_SPIN                 1024
-#define IDC_OUT_CX                      1028
-#define IDC_OUT_CY                      1029
+#define IDC_RADICAL_1                   1021
+#define IDC_RADICAL1_SPIN               1022
+#define IDC_RADICAL_2                   1023
+#define IDC_RADICAL2_SPIN               1024
+#define IDC_FOV                       1025
+#define IDC_FOV_SPIN                  1026
+#define IDC_ASPECT                       1027
+#define IDC_ASPECT_SPIN                  1028
+#define IDC_IN_CX                       1030
+#define IDC_IN_CY                       1031
+#define IDC_OUT_CX                      1032
+#define IDC_OUT_CY                      1033
+#define IDC_U0                          1034
+#define IDC_U1                          1035
+#define IDC_U2                          1036
+#define IDC_U3                          1037
+#define IDC_V0                          1038
+#define IDC_V1                          1039
+#define IDC_V2                          1040
+#define IDC_V3                          1041
+#define IDC_X0                          1042
+#define IDC_X1                          1043
+#define IDC_X2                          1044
+#define IDC_X3                          1045
+#define IDC_Y0                          1046
+#define IDC_Y1                          1047
+#define IDC_Y2                          1048
+#define IDC_Y3                          1049
+#define IDC_H00                         1050
+#define IDC_H01                         1051
+#define IDC_H02                         1052
+#define IDC_H10                         1053
+#define IDC_H11                         1054
+#define IDC_H12                         1055
+#define IDC_H20                         1056
+#define IDC_H21                         1057
+#define IDC_H22                         1058
 #define ID_Menu                         3277
 #define ID_VIEW_ZOOMIN                  32771
 #define ID_VIEW_ZOOMOUT                 32772
@@ -59,7 +96,7 @@
 #define ID_VIEW_Mesh                    32776
 #define ID_PROCESS_FEC                  32780
 #define ID_PROCESS_LDC                  32781
-#define ID_PROCESS_3                    32782
+#define ID_PROCESS_HOMO                 32782
 #define ID_PROCESS_4                    32784
 #define ID_PROCESS_5                    32785
 #define ID_PROCESS_6                    32786
@@ -79,9 +116,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        135
-#define _APS_NEXT_COMMAND_VALUE         32810
-#define _APS_NEXT_CONTROL_VALUE         1030
+#define _APS_NEXT_RESOURCE_VALUE        136
+#define _APS_NEXT_COMMAND_VALUE         32811
+#define _APS_NEXT_CONTROL_VALUE         1059
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

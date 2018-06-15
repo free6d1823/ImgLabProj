@@ -1,0 +1,56 @@
+\hypertarget{class_fec_view}{}\section{Fec\+View Class Reference}
+\label{class_fec_view}\index{Fec\+View@{Fec\+View}}
+
+
+\mbox{\hyperlink{class_fec_view}{Fec\+View}} is the image viewer for F\+EC processing image. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_fec_tool}{Fec\+Tool}}. It also can display gride lines on the image window.  
+
+
+
+
+{\ttfamily \#include $<$Fec\+View.\+h$>$}
+
+Inheritance diagram for Fec\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_fec_view}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fec_view_a8d9efd2c95cbd8807518735d46ae4eee}\label{class_fec_view_a8d9efd2c95cbd8807518735d46ae4eee}} 
+virtual void {\bfseries Set\+Param} (\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$p\+Wrapper)
+\item 
+\mbox{\Hypertarget{class_fec_view_a83ed54e633d3b45d4134dcf0d8f8941e}\label{class_fec_view_a83ed54e633d3b45d4134dcf0d8f8941e}} 
+afx\+\_\+msg void {\bfseries On\+Preview} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fec_view_afafd7be607439614e4627e085e203f04}\label{class_fec_view_afafd7be607439614e4627e085e203f04}} 
+\mbox{\hyperlink{class_fec_wrap}{Fec\+Wrap}} $\ast$ {\bfseries m\+\_\+p\+Param\+Ref}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_fec_view_a10a85bda7c6440797e16ecf9aba87233}\label{class_fec_view_a10a85bda7c6440797e16ecf9aba87233}} 
+virtual B\+O\+OL {\bfseries Pos\+Map} (int u, int v, float \&x, float \&y)
+\item 
+\mbox{\Hypertarget{class_fec_view_a15de2adcdfb141d22ff96cb6d5fdb607}\label{class_fec_view_a15de2adcdfb141d22ff96cb6d5fdb607}} 
+virtual C\+O\+L\+O\+R\+R\+EF {\bfseries Get\+Color} (B\+Y\+TE $\ast$p\+Src, int stride, float x, float y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_fec_view}{Fec\+View}} is the image viewer for F\+EC processing image. It handles the video rendering process by the specified process. It is controlled by its process correspondent \mbox{\hyperlink{class_fec_tool}{Fec\+Tool}}. It also can display gride lines on the image window. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_fec_tool}{Fec\+Tool}}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_fec_view_8h}{Fec\+View.\+h}}\item 
+i\+Optics/Fec\+View.\+cpp\end{DoxyCompactItemize}

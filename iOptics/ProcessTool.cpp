@@ -5,6 +5,7 @@
 #include "ProcessTool.h"
 #include "FecTool.h"
 #include "LdcTool.h"
+#include "HomoTool.h"
 
 #define LUT_SIZE	32+1
 ProcessWrap::ProcessWrap()
@@ -17,18 +18,20 @@ ProcessWrap::~ProcessWrap()
 
 
 
-ProcessTool* ProcessTool::CreateProcessTool(CWnd* pOwner, int nType, ImgFile* pImage)
+ProcessTool* ProcessTool::CreateProcessTool(WorkView* pOwner, int nType, ImgFile* pImage)
 {
 	ProcessTool* tool = NULL;
 	switch (nType) {
 		case IDD_FEC:
-			tool = (ProcessTool*) new FecTool();
-			tool->Create(IDD_FEC, pOwner);
+			tool = (ProcessTool*) new FecTool(pOwner);
 			tool->SetImgFile(pImage);
 			break;
 		case IDD_LDC:
-			tool = (ProcessTool*) new LdcTool();
-			tool->Create(IDD_LDC, pOwner);
+			tool = (ProcessTool*) new LdcTool(pOwner);
+			tool->SetImgFile(pImage);
+			break;
+		case IDD_HOMO:
+			tool = (ProcessTool*) new HomoTool(pOwner);
 			tool->SetImgFile(pImage);
 			break;
 		default:
@@ -51,11 +54,13 @@ ProcessTool* ProcessTool::CreateProcessTool(CWnd* pOwner, int nType, ImgFile* pI
 
 IMPLEMENT_DYNAMIC(ProcessTool, CDialog)
 
-ProcessTool::ProcessTool(UINT nIDTemplate, CWnd* pParent /*=NULL*/)
-	: CDialog(nIDTemplate, pParent)
+ProcessTool::ProcessTool(UINT nIDTemplate, WorkView* pParent)
+	: CDialog(nIDTemplate, (CWnd*)pParent)
 {
+	m_pOwner = pParent;
 	m_pBasicView = NULL;
 	m_pProcessWrap = NULL;
+	ASSERT(Create(nIDTemplate, (CWnd*)pParent));
 }
 
 ProcessTool::~ProcessTool()
@@ -120,12 +125,12 @@ BEGIN_MESSAGE_MAP(ProcessTool, CDialog)
 END_MESSAGE_MAP()
 
 
-float ProcessTool::GetDlgItemFloat(int nID)
+double ProcessTool::GetDlgItemDouble(int nID)
 {
-		float value = 0;
+		double value = 0;
 		char buff[256];
 		if(GetDlgItemText(nID, buff, sizeof(buff))) {
-				value = (float) atof(buff);
+				value = atof(buff);
 		}
 		return value;
 }
@@ -133,7 +138,13 @@ float ProcessTool::GetDlgItemFloat(int nID)
 void ProcessTool::SetDlgItemFloat(int nID, float fValue)
 {
 		char buff[256];
-		sprintf_s(buff, sizeof(buff), "%6.2f", fValue);
+		sprintf_s(buff, sizeof(buff), "%7.2f", fValue);
+		SetDlgItemText(nID, buff);
+}
+void ProcessTool::SetDlgItemDouble(int nID, double dValue)
+{
+		char buff[256];
+		sprintf_s(buff, sizeof(buff), "%8.3f", dValue);
 		SetDlgItemText(nID, buff);
 }
 void ProcessTool::OnBnClickedCancel()
@@ -164,11 +175,11 @@ void ProcessTool::OnUpdateToolbox(CCmdUI *pCmdUI)
 				pCmdUI->SetText("FEC"); break;
 		case ID_TOOLBOX_LDC:
 				pCmdUI->SetText("LDC"); break;
-		case ID_TOOLBOX_3:
+		case ID_TOOLBOX_HOMO:
+				pCmdUI->SetText("Perspective Transformation"); break;
 		case ID_TOOLBOX_4:
 		case ID_TOOLBOX_5:
 		case ID_TOOLBOX_6:
-		case ID_TOOLBOX_7:
 				pCmdUI->SetText("TBD"); break;
 		default:
 			if(m_pBasicView)
@@ -197,19 +208,17 @@ void ProcessTool::OnCommandToolbox(UINT nCmd)
 			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_FEC,0);break;
 		case ID_TOOLBOX_LDC:
 			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_LDC,0);break;
-		case ID_TOOLBOX_3:
-			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_3,0);break;
+		case ID_TOOLBOX_HOMO:
+			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_HOMO,0);break;
 		case ID_TOOLBOX_4:
 			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_4,0);break;
 		case ID_TOOLBOX_5:
 			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_5,0);break;
 		case ID_TOOLBOX_6:
 			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_6,0);break;
-		case ID_TOOLBOX_7:
-			GetParent()->SendMessage(WM_COMMAND, ID_PROCESS_7,0);break;
 			break;
 		default:
-			//process ID_TOOLBOX_ZOOMIN, ID_TOOLBOX_ZOOMOUT, ID_TOOLBOX_GRIDE
+			//process ID_TOOLBOX_ZOOMIN, ID_TOOLBOX_ZOOMOUT, ID_TOOLBOX_GRIDE, ID_TOOLBOX_MEASURE
 			if(m_pBasicView)
 					m_pBasicView->OnCommandToolbox(nCmd);
 		break;

@@ -1,0 +1,184 @@
+\hypertarget{class_process_tool}{}\section{Process\+Tool Class Reference}
+\label{class_process_tool}\index{Process\+Tool@{Process\+Tool}}
+
+
+\mbox{\hyperlink{class_process_tool}{Process\+Tool}} is the abstract class which is used to control the settings of a process with UI in a dialog box. A \mbox{\hyperlink{class_process_tool}{Process\+Tool}} class consistent of a \mbox{\hyperlink{class_process_view}{Process\+View}} member to display the processed image and a \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} class member to aintain the process related parameters and L\+UT data. \mbox{\hyperlink{class_process_tool}{Process\+Tool}} is the bridge class between \mbox{\hyperlink{class_work_view}{Work\+View}} and the Process. The application use \mbox{\hyperlink{class_process_tool}{Process\+Tool}} to access the specified process stuff.  
+
+
+
+
+{\ttfamily \#include $<$Process\+Tool.\+h$>$}
+
+Inheritance diagram for Process\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_process_tool}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_process_tool_a476140737a8e6c273f9297bd384f8cae}\label{class_process_tool_a476140737a8e6c273f9297bd384f8cae}} 
+enum \{ {\bfseries I\+DD} = 0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_process_tool}{Process\+Tool}} $\ast$ \mbox{\hyperlink{class_process_tool_a58b14d09ecf71dc46c978dc1afb56967}{Create\+Process\+Tool}} (C\+Wnd $\ast$p\+Owner, int n\+Type, Img\+File $\ast$p\+Image)
+\item 
+int \mbox{\hyperlink{class_process_tool_ab0e7d3a46484506a517325b938d537a0}{Get\+Process\+Tool\+ID}} ()
+\item 
+\mbox{\Hypertarget{class_process_tool_a52953e59d84e5e8178dbe7ed38fcec6c}\label{class_process_tool_a52953e59d84e5e8178dbe7ed38fcec6c}} 
+{\bfseries Process\+Tool} (U\+I\+NT n\+I\+D\+Template, C\+Wnd $\ast$p\+Parent=N\+U\+LL)
+\item 
+virtual void \mbox{\hyperlink{class_process_tool_a50caa175198cece00b39a146715bf3eb}{Set\+Param}} (\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$p\+Param)
+\item 
+virtual \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$ \mbox{\hyperlink{class_process_tool_a355ebcf991f86f59f4241ea4345547fc}{Get\+Param}} ()
+\item 
+virtual void \mbox{\hyperlink{class_process_tool_a178bc06abf5a20220bd2306a14708a93}{Set\+Img\+File}} (Img\+File $\ast$p\+Image)
+\item 
+virtual Img\+File $\ast$ \mbox{\hyperlink{class_process_tool_abe1cbbab6613f24a752113a3ec4faaa8}{Get\+Img\+File}} ()
+\item 
+\mbox{\Hypertarget{class_process_tool_a644f45cdf995090c61975f6fa345333f}\label{class_process_tool_a644f45cdf995090c61975f6fa345333f}} 
+afx\+\_\+msg void {\bfseries On\+Bn\+Clicked\+Cancel} ()
+\item 
+\mbox{\Hypertarget{class_process_tool_af707c18c69b52e97ea32b879c4fdc440}\label{class_process_tool_af707c18c69b52e97ea32b879c4fdc440}} 
+afx\+\_\+msg void {\bfseries On\+Bn\+Clicked\+Ok} ()
+\item 
+\mbox{\Hypertarget{class_process_tool_a639a520f4af641c5253c6655c6b499c6}\label{class_process_tool_a639a520f4af641c5253c6655c6b499c6}} 
+afx\+\_\+msg void {\bfseries On\+Update\+Toolbox} (C\+Cmd\+UI $\ast$p\+Cmd\+UI)
+\item 
+\mbox{\Hypertarget{class_process_tool_a1f856d66a4dd11a9ddd215a971866306}\label{class_process_tool_a1f856d66a4dd11a9ddd215a971866306}} 
+afx\+\_\+msg void {\bfseries On\+Command\+Toolbox} (U\+I\+NT n\+Cmd)
+\item 
+\mbox{\Hypertarget{class_process_tool_a4aba1cb35feb212ea5771ad59e7e8427}\label{class_process_tool_a4aba1cb35feb212ea5771ad59e7e8427}} 
+afx\+\_\+msg void {\bfseries On\+Destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_process_tool_a593e262bfa4f97671d404f17dc173a3a}\label{class_process_tool_a593e262bfa4f97671d404f17dc173a3a}} 
+float {\bfseries Get\+Dlg\+Item\+Float} (int n\+ID)
+\item 
+\mbox{\Hypertarget{class_process_tool_acff1c8e2b44509bc0ab9ae4e51e61ddc}\label{class_process_tool_acff1c8e2b44509bc0ab9ae4e51e61ddc}} 
+void {\bfseries Set\+Dlg\+Item\+Float} (int n\+ID, float f\+Value)
+\item 
+\mbox{\Hypertarget{class_process_tool_acf5cdf0b306dcf0a9bda434cb4098120}\label{class_process_tool_acf5cdf0b306dcf0a9bda434cb4098120}} 
+virtual void {\bfseries Update\+Data} (B\+O\+OL b\+Save\+And\+Validate=T\+R\+UE)
+\item 
+\mbox{\Hypertarget{class_process_tool_ae1d455b1be56263db97e2cbb0e047d0a}\label{class_process_tool_ae1d455b1be56263db97e2cbb0e047d0a}} 
+virtual void {\bfseries Post\+Nc\+Destroy} ()
+\item 
+void \mbox{\hyperlink{class_process_tool_aff87d429b43cdb20405a5036ec0a4d66}{On\+Save\+Parameter}} ()
+\item 
+void \mbox{\hyperlink{class_process_tool_a06656026e81c2da884f1130804aac780}{On\+Load\+Parameter}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$ \mbox{\hyperlink{class_process_tool_ae19c0d700f0a30bb0ca9d18e5397a562}{m\+\_\+p\+Process\+Wrap}}
+\item 
+\mbox{\hyperlink{class_process_view}{Process\+View}} $\ast$ \mbox{\hyperlink{class_process_tool_a775ff126073fabb52a8374c083058596}{m\+\_\+p\+Basic\+View}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{class_process_tool}{Process\+Tool}} is the abstract class which is used to control the settings of a process with UI in a dialog box. A \mbox{\hyperlink{class_process_tool}{Process\+Tool}} class consistent of a \mbox{\hyperlink{class_process_view}{Process\+View}} member to display the processed image and a \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} class member to aintain the process related parameters and L\+UT data. \mbox{\hyperlink{class_process_tool}{Process\+Tool}} is the bridge class between \mbox{\hyperlink{class_work_view}{Work\+View}} and the Process. The application use \mbox{\hyperlink{class_process_tool}{Process\+Tool}} to access the specified process stuff. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_process_tool_a58b14d09ecf71dc46c978dc1afb56967}\label{class_process_tool_a58b14d09ecf71dc46c978dc1afb56967}} 
+\index{Process\+Tool@{Process\+Tool}!Create\+Process\+Tool@{Create\+Process\+Tool}}
+\index{Create\+Process\+Tool@{Create\+Process\+Tool}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{Create\+Process\+Tool()}{CreateProcessTool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_process_tool}{Process\+Tool}} $\ast$ Process\+Tool\+::\+Create\+Process\+Tool (\begin{DoxyParamCaption}\item[{C\+Wnd $\ast$}]{p\+Owner,  }\item[{int}]{n\+Type,  }\item[{Img\+File $\ast$}]{p\+Image }\end{DoxyParamCaption})}
+
+Create the derrived class of the specified process typr
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Owner} & parent window of the \mbox{\hyperlink{class_process_tool}{Process\+Tool}}, the \mbox{\hyperlink{class_work_view}{Work\+View}} class \\
+\hline
+{\em n\+Type} & type of \mbox{\hyperlink{class_process_tool}{Process\+Tool}} n\+Type = I\+D\+D\+\_\+\+F\+EC F\+EC process tool n\+Type = I\+D\+D\+\_\+\+L\+DC L\+DC process tool \\
+\hline
+{\em p\+Image} & the original image to be processed from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the derrived \mbox{\hyperlink{class_process_tool}{Process\+Tool}} class pointer of the specified process. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_process_tool_abe1cbbab6613f24a752113a3ec4faaa8}\label{class_process_tool_abe1cbbab6613f24a752113a3ec4faaa8}} 
+\index{Process\+Tool@{Process\+Tool}!Get\+Img\+File@{Get\+Img\+File}}
+\index{Get\+Img\+File@{Get\+Img\+File}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Img\+File()}{GetImgFile()}}
+{\footnotesize\ttfamily Img\+File $\ast$ Process\+Tool\+::\+Get\+Img\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Gets the processed image in \mbox{\hyperlink{class_process_view}{Process\+View}} of this \mbox{\hyperlink{class_process_tool}{Process\+Tool}}. \mbox{\Hypertarget{class_process_tool_a355ebcf991f86f59f4241ea4345547fc}\label{class_process_tool_a355ebcf991f86f59f4241ea4345547fc}} 
+\index{Process\+Tool@{Process\+Tool}!Get\+Param@{Get\+Param}}
+\index{Get\+Param@{Get\+Param}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Param()}{GetParam()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}}$\ast$ Get\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} class pointer of the process tool. 
+
+Reimplemented in \mbox{\hyperlink{class_ldc_tool_af9828a2daf501b328a07dd8fa3d6abeb}{Ldc\+Tool}}, \mbox{\hyperlink{class_fec_tool_acccda5a312354ec0dcd215de8ed7ac03}{Fec\+Tool}}, and \mbox{\hyperlink{class_homo_tool_a497eb4f1812d3f38ea6657c35d64bf31}{Homo\+Tool}}.
+
+\mbox{\Hypertarget{class_process_tool_ab0e7d3a46484506a517325b938d537a0}\label{class_process_tool_ab0e7d3a46484506a517325b938d537a0}} 
+\index{Process\+Tool@{Process\+Tool}!Get\+Process\+Tool\+ID@{Get\+Process\+Tool\+ID}}
+\index{Get\+Process\+Tool\+ID@{Get\+Process\+Tool\+ID}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{Get\+Process\+Tool\+I\+D()}{GetProcessToolID()}}
+{\footnotesize\ttfamily int Get\+Process\+Tool\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \mbox{\hyperlink{class_process_tool}{Process\+Tool}} ID. \mbox{\Hypertarget{class_process_tool_a06656026e81c2da884f1130804aac780}\label{class_process_tool_a06656026e81c2da884f1130804aac780}} 
+\index{Process\+Tool@{Process\+Tool}!On\+Load\+Parameter@{On\+Load\+Parameter}}
+\index{On\+Load\+Parameter@{On\+Load\+Parameter}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{On\+Load\+Parameter()}{OnLoadParameter()}}
+{\footnotesize\ttfamily void Process\+Tool\+::\+On\+Load\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+UI request to load process parameters \mbox{\Hypertarget{class_process_tool_aff87d429b43cdb20405a5036ec0a4d66}\label{class_process_tool_aff87d429b43cdb20405a5036ec0a4d66}} 
+\index{Process\+Tool@{Process\+Tool}!On\+Save\+Parameter@{On\+Save\+Parameter}}
+\index{On\+Save\+Parameter@{On\+Save\+Parameter}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{On\+Save\+Parameter()}{OnSaveParameter()}}
+{\footnotesize\ttfamily void Process\+Tool\+::\+On\+Save\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+UI request to save process parameters \mbox{\Hypertarget{class_process_tool_a178bc06abf5a20220bd2306a14708a93}\label{class_process_tool_a178bc06abf5a20220bd2306a14708a93}} 
+\index{Process\+Tool@{Process\+Tool}!Set\+Img\+File@{Set\+Img\+File}}
+\index{Set\+Img\+File@{Set\+Img\+File}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Img\+File()}{SetImgFile()}}
+{\footnotesize\ttfamily void Process\+Tool\+::\+Set\+Img\+File (\begin{DoxyParamCaption}\item[{Img\+File $\ast$}]{p\+Image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the image to be processed from. The processed imaged won\textquotesingle{}t replace this original image. 
+
+Reimplemented in \mbox{\hyperlink{class_ldc_tool_a07d1a547f02d4dea6a480c1be875a685}{Ldc\+Tool}}, \mbox{\hyperlink{class_fec_tool_ac99805fa120b8bb7a21fc08382a875c1}{Fec\+Tool}}, and \mbox{\hyperlink{class_homo_tool_af43fe8ae0732dffbeb35b59058509af2}{Homo\+Tool}}.
+
+\mbox{\Hypertarget{class_process_tool_a50caa175198cece00b39a146715bf3eb}\label{class_process_tool_a50caa175198cece00b39a146715bf3eb}} 
+\index{Process\+Tool@{Process\+Tool}!Set\+Param@{Set\+Param}}
+\index{Set\+Param@{Set\+Param}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{Set\+Param()}{SetParam()}}
+{\footnotesize\ttfamily virtual void Set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_process_wrap}{Process\+Wrap}} $\ast$}]{p\+Param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Copys contents of process parameters into related \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}}. 
+
+Reimplemented in \mbox{\hyperlink{class_ldc_tool_a1c98303e0ab2dfea1f1dcca8f1548307}{Ldc\+Tool}}, \mbox{\hyperlink{class_fec_tool_acd6cd4230cb79fe0cb1053c588f91806}{Fec\+Tool}}, and \mbox{\hyperlink{class_homo_tool_a69965855ba23da88abe7903ad58c20c6}{Homo\+Tool}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_process_tool_a775ff126073fabb52a8374c083058596}\label{class_process_tool_a775ff126073fabb52a8374c083058596}} 
+\index{Process\+Tool@{Process\+Tool}!m\+\_\+p\+Basic\+View@{m\+\_\+p\+Basic\+View}}
+\index{m\+\_\+p\+Basic\+View@{m\+\_\+p\+Basic\+View}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+Basic\+View}{m\_pBasicView}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_process_view}{Process\+View}}$\ast$ Process\+Tool\+::m\+\_\+p\+Basic\+View\hspace{0.3cm}{\ttfamily [protected]}}
+
+pointer to processed image viewer \mbox{\Hypertarget{class_process_tool_ae19c0d700f0a30bb0ca9d18e5397a562}\label{class_process_tool_ae19c0d700f0a30bb0ca9d18e5397a562}} 
+\index{Process\+Tool@{Process\+Tool}!m\+\_\+p\+Process\+Wrap@{m\+\_\+p\+Process\+Wrap}}
+\index{m\+\_\+p\+Process\+Wrap@{m\+\_\+p\+Process\+Wrap}!Process\+Tool@{Process\+Tool}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+Process\+Wrap}{m\_pProcessWrap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_process_wrap}{Process\+Wrap}}$\ast$ Process\+Tool\+::m\+\_\+p\+Process\+Wrap\hspace{0.3cm}{\ttfamily [protected]}}
+
+pointer to parameter capsulator class 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+i\+Optics/\mbox{\hyperlink{_process_tool_8h}{Process\+Tool.\+h}}\item 
+i\+Optics/Process\+Tool.\+cpp\end{DoxyCompactItemize}

@@ -3,6 +3,8 @@
 
 #include "stdafx.h"
 #include "resource.h"
+#include "BasicView.h"
+#include "WorkView.h"
 #include "MainView.h"
 #include "Navigator.h"
 

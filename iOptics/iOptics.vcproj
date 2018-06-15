@@ -68,9 +68,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ImgReader.lib"
+				AdditionalDependencies="ImgLab.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="$(SolutionDir)\lib"
+				AdditionalLibraryDirectories="$(SolutionDir)lib\$(ConfigurationName)"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				TargetMachine="1"
@@ -151,9 +151,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ImgReader.lib"
+				AdditionalDependencies="ImgLab.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(SolutionDir)\lib"
+				AdditionalLibraryDirectories="$(SolutionDir)lib\$(ConfigurationName)"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -196,6 +196,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\DistMeasure.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Easytip.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\FecTool.cpp"
 				>
 			</File>
@@ -205,6 +213,18 @@
 			</File>
 			<File
 				RelativePath=".\Gride.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\HomoGride.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\HomoTool.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\HomoView.cpp"
 				>
 			</File>
 			<File
@@ -302,6 +322,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\DistMeasure.h"
+				>
+			</File>
+			<File
 				RelativePath=".\FecTool.h"
 				>
 			</File>
@@ -311,6 +335,18 @@
 			</File>
 			<File
 				RelativePath=".\Gride.h"
+				>
+			</File>
+			<File
+				RelativePath=".\HomoGride.h"
+				>
+			</File>
+			<File
+				RelativePath=".\HomoTool.h"
+				>
+			</File>
+			<File
+				RelativePath=".\HomoView.h"
 				>
 			</File>
 			<File
@@ -346,6 +382,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ProcessView.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Resource.h"
 				>
 			</File>
@@ -355,6 +395,10 @@
 			</File>
 			<File
 				RelativePath=".\targetver.h"
+				>
+			</File>
+			<File
+				RelativePath=".\WorkView.h"
 				>
 			</File>
 		</Filter>

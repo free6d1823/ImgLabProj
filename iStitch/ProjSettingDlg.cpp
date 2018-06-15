@@ -214,6 +214,8 @@ void ProjSettingDlg::OnEditItem(int nID, int nSub)
 												strcpy_s(m_Setting.ip[nID].path, sizeof(m_Setting.ip[nID].path), strFileName);
 												m_Setting.ip[nID].size.cx = pImg->Width();
 												m_Setting.ip[nID].size.cy = pImg->Height();
+												m_Setting.ip[nID].pos.x = m_Setting.ip[nID].size.cx * nID;
+												m_Setting.ip[nID].pos.y = 0;
 												UpdateListCtrl();
 										} else {
 												CString szText;

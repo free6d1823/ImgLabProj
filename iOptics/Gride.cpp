@@ -5,7 +5,6 @@
 #include "resource.h"
 #include "Gride.h"
 #include "common.h"
-#include "FecTool.h"
 
 // Gride
 Gride::Gride(COLORREF color)
@@ -138,81 +137,4 @@ void Gride::Draw(CDC* pDC)
 		}
 	}
 
-}
-
-///////////////////////////////////////////////
-
-
-FecGride::~FecGride()
-{
-}
-FecGride::FecGride(COLORREF color): Gride(color)
-{
-	memset(&m_param, 0, sizeof(m_param));
-
-}
-void FecGride::SetParam(void* pParam)
-{
-	FecWrap* pFecCap = (FecWrap*) pParam;
-
-	memcpy(&m_param, &pFecCap->param, sizeof(m_param));
-}
-void FecGride::Draw(CDC* pDC)
-{
-	//draw center
-	CPen penCenter(PS_SOLID, 1, m_color);
-	CPen* pOldPen = pDC->SelectObject(&penCenter);
-	CBrush* pOldBrush;
-	//scale and shift to relate to m_rcViewPort
-	POINT p1;
-	SIZE sz;
-	sz.cx = (m_rcRange.right - m_rcRange.left); //image size in viewport
-	sz.cy = (m_rcRange.bottom - m_rcRange.top);
-	p1.x = m_rcRange.left + m_param.ptCenter.x * sz.cx /m_param.szInput.cx;
-	p1.y = m_rcRange.top + m_param.ptCenter.y * sz.cy /m_param.szInput.cy;
-	p1.x  -= m_rcViewPort.left;
-	p1.y  -= m_rcViewPort.top;
-
-	int x1 = m_rcRange.left - m_rcViewPort.left;
-	int x2 = m_rcRange.right - m_rcViewPort.left;
-	int y1 = m_rcRange.top- m_rcViewPort.top;
-	int y2 = m_rcRange.bottom - m_rcViewPort.top;
-
-	pDC->MoveTo(x1, p1.y);
-	pDC->LineTo(x2, p1.y);
-	pDC->MoveTo(p1.x, y1);
-	pDC->LineTo(p1.x, y2);
-
-	int rx = m_param.szRadius.cx  * sz.cx /m_param.szInput.cx;
-	int ry = m_param.szRadius.cy  * sz.cy /m_param.szInput.cy;
-
-	CBrush br;
-	br.CreateStockObject(HOLLOW_BRUSH);
-	pOldBrush = pDC->SelectObject(&br);
-
-	pDC->Ellipse(p1.x - rx, p1.y - ry, p1.x + rx, p1.y + ry);
-	//draw 60, 30 degree
-	float f1, f2;
-	switch(m_param.lt){
-		case LensType_0: //tan(angle/2)
-			f1 = 0.577350f; f2 = 0.267949f;
-			break;
-		case LensType_1://sin(angle/2)
-			f1 = 0.5f; f2 = 0.258819f;
-			break;
-		case LensType_2://angle
-			f1 = 0.666667f; f2=0.333333f;
-			break;
-		default://sin(angle)
-			f1 = 0.866025f; f2=0.5f;
-			break;
-	}
-	int rx2, ry2;
-	rx2 = (int)((float)rx * f1);ry2 = (int)((float)ry * f1);
-	pDC->Ellipse(p1.x - rx2, p1.y - ry2, p1.x + rx2, p1.y + ry2);
-	rx2 = (int)((float)rx * f2);ry2 = (int)((float)ry * f2);
-	pDC->Ellipse(p1.x - rx2, p1.y - ry2, p1.x + rx2, p1.y + ry2);
-
-	pDC->SelectObject(pOldBrush);
-	pDC->SelectObject(pOldPen);
 }

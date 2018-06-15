@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="iStitch.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">iStitch
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Image stitching tool</div>
   </td>
@@ -73,6 +73,11 @@ $(function() {
 <div class="title">CMainDoc Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class stores the images properties and stitched image.  
+ <a href="class_c_main_doc.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_main_doc_8h_source.html">MainDoc.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CMainDoc:</div>
 <div class="dyncontent">
@@ -83,21 +88,22 @@ Collaboration diagram for CMainDoc:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_c_main_doc__coll__graph.png" border="0" usemap="#_c_main_doc_coll__map" alt="Collaboration graph"/></div>
 <map name="_c_main_doc_coll__map" id="_c_main_doc_coll__map">
-<area shape="rect" id="node3" href="struct___project_setting.html" title="_ProjectSetting" alt="" coords="121,95,231,121"/>
-<area shape="rect" id="node4" href="struct___image_property.html" title="_ImageProperty" alt="" coords="119,5,233,32"/>
+<area shape="rect" id="node3" href="struct___project_setting.html" title="The stitching images parameters. " alt="" coords="121,95,231,121"/>
+<area shape="rect" id="node4" href="struct___image_property.html" title="The source image properties and stitching parameters. " alt="" coords="119,5,233,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7a487bf4f953314ca1343ca34df57f25"><td class="memItemLeft" align="right" valign="top"><a id="a7a487bf4f953314ca1343ca34df57f25"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>InitPropertySetting</b> (<a class="el" href="struct___project_setting.html">PProjectSetting</a> pPs)</td></tr>
-<tr class="separator:a7a487bf4f953314ca1343ca34df57f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64c9fbacebb5d3834479c576ffc3468"><td class="memItemLeft" align="right" valign="top"><a id="ab64c9fbacebb5d3834479c576ffc3468"></a>
+BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>UpdatePropertySetting</b> (<a class="el" href="struct___project_setting.html">PProjectSetting</a> pPs)</td></tr>
+<tr class="separator:ab64c9fbacebb5d3834479c576ffc3468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b704bc9ee158709077d4870c7692044"><td class="memItemLeft" align="right" valign="top"><a id="a8b704bc9ee158709077d4870c7692044"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>FreePropertySetting</b> ()</td></tr>
 <tr class="separator:a8b704bc9ee158709077d4870c7692044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57252856669a2b8b9fcdfac8d9b84bea"><td class="memItemLeft" align="right" valign="top"><a id="a57252856669a2b8b9fcdfac8d9b84bea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>IncreaseImagePosX</b> (int id, int x)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_main_doc.html#a57252856669a2b8b9fcdfac8d9b84bea">IncreaseImagePosX</a> (int id, int x)</td></tr>
+<tr class="memdesc:a57252856669a2b8b9fcdfac8d9b84bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">use these functions to modify partial parameters <br /></td></tr>
 <tr class="separator:a57252856669a2b8b9fcdfac8d9b84bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2efb2ee8e0dd6888207e5760fea782b"><td class="memItemLeft" align="right" valign="top"><a id="ab2efb2ee8e0dd6888207e5760fea782b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>IncreaseImagePosY</b> (int id, int y)</td></tr>
@@ -114,6 +120,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>GetImagesBoundary</b>
 <tr class="memitem:a126f38d2277d2836557658480fd1871b"><td class="memItemLeft" align="right" valign="top"><a id="a126f38d2277d2836557658480fd1871b"></a>
 virtual BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>OnNewDocument</b> ()</td></tr>
 <tr class="separator:a126f38d2277d2836557658480fd1871b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b7a49046e89fd82323d65228c4db1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_main_doc.html#a92b7a49046e89fd82323d65228c4db1e">DoStitching</a> (int nTopID, int mode)</td></tr>
+<tr class="separator:a92b7a49046e89fd82323d65228c4db1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e8b5aa95766a847bb11ac63e310dcc"><td class="memItemLeft" align="right" valign="top"><a id="a76e8b5aa95766a847bb11ac63e310dcc"></a>
+ImgFile *&#160;</td><td class="memItemRight" valign="bottom"><b>GetImage</b> ()</td></tr>
+<tr class="separator:a76e8b5aa95766a847bb11ac63e310dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af72ef9a0f0ea90f3447ad861cb3a34d4"><td class="memItemLeft" align="right" valign="top"><a id="af72ef9a0f0ea90f3447ad861cb3a34d4"></a>
 virtual BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>OnOpenDocument</b> (LPCTSTR lpszPathName)</td></tr>
 <tr class="separator:af72ef9a0f0ea90f3447ad861cb3a34d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,10 +152,100 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a07fb2abbfdc5c2a464c99a4f87c4c75f"><td class="memItemLeft" align="right" valign="top"><a id="a07fb2abbfdc5c2a464c99a4f87c4c75f"></a>
-<a class="el" href="struct___project_setting.html">ProjectSetting</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_ProjectSetting</b></td></tr>
+<tr class="memitem:a07fb2abbfdc5c2a464c99a4f87c4c75f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct___project_setting.html">ProjectSetting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_main_doc.html#a07fb2abbfdc5c2a464c99a4f87c4c75f">m_ProjectSetting</a></td></tr>
 <tr class="separator:a07fb2abbfdc5c2a464c99a4f87c4c75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c68f04aec7608ec7be0443e244a2438"><td class="memItemLeft" align="right" valign="top">ImgFile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_main_doc.html#a5c68f04aec7608ec7be0443e244a2438">m_pImg</a></td></tr>
+<tr class="separator:a5c68f04aec7608ec7be0443e244a2438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b6028469709ce4f7b273bbf94bc4aa"><td class="memItemLeft" align="right" valign="top"><a id="a45b6028469709ce4f7b273bbf94bc4aa"></a>
+ImgLab *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pImgLab</b></td></tr>
+<tr class="separator:a45b6028469709ce4f7b273bbf94bc4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class stores the images properties and stitched image. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a92b7a49046e89fd82323d65228c4db1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b7a49046e89fd82323d65228c4db1e">&#9670;&nbsp;</a></span>DoStitching()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CMainDoc::DoStitching </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nTopID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>make stitched image</p>
+<p>Apply stitching parameters and make the image </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nTopID</td><td>index of the image to be shown on top </td></tr>
+    <tr><td class="paramname">mode</td><td>0 no transparent, 1 50% alpha blending, 2= linear blending </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a5c68f04aec7608ec7be0443e244a2438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c68f04aec7608ec7be0443e244a2438">&#9670;&nbsp;</a></span>m_pImg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImgFile* CMainDoc::m_pImg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>stitched image </p>
+
+</div>
+</div>
+<a id="a07fb2abbfdc5c2a464c99a4f87c4c75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07fb2abbfdc5c2a464c99a4f87c4c75f">&#9670;&nbsp;</a></span>m_ProjectSetting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct___project_setting.html">ProjectSetting</a> CMainDoc::m_ProjectSetting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>get the stitched image, you might need to call DoStitch before to get stitched result source images propert and transformation parameters </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>iStitch/<a class="el" href="_main_doc_8h_source.html">MainDoc.h</a></li>
 <li>iStitch/MainDoc.cpp</li>
